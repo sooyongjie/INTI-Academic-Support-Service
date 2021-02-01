@@ -1,0 +1,55 @@
+body.dark {
+  nav {
+    border-bottom: 1px solid #222;
+    .user-dropdown ul {
+      border-color: #333;
+      background: #111;
+      li {
+        color: #ddd;
+      }
+    }
+  }
+  .std-btn {
+    background: #222;
+    border-color: #222;
+    span {
+      color: #ddd;
+    }
+    i {
+      color: #888;
+    }
+    &:hover {
+      background: #333;
+      color: #eee;
+      border-color: #333;
+    }
+    &:focus {
+      border-color: #555;
+    }
+  }
+  .heading {
+    .back-btn {
+      i {
+        color: #888;
+      }
+      &:hover {
+        background: #222;
+        i {
+          color: #aaa;
+        }
+      }
+    }
+  }
+  .card {
+    border-color: #444;
+    h4 {
+      color: #888;
+    }
+    &:hover {
+      background: #222;
+    }
+  }
+  footer .copyright {
+    color: #444;
+  }
+}

@@ -1,0 +1,112 @@
+@import "../mixin";
+@import "../colors";
+@import "request-new";
+
+.container.requests {
+  row-gap: 10px;
+}
+
+.container.center {
+  align-items: center;
+  .card-container {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 30px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  h1 {
+    font-weight: 600;
+  }
+  .add-btn {
+    padding: 4px 10px;
+    margin-left: 10px;
+    i {
+      font-weight: 400;
+    }
+  }
+  .back-btn {
+    height: 28px;
+    width: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    &:hover,
+    &:focus {
+      background: $redHover;
+      i {
+        color: $red;
+      }
+    }
+    &:active {
+      background: $redActive;
+    }
+  }
+}
+
+.sub-heading {
+  line-height: 24px;
+}
+
+form .card {
+  &:hover {
+    border-color: #f9ced0;
+    background: #fefcfc;
+    h4 {
+      color: #222;
+    }
+  }
+  &:focus {
+    border-color: #f9ced0;
+    background: #fdf1f2;
+  }
+  h4 {
+    color: #666;
+    @include europa;
+    font-size: 16px;
+  }
+}
+
+.card {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  // request view
+  &.big {
+    min-width: 350px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 4px;
+    a {
+      padding: 0;
+      border-color: #666;
+    }
+  }
+}
+
+form.card {
+  row-gap: 0px;
+  .heading {
+    margin-bottom: 28px;
+  }
+  &.new-request {
+  
+  }
+
+}

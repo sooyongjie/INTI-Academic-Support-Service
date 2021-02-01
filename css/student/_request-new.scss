@@ -1,0 +1,35 @@
+@import "../mixin";
+
+form.new-request {
+  padding: 28px 32px 36px 32px;
+  label {
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 14px;
+    @include poppins;
+  }
+  input {
+    margin-bottom: 16px;
+    padding: 0 0 8px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    transition: 0.1s ease-out;
+    &:focus {
+      border-color: $red;
+    }
+  }
+  button.submit-btn {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    align-self: flex-end;
+    color: $red;
+    span {
+      @include europa;
+    }
+    i {
+        font-weight: 400;
+    }
+  }
+}

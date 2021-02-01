@@ -1,0 +1,55 @@
+@import "../colors";
+
+.button {
+  i {
+    font-size: 16px !important;
+  }
+}
+
+.notification-container {
+  display: flex;
+  column-gap: 50px;
+  row-gap: 40px;
+  flex-wrap: wrap;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  h2,
+  h4 {
+    font-weight: 400;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  .notification {
+    width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px 12px 12px 16px;
+    .notification-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      button {
+        border-radius: 50%;
+        transition: 0.2s;
+        &:hover,
+        &:focus {
+          background: #fdf0f0;
+          color: $red;
+        }
+        &:active {
+          background: #f9ced0;
+          transition: 0.05s;
+        }
+      }
+      i {
+        padding: 6px 8px;
+        font-weight: 400;
+      }
+    }
+  }
+}

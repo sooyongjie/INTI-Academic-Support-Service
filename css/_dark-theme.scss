@@ -1,0 +1,30 @@
+@import "./student/dark";
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+  }
+  .loading-screen {
+    background: black;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .loading-screen {
+    background: white;
+  }
+}
+
+body.dark {
+  background: black;
+  color: #ddd;
+  hr {
+    border-color: #444 !important;
+  }
+  a {
+    color: #ddd;
+  }
+  p {
+    color: #ddd;
+  }
+}

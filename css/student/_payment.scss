@@ -1,0 +1,20 @@
+.card {
+  &.payment-info {
+    width: auto;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    justify-items: center;
+    align-items: center;
+    row-gap: 10px;
+    img {
+      height: 35px;
+    }
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.done-btn {
+  align-self: flex-end;
+}

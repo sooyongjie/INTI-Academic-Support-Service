@@ -1,0 +1,21 @@
+@font-face {
+  font-family: Europa;
+  src: url("/fonts/europa.woff");
+}
+
+@mixin red {
+  background: $red;
+  color: white;
+}
+
+@mixin poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+@mixin europa {
+  font-family: Europa;
+}
+
+@mixin roboto {
+  font-family: "Roboto", sans-serif;
+}
