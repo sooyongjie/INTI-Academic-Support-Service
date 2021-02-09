@@ -1,3 +1,23 @@
-.container .home {
-  row-gap: 50px;
+.container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 50px;
+  .card {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    padding: 12px 16px 16px 16px;
+    border: 1px solid #dadada;
+    border-radius: 16px;
+    i {
+      font-size: 28px;
+      font-weight: 300;
+    }
+  }
 }
