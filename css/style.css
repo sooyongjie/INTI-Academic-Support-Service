@@ -3,106 +3,10 @@
   src: url("/fonts/europa.woff");
 }
 
-body.dark nav {
-  border-bottom: 1px solid #222;
-}
-
-body.dark nav .user-dropdown ul {
-  border-color: #333;
-  background: #111;
-}
-
-body.dark nav .user-dropdown ul li {
-  color: #ddd;
-}
-
-body.dark .std-btn {
-  background: #222;
-  border-color: #222;
-}
-
-body.dark .std-btn span {
-  color: #ddd;
-}
-
-body.dark .std-btn i {
-  color: #888;
-}
-
-body.dark .std-btn:hover {
-  background: #333;
-  color: #eee;
-  border-color: #333;
-}
-
-body.dark .std-btn:focus {
-  border-color: #555;
-}
-
-body.dark .heading .back-btn i {
-  color: #888;
-}
-
-body.dark .heading .back-btn:hover {
-  background: #222;
-}
-
-body.dark .heading .back-btn:hover i {
-  color: #aaa;
-}
-
-body.dark .card {
-  border-color: #444;
-}
-
-body.dark .card h4 {
-  color: #888;
-}
-
-body.dark .card:hover {
-  background: #222;
-}
-
-body.dark footer .copyright {
-  color: #444;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: black;
-  }
-  .loading-screen {
-    background: black;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  .loading-screen {
-    background: white;
-  }
-}
-
-body.dark {
-  background: black;
-  color: #ddd;
-}
-
-body.dark hr {
-  border-color: #444 !important;
-}
-
-body.dark a {
-  color: #ddd;
-}
-
-body.dark p {
-  color: #ddd;
-}
-
 * {
   padding: 0;
   margin: 0;
-  font-family: Europa;
+  font-family: "Roboto", sans-serif;
   outline: none;
 }
 
