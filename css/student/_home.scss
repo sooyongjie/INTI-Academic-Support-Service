@@ -15,9 +15,42 @@
     padding: 12px 16px 16px 16px;
     border: 1px solid #dadada;
     border-radius: 16px;
+    animation: scale-down-center 0.1s ease-in both;
+    opacity: 0;
     i {
       font-size: 28px;
       font-weight: 300;
     }
+    &:hover {
+      animation: scale-up-center 0.1s ease-out both;
+    }
   }
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes scale-down-center {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+footer {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }

@@ -17,33 +17,58 @@
     />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/student/student.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
   </head>
   <body>
     <nav>
-      <div class="nav-back">
+      <a class="nav-back">
         <i class="fas fa-arrow-left"></i>
-        <span>Back</span>
-      </div>
+        <span class="nav-item">Back</span>
+      </a>
       <div class="logo">
         <img src="../img/inti-logo.png" alt="" />
       </div>
       <div class="nav-user">
-        <span>sooyongjie</span>
+        <a class="nav-item">sooyongjie</a>
         <i class="fas fa-caret-down"></i>
+        <!-- Dropdown -->
         <div class="user-dropdown">
-          <span>Hello</span>
+          <label>Settings</label>
+          <a>Toggle Theme<i class="fad fa-sun"></i></a>
+          <hr>
+          <a href="">Account Details</a>
+          <a href="">Sign out</a>
         </div>
       </div>
     </nav>
+    <div class="loading-screen">
+      <svg class="spinner" viewBox="0 0 50 50">
+        <circle
+          class="path"
+          cx="25"
+          cy="25"
+          r="20"
+          fill="none"
+          stroke-width="5"
+        ></circle>
+      </svg>
+    </div>
     <div class="container">
-      <div class="card">
+      <a class="card">
         <i class="far fa-sticky-note"></i>
         <span>Send Request</span>
-      </div>
-      <div class="card">
+      </a>
+      <a class="card">
         <i class="fas fa-history"></i>
         <span>View Requests</span>
-      </div>
+      </a>
     </div>
   </body>
+  <footer>
+    <p class="copyright">© 2021 INTI International University & Colleges</p>
+  </footer>
+  <script src="js/script.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/theme.js"></script>
+
 </html>

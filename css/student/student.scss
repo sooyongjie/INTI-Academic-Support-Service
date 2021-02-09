@@ -6,3 +6,7 @@
 body {
   height: 100vh;
 }
+
+.loading-screen {
+  height: calc(100% - 81px - 10vh);
+}

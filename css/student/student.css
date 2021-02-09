@@ -9,12 +9,17 @@
 }
 
 nav {
-  height: 80px;
+  height: 70px;
   padding: 0 150px;
   background: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+nav span, nav a, nav label {
+  font-family: "Poppins", sans-serif;
 }
 
 nav .nav-back,
@@ -23,7 +28,11 @@ nav .nav-user {
   width: 100px;
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 16px;
+}
+
+nav .nav-back i {
+  font-size: 14px;
 }
 
 nav .logo,
@@ -33,8 +42,11 @@ nav img {
 
 nav .nav-user .user-dropdown {
   width: 150px;
-  margin: 110px 0 0 -40px;
+  margin: 220px 0 0 -30px;
   padding: 12px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
   position: absolute;
   background: #fff;
   border: 1px solid #dadada;
@@ -43,6 +55,24 @@ nav .nav-user .user-dropdown {
   z-index: -1;
   animation: slide-up 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   transition: 0.1s ease-out;
+}
+
+nav .nav-user .user-dropdown label {
+  font-size: 14px;
+  color: #888;
+}
+
+nav .nav-user .user-dropdown hr {
+  height: 1px;
+  margin: 2px 0;
+  background: #ddd;
+  border: none;
+}
+
+nav .nav-user .user-dropdown i.fad {
+  margin-left: 10px;
+  --fa-primary-color: #ffc24d;
+  --fa-secondary-color: orange;
 }
 
 nav .nav-user:hover .user-dropdown,
@@ -89,6 +119,8 @@ nav .nav-user:focus-within .user-dropdown {
   padding: 12px 16px 16px 16px;
   border: 1px solid #dadada;
   border-radius: 16px;
+  animation: scale-down-center 0.1s ease-in both;
+  opacity: 0;
 }
 
 .container .card i {
@@ -96,7 +128,43 @@ nav .nav-user:focus-within .user-dropdown {
   font-weight: 300;
 }
 
+.container .card:hover {
+  animation: scale-up-center 0.1s ease-out both;
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes scale-down-center {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+footer {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
 body {
   height: 100vh;
+}
+
+.loading-screen {
+  height: calc(100% - 81px - 10vh);
 }
 /*# sourceMappingURL=student.css.map */
