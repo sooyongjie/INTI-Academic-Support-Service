@@ -1,0 +1,36 @@
+@import "student";
+
+* {
+  color: #ccc !important;
+}
+
+body.dark {
+  background: black !important;
+
+  nav,
+  nav .user-dropdown,
+  .loading-screen {
+    background: black !important;
+  }
+  nav {
+    border-bottom: 1px solid #333;
+    .user-dropdown {
+      border-color: #444 !important;
+      hr {
+        background: #444 !important;
+      }
+    }
+  }
+
+  .container {
+    .card {
+      border-color: #333;
+      background: #080808 !important;
+    }
+  }
+
+  footer p {
+    color: #666 !important;
+  }
+}
+

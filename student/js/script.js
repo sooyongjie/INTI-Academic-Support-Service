@@ -4,3 +4,4 @@ window.addEventListener("load", function () {
     document.querySelector(".loading-screen").remove();
   }, 400);
 });
+
