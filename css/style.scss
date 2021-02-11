@@ -87,6 +87,7 @@ h4,
 h5,
 h6 {
   @include poppins;
+  font-weight: 500;
 }
 
 h1,
@@ -117,6 +118,7 @@ footer {
   font-size: 10px;
 }
 
+// Scrollbar
 /* width */
 ::-webkit-scrollbar {
   width: 15px;
