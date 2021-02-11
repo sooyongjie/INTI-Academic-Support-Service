@@ -1,8 +1,12 @@
 window
   .matchMedia("(prefers-color-scheme: dark)")
   .addEventListener("change", (e) => {
-    const newColorScheme = e.matches ? "dark" : "light";
-    alert(newColorScheme);
+    const newTheme = e.matches ? "dark" : "light";
+    localStorage.setItem("theme", newTheme);
+    window.location.reload();
+    // if(newTheme == "light") {
+    //   setTheme("light")
+    // } else setTheme("dark")
   });
 
 checkPrefferedTheme = () => {
@@ -31,10 +35,10 @@ document.getElementById("theme-btn").addEventListener("click", () => {
 setTheme = (theme) => {
   if (theme == "light") {
     linkList[3].href = "../css/student/student.css";
-    document.querySelector(".inti-logo").src = "../img/inti-logo.png";
+    document.querySelector(".inti-logo").src = "../img/inti-logo-half.svg";
   } else {
     linkList[3].href = "../css/student/student-dark.css";
-    document.querySelector(".inti-logo").src = "../img/inti-logo-dark.png";
+    document.querySelector(".inti-logo").src = "../img/inti-logo-half-dark.svg";
   }
   console.log(`Loading ${theme} theme...`);
   document.body.classList.toggle("dark");
