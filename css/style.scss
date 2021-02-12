@@ -20,6 +20,7 @@ body {
   overflow-x: hidden;
   z-index: 99;
   transition: 0.1s ease-out;
+
   .spinner {
     animation: rotate 2s linear infinite;
     z-index: 2;
@@ -29,26 +30,31 @@ body {
     margin: 0 0 0 -25px;
     width: 30px;
     height: 30px;
+
     & .path {
       stroke: $red;
       stroke-linecap: butt;
       animation: dash 1.5s ease-in-out infinite;
     }
   }
+
   @keyframes rotate {
     100% {
       transform: rotate(360deg);
     }
   }
+
   @keyframes dash {
     0% {
       stroke-dasharray: 1, 150;
       stroke-dashoffset: 0;
     }
+
     50% {
       stroke-dasharray: 90, 150;
       stroke-dashoffset: -35;
     }
+
     100% {
       stroke-dasharray: 90, 150;
       stroke-dashoffset: -124;
@@ -70,6 +76,7 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+
   span {
     @include poppins;
     font-size: 14px;
@@ -106,16 +113,77 @@ tr {
 button,
 a {
   transition: 0.1s ease-out;
+
   &:active {
     transition: 0.05 ease-out;
   }
 }
 
-footer {
+.toast-container {
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  bottom: 20px;
+  transform: translateY(10px);
+  opacity: 0;
+  z-index: -1;
+  transition: 0.1s ease-out;
+
+  &.active {
+    transform: translateY(0px);
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .toast {
+    height: max-content;
+    padding: 6px 8px 6px 22px;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    background: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 15px;
+
+    button {
+      border-radius: 50%;
+      border: 1px solid #f8f8f8;
+      transition: 0.2s;
+      align-self: flex-end;
+
+      &:hover,
+      &:focus {
+        background: #fdf0f0;
+        color: $red;
+        border: 1px solid $redBorder;
+      }
+
+      &:active {
+        background: $redBorder;
+        transition: 0.05s;
+      }
+    }
+
+    i {
+      padding: 6px 8px;
+      font-weight: 400;
+    }
+  }
+}
+
+footer {
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   color: #aaa;
+  text-align: center;
   font-size: 10px;
+  z-index: -1;
 }
 
 // Scrollbar

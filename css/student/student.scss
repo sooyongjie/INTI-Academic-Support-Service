@@ -2,6 +2,7 @@
 @import "../colors";
 @import "nav";
 @import "home";
+@import "cards";
 
 body {
   height: 100vh;
@@ -13,76 +14,24 @@ nav {
 }
 
 .container {
-  height: 70vh;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
-  align-items: center;
   column-gap: 50px;
-  row-gap: 20px;
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  row-gap: 40px;
+  &.center {
+    min-height: 70vh;
     align-items: center;
-    padding: 12px 16px 16px 16px;
-    border: 1px solid #dadada;
-    border-radius: 16px;
-    text-align: left;
-    .heading {
-      font-size: 14px;
-    }
-  }
-  .card.form {
-    min-height: 300px;
-    width: 300px;
-    padding: 32px 36px 36px 36px;
-    justify-content: unset;
-    align-items: unset;
-    &:focus-within {
-      border-color: $redBorder;
-    }
-    .heading {
-      margin-bottom: 36px;
-    }
-    label {
-      color: #888;
-      margin-bottom: 12px;
-    }
-    input {
-      margin-bottom: 20px;
-      padding: 0 0 10px 0;
-      border: none;
-      border-bottom: 1px solid #ccc;
-      transition: 0.15s ease-out;
-      &:hover {
-        border-color: $redActive;
-      }
-      &:focus {
-        border-color: $red;
-      }
-    }
-    button {
-      padding: 6px 12px;
-      border-radius: 8px;
-      background: #eee;
-      color: #222;
-      border: 1px solid #f8f8f8;
-      align-self: flex-end;
-      display: flex;
-      align-items: center;
-      column-gap: 8px;
-      &:hover {
-        background: #eee;
-        border-color: #ccc;
-      }
-      &:focus {
-        background: $redHover;
-        border-color: $redBorder;
-      }
-    }
   }
   &.row {
     flex-direction: column;
+    align-items: center;
+    justify-content: unset;
+  }
+  &.form {
+    label {
+      margin-bottom: 12px;
+    }
   }
   .heading {
     display: flex;

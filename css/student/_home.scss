@@ -11,8 +11,12 @@
       font-size: 28px;
       font-weight: 300;
     }
-    &:hover {
+    &:hover,
+    &:focus {
       animation: scale-up-center 0.1s ease-out both;
+    }
+    &:focus {
+      border-color: #888;
     }
   }
 }
@@ -33,14 +37,4 @@
   100% {
     transform: scale(1);
   }
-}
-
-footer {
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
 }

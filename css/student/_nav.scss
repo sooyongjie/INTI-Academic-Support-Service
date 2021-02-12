@@ -8,7 +8,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #eee;
-  span, a, label {
+  span,
+  a,
+  label {
     @include poppins;
   }
   .nav-item {
@@ -60,6 +62,9 @@ nav {
         margin-left: 10px;
         --fa-primary-color: #ffc24d;
         --fa-secondary-color: orange;
+        --fa-primary-opacity: 1;
+        --fa-secondary-opacity: 1;
+        transition: 0.3s ease-out !important;
       }
     }
     &:hover .user-dropdown,

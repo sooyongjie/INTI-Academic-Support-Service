@@ -18,7 +18,9 @@ nav {
   border-bottom: 1px solid #eee;
 }
 
-nav span, nav a, nav label {
+nav span,
+nav a,
+nav label {
   font-family: "Poppins", sans-serif;
 }
 
@@ -73,6 +75,9 @@ nav .nav-user .user-dropdown i.fad {
   margin-left: 10px;
   --fa-primary-color: #ffc24d;
   --fa-secondary-color: orange;
+  --fa-primary-opacity: 1;
+  --fa-secondary-opacity: 1;
+  transition: 0.3s ease-out !important;
 }
 
 nav .nav-user:hover .user-dropdown,
@@ -115,8 +120,12 @@ nav .nav-user:focus-within .user-dropdown {
   font-weight: 300;
 }
 
-.container .button.card:hover {
+.container .button.card:hover, .container .button.card:focus {
   animation: scale-up-center 0.1s ease-out both;
+}
+
+.container .button.card:focus {
+  border-color: #888;
 }
 
 @keyframes scale-up-center {
@@ -137,14 +146,124 @@ nav .nav-user:focus-within .user-dropdown {
   }
 }
 
-footer {
-  height: 10vh;
+.heading {
+  margin-bottom: 28px;
+}
+
+.heading h2 {
+  font-size: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px 16px 16px;
+  border: 1px solid #dadada;
+  border-radius: 16px;
+  text-align: left;
+  opacity: 0;
+}
+
+.card .col {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card .col a.view-request {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  opacity: 0;
+}
+
+.card .col a.view-request i {
+  font-size: 0px;
+  transition: 0.2s ease-out;
+}
+
+.card a.view-request,
+.card button {
+  background: #eee;
+  color: #222;
+  border: 1px solid #f8f8f8;
+}
+
+.card a.view-request:hover,
+.card button:hover {
+  background: #eee;
+  border-color: #ccc;
+}
+
+.card a.view-request:focus,
+.card button:focus {
+  background: #fdf0f0;
+  border-color: #f9ced0;
+}
+
+.card:hover a.view-request,
+.card:focus-within a.view-request {
+  opacity: 1;
+}
+
+.card:hover a.view-request i,
+.card:focus-within a.view-request i {
+  font-size: 14px;
+}
+
+.card button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.card.request,
+.payment {
+  padding: 32px 36px 36px 36px;
+}
+
+.card.request {
+  min-height: 200px;
+  width: 300px;
+  justify-content: unset;
+  align-items: unset;
+}
+
+.card.request:focus-within {
+  border-color: #f9ced0;
+}
+
+.card.request label {
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.card.request input {
+  margin-bottom: 20px;
+  padding: 0 0 10px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  transition: 0.15s ease-out;
+}
+
+.card.request input:hover {
+  border-color: #f9ced0;
+}
+
+.card.request input:focus {
+  border-color: #e20c18;
+}
+
+.card.request p {
+  margin-bottom: 16px;
 }
 
 body {
@@ -157,90 +276,26 @@ nav {
 }
 
 .container {
-  height: 70vh;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
-  align-items: center;
   column-gap: 50px;
-  row-gap: 20px;
+  row-gap: 40px;
 }
 
-.container .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.container.center {
+  min-height: 70vh;
   align-items: center;
-  padding: 12px 16px 16px 16px;
-  border: 1px solid #dadada;
-  border-radius: 16px;
-  text-align: left;
-}
-
-.container .card .heading {
-  font-size: 14px;
-}
-
-.container .card.form {
-  min-height: 300px;
-  width: 300px;
-  padding: 32px 36px 36px 36px;
-  justify-content: unset;
-  align-items: unset;
-}
-
-.container .card.form:focus-within {
-  border-color: #f9ced0;
-}
-
-.container .card.form .heading {
-  margin-bottom: 36px;
-}
-
-.container .card.form label {
-  color: #888;
-  margin-bottom: 12px;
-}
-
-.container .card.form input {
-  margin-bottom: 20px;
-  padding: 0 0 10px 0;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  transition: 0.15s ease-out;
-}
-
-.container .card.form input:hover {
-  border-color: #f9ced0;
-}
-
-.container .card.form input:focus {
-  border-color: #e20c18;
-}
-
-.container .card.form button {
-  padding: 6px 12px;
-  border-radius: 8px;
-  background: #eee;
-  color: #222;
-  border: 1px solid #f8f8f8;
-  align-self: flex-end;
-  display: flex;
-  align-items: center;
-  column-gap: 8px;
-}
-
-.container .card.form button:hover {
-  background: #eee;
-  border-color: #ccc;
-}
-
-.container .card.form button:focus {
-  background: #fdf0f0;
-  border-color: #f9ced0;
 }
 
 .container.row {
   flex-direction: column;
+  align-items: center;
+  justify-content: unset;
+}
+
+.container.form label {
+  margin-bottom: 12px;
 }
 
 .container .heading {
