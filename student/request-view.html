@@ -20,19 +20,21 @@
 <body>
     <nav>
         <a class="nav-back" onclick="goBack()">
-            <i class="fas fa-arrow-left"></i>
-            <span class="nav-item">Back</span>
+            <!-- <i class="fas fa-arrow-left"></i>
+            <span class="nav-item">Back</span> -->
         </a>
-        <div class="logo">
-            <img src="../img/inti-logo.svg" class="inti-logo" alt="" />
-        </div>
+        <a href="./home.html" class="logo">
+            <img src="../img/inti-logo-half.svg" class="inti-logo" alt="" />
+        </a>
         <div class="nav-user">
             <a class="nav-item">sooyongjie</a>
             <i class="fas fa-caret-down"></i>
             <!-- Dropdown -->
             <div class="user-dropdown">
                 <label>Settings</label>
-                <a id="theme-btn">Toggle Theme<i class="fad fa-sun" id="theme-icon"></i></a>
+                <button type="button" id="theme-btn">
+                    <span>Toggle Theme</span>
+                    <i class="fad fa-sun" id="theme-icon" id="theme-icon"></i></button>
                 <hr />
                 <a href="./profile.html">Account Details</a>
                 <a href="./">Sign out</a>
@@ -49,19 +51,65 @@
             <div class="heading">
                 <h2>Request #10001</h3>
             </div>
+            <label for="">Programme</label>
+            <p>University of Wollongong</p>
             <label for="">Course Code</label>
             <p>CSIT321</p>
-            <label for="">No. of Sets</label>
-            <p>1</p>
+            <label for="">Session</label>
+            <p>July 2019</p>
             <label for="">Status</label>
             <p>Pending</p>
         </div>
         <div class="payment">
+            <div class="order">
+                <div class="heading">
+                    <h2>Order Details</h3>
+                </div>
+                    <p>Total RM1</p>
+            </div>
             <div class="heading">
                 <h2>Payment Details</h3>
             </div>
-            <div class="order">
-                <label for="">CSIT321 ×1 = RM1</label>
+            <label for="receipt-input" class="receipt-input">
+                <i class="fas fa-upload"></i>
+                <span>Upload Receipt</span>
+                <input type="file" name="" id="receipt-input">
+            </label>
+            <div class="heading">
+                <h2>Payment Method</h2>
+            </div>
+            <p>Bank Transfer only</p>
+            <div class="card">
+                <div class="payment-info">
+                    <img src="../img/mb.png" alt="">
+                    <div>
+                        <h4>Soo Yong Jie</h4>
+                        <h4>10988333</h4>
+                    </div>
+                    <a href="https://www.maybank2u.com.my/">
+                        <i class="fas fa-external-link-square-alt"></i>
+                    </a>
+                </div>
+                <div class="payment-info">
+                    <img src="../img/pb.png" alt="">
+                    <div>
+                        <h4>Soo Yong Jie</h4>
+                        <h4>10988333</h4>
+                    </div>
+                    <a href="https://www2.pbebank.com/myIBK/apppbb/servlet/">
+                        <i class="fas fa-external-link-square-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="toast-container">
+        <div class="toast">
+            <span class="toast-message">Welcome 👋🏻</span>
+            <div class="close-btn-container">
+                <button onclick="clearToast()">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -70,7 +118,7 @@
     <p class="copyright">© 2021 INTI International University & Colleges</p>
 </footer>
 <script src="js/script.js"></script>
-<script src="js/home.js"></script>
 <script src="js/theme.js"></script>
+<script src="js/upload-files.js"></script>
 
 </html>

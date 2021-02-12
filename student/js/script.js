@@ -30,10 +30,12 @@ showToast = () => {
     toast.className = "toast-container active";
     setTimeout(() => {
       clearToast();
-    }, 2500);
+    }, 3000);
   }, 500);
 };
 
 clearToast = () => {
   toast.className = "toast-container";
 };
+
+showToast()

@@ -32,7 +32,9 @@
       <!-- Dropdown -->
       <div class="user-dropdown">
         <label>Settings</label>
-        <a id="theme-btn">Toggle Theme<i class="fad fa-sun" id="theme-icon" id="theme-icon"></i></a>
+        <button type="button" id="theme-btn">
+          <span>Toggle Theme</span>
+          <i class="fad fa-sun" id="theme-icon" id="theme-icon"></i></button>
         <hr />
         <a href="./profile.html">Account Details</a>
         <a href="./">Sign out</a>
@@ -57,9 +59,11 @@
   <div class="toast-container">
     <div class="toast">
       <span class="toast-message">Welcome 👋🏻</span>
-      <button onclick="clearToast()">
-        <i class="fas fa-times"></i>
-      </button>
+      <div class="close-btn-container">
+        <button onclick="clearToast()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
     </div>
   </div>
 </body>

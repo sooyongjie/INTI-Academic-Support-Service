@@ -18,7 +18,6 @@ nav {
   border-bottom: 1px solid #eee;
 }
 
-nav span,
 nav a,
 nav label {
   font-family: "Poppins", sans-serif;
@@ -42,13 +41,23 @@ nav img {
   width: 100px;
 }
 
+nav img {
+  pointer-events: none;
+}
+
+nav .nav-user:hover .user-dropdown,
+nav .nav-user:focus-within .user-dropdown {
+  animation: slide-down 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  opacity: 1;
+  z-index: 1;
+}
+
 nav .nav-user .user-dropdown {
-  width: 150px;
+  width: max-content;
   margin: 220px 0 0 -30px;
-  padding: 12px 16px 16px 16px;
+  padding: 12px 12px 16px 12px;
   display: flex;
   flex-direction: column;
-  row-gap: 8px;
   position: absolute;
   background: #fff;
   border: 1px solid #dadada;
@@ -60,31 +69,57 @@ nav .nav-user .user-dropdown {
 }
 
 nav .nav-user .user-dropdown label {
+  padding: 2px 4px;
   font-size: 14px;
   color: #888;
 }
 
+nav .nav-user .user-dropdown a,
+nav .nav-user .user-dropdown button {
+  padding: 4px 4px;
+  border-radius: 4px;
+}
+
+nav .nav-user .user-dropdown a:active, nav .nav-user .user-dropdown a:focus,
+nav .nav-user .user-dropdown button:active,
+nav .nav-user .user-dropdown button:focus {
+  background: #222;
+  color: white;
+}
+
 nav .nav-user .user-dropdown hr {
   height: 1px;
-  margin: 2px 0;
+  margin: 6px 0;
   background: #ddd;
   border: none;
 }
 
 nav .nav-user .user-dropdown i.fad {
-  margin-left: 10px;
+  margin: 0 8px;
+  transform: translateY(0px);
+  opacity: 1;
+  transition: 0.3s ease-out !important;
+  transform: translateY(6px);
+  opacity: 0;
+}
+
+nav .nav-user .user-dropdown i.fad.shown {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+nav .nav-user .user-dropdown i.fad.fa-sun {
   --fa-primary-color: #ffc24d;
   --fa-secondary-color: orange;
   --fa-primary-opacity: 1;
   --fa-secondary-opacity: 1;
-  transition: 0.3s ease-out !important;
 }
 
-nav .nav-user:hover .user-dropdown,
-nav .nav-user:focus-within .user-dropdown {
-  animation: slide-down 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  opacity: 1;
-  z-index: 1;
+nav .nav-user .user-dropdown i.fad.fa-moon-cloud {
+  --fa-primary-color: #363548;
+  --fa-secondary-color: #f9d35f;
+  --fa-primary-opacity: 1;
+  --fa-secondary-opacity: 1;
 }
 
 @keyframes slide-down {
@@ -155,6 +190,7 @@ nav .nav-user:focus-within .user-dropdown {
 }
 
 .card {
+  height: max-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -225,8 +261,7 @@ nav .nav-user:focus-within .user-dropdown {
   column-gap: 8px;
 }
 
-.card.request,
-.payment {
+.card.request {
   padding: 32px 36px 36px 36px;
 }
 
@@ -255,7 +290,7 @@ nav .nav-user:focus-within .user-dropdown {
 }
 
 .card.request input:hover {
-  border-color: #f9ced0;
+  border-color: #fdf0f0;
 }
 
 .card.request input:focus {
@@ -264,6 +299,82 @@ nav .nav-user:focus-within .user-dropdown {
 
 .card.request p {
   margin-bottom: 16px;
+}
+
+.payment {
+  padding: 10px 36px 36px 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.payment .heading {
+  margin-bottom: 10px;
+}
+
+.payment .order {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.payment .receipt-input {
+  width: max-content;
+  margin-bottom: 30px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  transition: 0.1s ease-out;
+  cursor: pointer;
+}
+
+.payment .receipt-input:hover, .payment .receipt-input:focus-within {
+  border: 2px dashed #e20c18;
+  background: #fdf0f0;
+}
+
+.payment .receipt-input span {
+  font-family: "Poppins", sans-serif;
+}
+
+.payment input[type='file'] {
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  pointer-events: none;
+}
+
+.payment .card {
+  margin-top: 20px;
+  padding: 20px 24px;
+  row-gap: 20px;
+}
+
+.payment .card .payment-info {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  justify-items: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.payment .card .payment-info h4 {
+  cursor: text;
+}
+
+.payment .card .payment-info a i:hover,
+.payment .card .payment-info a:focus-within i {
+  color: #e20c18;
+}
+
+.payment .card .payment-info a i {
+  color: #888;
+  font-weight: 400;
+  margin: 0 8px;
 }
 
 body {
@@ -314,6 +425,6 @@ nav {
 }
 
 .loading-screen {
-  height: calc(100% - 81px - 10vh);
+  height: calc(100% - 81px - 5vh);
 }
 /*# sourceMappingURL=student.css.map */

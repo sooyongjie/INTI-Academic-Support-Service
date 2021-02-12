@@ -1,0 +1,80 @@
+.payment {
+    padding: 10px 36px 36px 36px;
+    display: flex;
+    flex-direction: column;
+
+    .heading {
+        margin-bottom: 10px;
+    }
+
+    .order {
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .receipt-input {
+        width: max-content;
+        margin-bottom: 30px;
+        padding: 6px 12px;
+        border-radius: 8px;
+        border: 2px dashed #ccc;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        transition: 0.1s ease-out;
+        cursor: pointer;
+
+        &:hover,
+        &:focus-within {
+            border: 2px dashed $red;
+            background: $lightRed;
+        }
+
+        span {
+            @include poppins;
+        }
+    }
+
+    input[type='file'] {
+        position: absolute;
+        height: 0px;
+        width: 0px;
+        pointer-events: none;
+    }
+
+    .card {
+        margin-top: 20px;
+        padding: 20px 24px;
+        row-gap: 20px;
+
+        .payment-info {
+            display: grid;
+            grid-template-columns: 70px 1fr auto;
+            justify-items: center;
+            align-items: center;
+            column-gap: 20px;
+
+            h4 {
+                cursor: text;
+            }
+
+            a {
+
+                i:hover,
+                &:focus-within i {
+                    color: $red;
+                }
+
+                i {
+                    color: #888;
+                    font-weight: 400;
+                        margin: 0 8px;
+                }
+            }
+        }
+    }
+
+}

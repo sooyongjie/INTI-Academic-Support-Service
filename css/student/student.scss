@@ -3,6 +3,7 @@
 @import "nav";
 @import "home";
 @import "cards";
+@import "request-view";
 
 body {
   height: 100vh;
@@ -19,20 +20,24 @@ nav {
   justify-content: center;
   column-gap: 50px;
   row-gap: 40px;
+
   &.center {
     min-height: 70vh;
     align-items: center;
   }
+
   &.row {
     flex-direction: column;
     align-items: center;
     justify-content: unset;
   }
+
   &.form {
     label {
       margin-bottom: 12px;
     }
   }
+
   .heading {
     display: flex;
     align-items: center;
@@ -44,11 +49,12 @@ nav {
   body {
     background: black;
   }
+
   .loading-screen {
     background: black;
   }
 }
 
 .loading-screen {
-  height: calc(100% - 81px - 10vh);
+  height: calc(100% - 81px - 5vh);
 }

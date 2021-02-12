@@ -6,39 +6,49 @@
 
 body.dark {
   background: black !important;
+
   nav,
   nav .user-dropdown,
   .loading-screen {
     background: black !important;
   }
+
   nav {
     border-bottom: 1px solid #333;
+
     .user-dropdown {
       border-color: #444 !important;
+
       hr {
         background: #444 !important;
       }
     }
   }
+
   .container {
     .card {
       border-color: #333;
       background: #080808 !important;
+
       button {
         border-color: #222;
         background: #222;
+
         &:hover {
           border-color: #444;
           background: #333;
         }
+
         &:focus {
           border-color: #444;
           background: #444;
         }
       }
+
       a.view-request {
         border-color: #444;
         background: #333;
+
         &:focus {
           border-color: #444;
           background: #444;
@@ -46,33 +56,42 @@ body.dark {
       }
     }
   }
+
   label {
     color: #666 !important;
   }
+
   input {
     border-color: #444 !important;
     background: none;
-    &:hover {
-    }
+
+    &:hover {}
+
     &:focus {
       border-color: $red !important;
     }
   }
+
   .toast {
     border-color: #333;
     background: #111;
+
     button {
       border-color: #111;
       background: #111;
-      &:hover, &:focus {
+
+      &:hover,
+      &:focus {
         border-color: #444;
         background: #333;
       }
+
       &:active {
         background: #444;
       }
     }
   }
+
   footer p {
     color: #666 !important;
   }
