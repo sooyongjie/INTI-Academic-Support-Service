@@ -32,21 +32,22 @@
     flex-direction: column;
     align-items: center;
   }
-
+  .card {
+    a.view-request,
+    button {
+      background: #f2f2f2 !important;
+      opacity: 1 !important;
+      i {
+        font-size: 14px !important;
+      }
+      &:focus,
+      &:focus-within {
+        background: #eee !important;
+      }
+    }
+  }
   .card.request {
     padding: 28px 28px 20px 28px;
-  }
-  a.view-request,
-  button {
-    background: #f2f2f2 !important;
-    opacity: 1 !important;
-    i {
-      font-size: 14px !important;
-    }
-    &:focus,
-    &:focus-within {
-      background: #eee !important;
-    }
   }
 
   footer {
