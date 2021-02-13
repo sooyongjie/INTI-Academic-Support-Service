@@ -450,6 +450,10 @@ nav {
   transition: 0.1 ease-out;
 }
 
+.section {
+  opacity: 0;
+}
+
 .container {
   height: calc(100% - 81px - 100px - 10vh);
   margin-top: 40px;

@@ -18,7 +18,7 @@
     <?php include_once('./components/nav.php') ?>
     <?php include_once('./components/spinner.php') ?>
     <div class="container">
-        <div class="card request">
+        <div class="card request section">
             <div class="heading">
                 <h2>Request #10001</h3>
             </div>
@@ -33,7 +33,7 @@
             <label for="">Total Amount</label>
             <p>RM1</p>
         </div>
-        <div class="payment">
+        <div class="payment section">
             <div class="heading">
                 <h2>Payment Method</h2>
             </div>

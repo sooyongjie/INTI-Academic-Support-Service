@@ -18,11 +18,11 @@
   <?php include_once('./components/nav.php') ?>
   <?php include_once('./components/spinner.php') ?>
   <div class="container center">
-    <a href="./new-request.php" class="button card">
+    <a href="./new-request.php" class="button card section">
       <i class="far fa-clipboard-list"></i>
       <span>Send Request</span>
     </a>
-    <a href="./requests.php" class="button card">
+    <a href="./requests.php" class="button card section">
       <i class="far fa-history"></i>
       <span>View Requests</span>
     </a>
