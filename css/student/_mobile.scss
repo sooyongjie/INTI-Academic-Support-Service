@@ -1,0 +1,38 @@
+@media only screen and (max-width: 768px) {
+  nav {
+    .nav-back,
+    .nav-username {
+      span {
+        display: none;
+      }
+    }
+    .nav-back,
+    .nav-user {
+      width: 50px;
+    }
+    .nav-back {
+      left: 20px;
+    }
+    .nav-user {
+      right: 20px;
+      i.fa-user {
+        display: block;
+      }
+      .fa-caret-down {
+        display: none;
+      }
+      .user-dropdown {
+        margin: 220px 0 0 -140px;
+      }
+    }
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card.request {
+    width: 250px;
+    padding: 32px 36px 36px 36px;
+  }
+}
