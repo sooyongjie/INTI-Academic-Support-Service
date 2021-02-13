@@ -32,7 +32,6 @@
 <?php include_once('./components/footer.php') ?>
 
 <script src="js/script.js"></script>
-<script src="js/home.js"></script>
 <script src="js/theme.js"></script>
 
 </html>

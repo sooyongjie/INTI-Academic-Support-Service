@@ -13,12 +13,12 @@
       <div class="heading">
         <h2>New Request</h2>
       </div>
-      <label for="">Programme</label>
-      <input type="text" value="University of Wollongong" />
-      <label for="">Session</label>
-      <input type="text" value="July 2020" />
-      <label for="">Course Code</label>
-      <input type="text" value="CSIT321" />
+      <label for="programme">Programme</label>
+      <input type="text" id="programme" value="University of Wollongong" />
+      <label for="session">Session</label>
+      <input type="text" id="session" value="July 2020" />
+      <label for="course-code">Course Code</label>
+      <input type="text" id="course-code" value="CSIT321" />
       <button>
         <span>Submit</span>
       </button>
@@ -28,7 +28,6 @@
 <?php include_once('./components/footer.php') ?>
 
 <script src="js/script.js"></script>
-<script src="js/home.js"></script>
 <script src="js/theme.js"></script>
 
 </html>

@@ -4,13 +4,13 @@
         <span class="nav-item">Back</span>
     </a>
     <a href="./home.php" class="logo">
-        <img src="../img/inti-logo-half.svg" class="inti-logo" alt="" />
+        <img src="../img/inti-logo-half.svg" class="inti-logo" alt="INTI Logo" height="auto" width="100px" />
     </a>
     <div class="nav-user">
-        <a class="nav-item nav-username">
+        <div class="nav-item nav-username">
             <i class="fas fa-user-circle"></i>
             <span class="username">User</span>
-        </a>
+        </div>
         <i class="fas fa-caret-down"></i>
         <!-- Dropdown -->
         <div class="user-dropdown">
