@@ -11,7 +11,7 @@ window.addEventListener("load", function () {
       delay: "0.1",
       opacity: "1",
       duration: 0.2,
-      stagger: 0.02,
+      stagger: 0.04,
     });
   }, 50);
 });
