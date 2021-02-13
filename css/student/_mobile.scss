@@ -15,7 +15,7 @@
     }
     .nav-user {
       right: 20px;
-      i.fa-user {
+      i.fa-user-circle {
         display: block;
       }
       .fa-caret-down {
@@ -34,8 +34,7 @@
   }
 
   .card.request {
-    width: 250px;
-    padding: 24px 32px 28px 32px;
+    padding: 28px 28px 20px 28px;
   }
   a.view-request,
   button {
@@ -49,4 +48,12 @@
       background: #eee !important;
     }
   }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+  }
+
 }

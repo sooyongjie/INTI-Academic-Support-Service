@@ -8,7 +8,7 @@
     </a>
     <div class="nav-user">
         <a class="nav-item nav-username">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-user-circle"></i>
             <span class="username">User</span>
         </a>
         <i class="fas fa-caret-down"></i>

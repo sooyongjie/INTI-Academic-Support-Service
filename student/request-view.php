@@ -68,7 +68,6 @@
                 <span>Upload Receipt</span>
                 <input type="file" name="" id="receipt-input">
             </label>
-
         </div>
     </div>
     <div class="toast-container">

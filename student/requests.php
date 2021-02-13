@@ -40,6 +40,8 @@
             </div>
             <label for="">Course Code</label>
             <p>CSIT321</p>
+            <label for="">Session</label>
+            <p>July 2019</p>
             <label for="">Status</label>
             <div class="col">
                 <p>Pending</p>

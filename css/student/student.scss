@@ -20,7 +20,7 @@ nav {
 }
 
 .container {
-  height: calc(100% - 81px - 100px - 10vh);
+  min-height: calc(100% - 81px - 100px - 10vh);
   margin-top: 40px;
   padding-bottom: 100px;
   display: flex;

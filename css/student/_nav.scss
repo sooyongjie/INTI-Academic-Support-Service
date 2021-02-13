@@ -29,6 +29,7 @@ nav {
     left: 150px;
     i {
       font-size: 14px;
+      font-weight: 600;
     }
   }
 
@@ -40,8 +41,10 @@ nav {
       opacity: 1;
       z-index: 1;
     }
-    i.fa-user {
+    i.fa-user-circle {
       display: none;
+      color: #222;
+      font-size: 20px;
     }
     .user-dropdown {
       width: max-content;
@@ -71,8 +74,7 @@ nav {
 
         &:active,
         &:focus {
-          background: #222;
-          color: white;
+          background: #f2f2f2;
         }
       }
 

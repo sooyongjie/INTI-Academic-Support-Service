@@ -18,7 +18,12 @@ body.dark {
 
     .user-dropdown {
       border-color: #444 !important;
-
+      button {
+        &:active,
+        &:focus {
+          background: #333;
+        }
+      }
       hr {
         background: #444 !important;
       }
@@ -65,7 +70,8 @@ body.dark {
     border-color: #444 !important;
     background: none;
 
-    &:hover {}
+    &:hover {
+    }
 
     &:focus {
       border-color: $red !important;
