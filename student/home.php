@@ -28,6 +28,7 @@
       </div>
     </div>
   </div>
+<?php include_once('./components/fab.php') ?>
 </body>
 <?php include_once('./components/footer.php') ?>
 
