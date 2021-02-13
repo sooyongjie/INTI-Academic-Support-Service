@@ -190,9 +190,6 @@ a:active {
 footer {
   height: 5vh;
   width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
   color: #aaa;
   text-align: center;
   font-size: 10px;

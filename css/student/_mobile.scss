@@ -27,12 +27,26 @@
     }
   }
   .container {
+    margin: 50px 0 0 0 !important;
+    padding: 0 0 100px 0;
     flex-direction: column;
     align-items: center;
   }
 
   .card.request {
     width: 250px;
-    padding: 32px 36px 36px 36px;
+    padding: 24px 32px 28px 32px;
+  }
+  a.view-request,
+  button {
+    background: #f2f2f2 !important;
+    opacity: 1 !important;
+    i {
+      font-size: 14px !important;
+    }
+    &:focus,
+    &:focus-within {
+      background: #eee !important;
+    }
   }
 }

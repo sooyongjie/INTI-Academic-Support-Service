@@ -3,7 +3,7 @@
         <i class="fas fa-arrow-left"></i>
         <span class="nav-item">Back</span>
     </a>
-    <a href="./home.html" class="logo">
+    <a href="./home.php" class="logo">
         <img src="../img/inti-logo-half.svg" class="inti-logo" alt="" />
     </a>
     <div class="nav-user">
@@ -19,7 +19,7 @@
                 <span>Toggle Theme</span>
                 <i class="fad fa-sun" id="theme-icon" id="theme-icon"></i></button>
             <hr />
-            <a href="./profile.html">Account Details</a>
+            <a href="./profile.php">Account Details</a>
             <a href="./">Sign out</a>
         </div>
     </div>

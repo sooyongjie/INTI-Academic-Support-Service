@@ -16,7 +16,6 @@
   border: 1px solid #dadada;
   border-radius: 16px;
   text-align: left;
-  opacity: 0;
 
   .col {
     display: flex;
@@ -44,7 +43,9 @@
     background: #eee;
     color: #222;
     border: 1px solid #f8f8f8;
-
+    span {
+      font-size: 14px;
+    }
     &:hover {
       background: #eee;
       border-color: #ccc;
