@@ -59,7 +59,7 @@ toggleFab = () => {
     gsap.to(fabActionButtons, {
       opacity: "0",
       duration: 0.2,
-      stagger: 0.1,
+      stagger: 0.05,
     });
   } else {
     fabOpened = true;
@@ -67,7 +67,7 @@ toggleFab = () => {
       delay: "0.05",
       opacity: "1",
       duration: 0.2,
-      stagger: 0.1,
+      stagger: 0.05,
     });
   }
   fabActions.classList.toggle("shown");
