@@ -8,7 +8,7 @@
 <body>
     <?php include_once('./components/nav.php') ?>
     <?php include_once('./components/spinner.php') ?>
-    <div class="container">
+    <div class="container row">
         <div class="card request section">
             <div class="heading">
                 <h2>Request #10001</h3>
@@ -71,6 +71,8 @@
             </div>
         </div>
     </div>
+  <?php include_once('./components/fab.php') ?>
+  <?php include_once('./components/scroll-to-top.php') ?>
 </body>
 <?php include_once('./components/footer.php') ?>
 
