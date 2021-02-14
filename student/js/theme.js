@@ -14,7 +14,7 @@ window
 
 checkPrefferedTheme = () => {
   if (
-    !localStorage.getItem("theme") ||
+    !localStorage.getItem("theme") &&
     (window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches)
   ) {
@@ -65,3 +65,5 @@ if (!localStorage.getItem("theme")) {
 } else {
   setTheme(localStorage.getItem("theme"));
 }
+console.log(window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches);

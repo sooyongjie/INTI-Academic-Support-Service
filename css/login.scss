@@ -2,12 +2,15 @@
 @import "mixin";
 
 .container {
-  height: 96vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   row-gap: 40px;
+  div {
+    display: none !important;
+  }
 }
 
 .inti-logo {
