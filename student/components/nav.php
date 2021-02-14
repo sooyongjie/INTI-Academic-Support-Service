@@ -1,4 +1,5 @@
 <nav>
+<a href="#top"></a>
     <a class="nav-back" onclick="goBack()">
         <i class="fas fa-arrow-left"></i>
         <span class="nav-item">Back</span>

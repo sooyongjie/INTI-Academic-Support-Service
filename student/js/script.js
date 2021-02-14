@@ -3,6 +3,7 @@ const toastMessage = document.querySelector(".toast-message");
 const fabActions = document.querySelector(".fab-actions");
 const fab = document.querySelector(".fab");
 const fabActionButtons = [...document.querySelectorAll('.fab-action-btn')].reverse()
+const scrollButton = document.querySelector(".scroll-btn");
 
 var fabOpened = 0;
 var gsap = gsap.timeline();
@@ -72,5 +73,12 @@ toggleFab = () => {
   }
   fabActions.classList.toggle("shown");
   fab.classList.toggle("expanded");
-
 }
+
+window.addEventListener('scroll', function () {
+  if (window.pageYOffset > 71) {
+    scrollButton.classList = 'scroll-btn shown';
+  } else {
+    scrollButton.classList = 'scroll-btn';
+  }
+});

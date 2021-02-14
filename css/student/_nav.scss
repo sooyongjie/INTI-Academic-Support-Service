@@ -41,6 +41,7 @@ nav {
       animation: slide-down 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
       opacity: 1;
       z-index: 1;
+      pointer-events: unset;
     }
     i.fa-user-circle {
       display: none;
@@ -54,11 +55,12 @@ nav {
       display: flex;
       flex-direction: column;
       position: absolute;
-      background: #fff;
+      background: white;
       border: 1px solid #dadada;
       border-radius: 8px;
       opacity: 0;
-      z-index: -1;
+      z-index: 1;
+      pointer-events: none;
       animation: slide-up 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
       transition: 0.1s ease-out;
 

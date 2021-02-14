@@ -27,10 +27,14 @@
     }
   }
   .container {
+    min-height: calc(100vh - 71px - 30px - 10vh) !important;
     margin-top: calc(71px + 30px) !important;
-    padding: 0 0 100px 0;
+    padding-bottom: 0 !important;
     flex-direction: column;
     align-items: center;
+    &.row {
+      padding-bottom: 100px !important;
+    }
   }
   .card {
     a.view-request,

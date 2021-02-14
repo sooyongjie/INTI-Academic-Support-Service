@@ -6,9 +6,10 @@
 @import "request-view";
 @import "mobile";
 @import "fab";
+@import "scroll-to-top";
 
 body {
-  height: 100vh;
+  // height: 100vh;
 }
 
 body,
@@ -21,7 +22,7 @@ nav {
 }
 
 .container {
-  min-height: calc(100% - 81px - 100px - 10vh);
+  min-height: calc(100vh - 71px - 100px - 10vh);
   margin-top: calc(71px + 40px);
   padding-bottom: 100px;
   display: flex;
@@ -30,7 +31,6 @@ nav {
   row-gap: 40px;
 
   &.center {
-    min-height: 70vh;
     align-items: center;
   }
 
