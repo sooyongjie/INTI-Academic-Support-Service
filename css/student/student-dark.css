@@ -15,7 +15,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #ddd;
   position: fixed;
   top: 0px;
   z-index: 99;
@@ -309,7 +308,8 @@ nav img {
   column-gap: 8px;
 }
 
-.card.form, .card.request {
+.card.form,
+.card.request {
   min-height: 200px;
   width: 250px;
   padding: 24px 32px 16px 32px;
@@ -317,15 +317,18 @@ nav img {
   align-items: unset;
 }
 
-.card.form:focus-within, .card.request:focus-within {
+.card.form:focus-within,
+.card.request:focus-within {
   border-color: #f9ced0;
 }
 
-.card.form label, .card.request label {
+.card.form label,
+.card.request label {
   color: #888;
 }
 
-.card.form input, .card.request input {
+.card.form input,
+.card.request input {
   margin-bottom: 20px;
   padding: 0 0 10px 0;
   border: none;
@@ -333,15 +336,18 @@ nav img {
   transition: 0.15s ease-out;
 }
 
-.card.form input:hover, .card.request input:hover {
+.card.form input:hover,
+.card.request input:hover {
   border-color: #fdf0f0;
 }
 
-.card.form input:focus, .card.request input:focus {
+.card.form input:focus,
+.card.request input:focus {
   border-color: #e20c18;
 }
 
-.card.form p, .card.request p {
+.card.form p,
+.card.request p {
   margin-bottom: 16px;
 }
 
@@ -459,7 +465,7 @@ nav img {
     right: 0px;
   }
   .container {
-    min-height: calc(100vh - 61px - 30px - 10vh) !important;
+    min-height: calc(100vh - 60px - 30px - 10vh) !important;
     margin-top: calc(71px + 30px) !important;
     padding-bottom: 0 !important;
     grid-template-columns: min-content !important;
@@ -712,7 +718,7 @@ nav {
 }
 
 .container {
-  min-height: calc(100vh - 71px - 100px - 10vh);
+  min-height: calc(100vh - 70px - 100px - 10vh);
   margin-top: calc(71px + 40px);
   padding-bottom: 100px;
   display: grid;
@@ -740,7 +746,7 @@ nav {
 }
 
 .loading-screen {
-  height: calc(100% - 81px - 5vh);
+  height: calc(100% - 70px - 5vh);
 }
 
 * {

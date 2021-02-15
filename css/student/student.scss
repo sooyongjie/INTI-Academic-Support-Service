@@ -23,8 +23,8 @@ nav {
 }
 
 .container {
-  min-height: calc(100vh - 71px - 100px - 10vh);
-  margin-top: calc(71px + 40px);
+  min-height: calc(100vh - 70px - 100px - 10vh);
+  margin-top: calc(70px + 40px);
   padding-bottom: 100px;
   display: grid;
   grid-template-columns: repeat(2, max-content);
@@ -32,7 +32,8 @@ nav {
   column-gap: 50px;
   row-gap: 40px;
   &.center {
-    margin-top: 71px !important;
+    margin-top: 70px !important;
+    margin-bottom: 40px;
     align-content: center;
   }
 
@@ -60,5 +61,5 @@ nav {
 }
 
 .loading-screen {
-  height: calc(100% - 81px - 5vh);
+  height: calc(100% - 70px - 5vh);
 }
