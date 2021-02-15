@@ -8,6 +8,8 @@
   }
 
   .card {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
     margin-top: 20px;
     margin-bottom: 30px;
     padding: 20px 24px;
@@ -15,7 +17,7 @@
 
     .payment-info {
       display: grid;
-      grid-template-columns: 70px 1fr auto;
+      grid-template-columns: auto auto auto;
       justify-items: center;
       align-items: center;
       column-gap: 20px;
@@ -44,7 +46,8 @@
     padding: 8px 12px;
     border-radius: 8px;
     border: 2px dashed #dadada;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
     justify-content: center;
     align-items: center;
     column-gap: 10px;

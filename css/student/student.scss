@@ -26,25 +26,20 @@ nav {
   min-height: calc(100vh - 71px - 100px - 10vh);
   margin-top: calc(71px + 40px);
   padding-bottom: 100px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
   justify-content: center;
   column-gap: 50px;
   row-gap: 40px;
-
   &.center {
-    align-items: center;
+    margin-top: 71px !important;
+    align-content: center;
   }
 
   &.row {
-    flex-direction: column;
-    align-items: center;
-    justify-content: unset;
-  }
-
-  &.form {
-    label {
-      margin-bottom: 12px;
-    }
+    grid-template-rows: min-content;
+    grid-template-columns: unset;
+    justify-content: center;
   }
 
   .heading {
@@ -55,13 +50,13 @@ nav {
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background: black;
-  }
+  // body.dark {
+  //   background: black;
 
-  .loading-screen {
-    background: black;
-  }
+  //   .loading-screen {
+  //     background: black;
+  //   }
+  // }
 }
 
 .loading-screen {

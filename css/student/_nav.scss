@@ -20,7 +20,8 @@ nav {
   .nav-user {
     height: 70px;
     width: 100px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
     justify-content: center;
     align-items: center;
     column-gap: 16px;
@@ -51,7 +52,8 @@ nav {
     }
     .user-dropdown {
       width: max-content;
-      margin: 220px 0 0 -70px;
+      top: 60px;
+      // margin: 220px 0 0 -70px;
       padding: 12px 12px 16px 12px;
       display: flex;
       flex-direction: column;
@@ -150,5 +152,23 @@ nav {
 
   100% {
     transform: translateY(-40px);
+  }
+}
+
+@supports (-ms-ime-align: auto) {
+  .selector {
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  .safari10 {
+    color: #0000ff;
+    background-color: #cccccc;
+  }
+}
+@media not all and (min-resolution: 0.001dpcm) {
+  .safari10 {
+    color: #0000ff;
+    background-color: #cccccc;
   }
 }

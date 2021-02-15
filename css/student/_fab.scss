@@ -2,7 +2,8 @@
   .fab {
     width: 48px;
     padding: 12px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
     align-items: center;
     position: fixed;
     right: 40px;
@@ -10,13 +11,13 @@
     background: dodgerblue;
     border-radius: 50%;
     z-index: 99;
-    transition: 0.25s ease-out;
+    transition: 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
     &:hover {
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     }
     &.expanded {
       padding: 12px 136px 12px 16px;
-      border-radius: 16px;
+      border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
       span {
         z-index: 1;
@@ -39,8 +40,9 @@
     }
   }
   .fab-actions {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: max-content;
+    justify-items: end;
     row-gap: 20px;
     position: fixed;
     right: 40px;
@@ -59,7 +61,6 @@
     }
     button {
       width: max-content;
-      align-self: flex-end;
       padding: 8px 16px;
       border-radius: 16px 16px 6px 16px;
       background: white;

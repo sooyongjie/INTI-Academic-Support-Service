@@ -1,5 +1,5 @@
 .heading {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 
   h2 {
     font-size: 20px;
@@ -76,13 +76,10 @@
   }
 }
 
-.card.request {
-  padding: 24px 32px 16px 32px;
-}
-
-.card.request {
+.card.form, .card.request {
   min-height: 200px;
   width: 250px;
+  padding: 24px 32px 16px 32px;
   justify-content: unset;
   align-items: unset;
 
@@ -92,7 +89,6 @@
 
   label {
     color: #888;
-    margin-bottom: 8px;
   }
 
   input {
@@ -113,5 +109,17 @@
 
   p {
     margin-bottom: 16px;
+  }
+}
+
+.card.form {
+  label {
+    margin-bottom: 12px;
+  }
+}
+
+.card.request {
+  label {
+    margin-bottom: 8px;
   }
 }

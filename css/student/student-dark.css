@@ -30,7 +30,8 @@ nav .nav-back,
 nav .nav-user {
   height: 70px;
   width: 100px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
   justify-content: center;
   align-items: center;
   column-gap: 16px;
@@ -66,7 +67,7 @@ nav .nav-user i.fa-user-circle {
 
 nav .nav-user .user-dropdown {
   width: max-content;
-  margin: 220px 0 0 -70px;
+  top: 60px;
   padding: 12px 12px 16px 12px;
   display: flex;
   flex-direction: column;
@@ -165,11 +166,27 @@ nav img {
   }
 }
 
+@media not all and (min-resolution: 0.001dpcm) {
+  .safari10 {
+    color: #0000ff;
+    background-color: #cccccc;
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  .safari10 {
+    color: #0000ff;
+    background-color: #cccccc;
+  }
+}
+
 .button.card {
   height: 150px;
   width: 150px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+  justify-items: center;
+  align-content: center;
   row-gap: 12px;
   z-index: 0;
   animation: scale-down-center 0.1s ease-in both;
@@ -207,7 +224,7 @@ nav img {
 }
 
 .heading {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .heading h2 {
@@ -292,27 +309,23 @@ nav img {
   column-gap: 8px;
 }
 
-.card.request {
-  padding: 24px 32px 16px 32px;
-}
-
-.card.request {
+.card.form, .card.request {
   min-height: 200px;
   width: 250px;
+  padding: 24px 32px 16px 32px;
   justify-content: unset;
   align-items: unset;
 }
 
-.card.request:focus-within {
+.card.form:focus-within, .card.request:focus-within {
   border-color: #f9ced0;
 }
 
-.card.request label {
+.card.form label, .card.request label {
   color: #888;
-  margin-bottom: 8px;
 }
 
-.card.request input {
+.card.form input, .card.request input {
   margin-bottom: 20px;
   padding: 0 0 10px 0;
   border: none;
@@ -320,16 +333,24 @@ nav img {
   transition: 0.15s ease-out;
 }
 
-.card.request input:hover {
+.card.form input:hover, .card.request input:hover {
   border-color: #fdf0f0;
 }
 
-.card.request input:focus {
+.card.form input:focus, .card.request input:focus {
   border-color: #e20c18;
 }
 
-.card.request p {
+.card.form p, .card.request p {
   margin-bottom: 16px;
+}
+
+.card.form label {
+  margin-bottom: 12px;
+}
+
+.card.request label {
+  margin-bottom: 8px;
 }
 
 .payment {
@@ -343,6 +364,8 @@ nav img {
 }
 
 .payment .card {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   margin-top: 20px;
   margin-bottom: 30px;
   padding: 20px 24px;
@@ -351,7 +374,7 @@ nav img {
 
 .payment .card .payment-info {
   display: grid;
-  grid-template-columns: 70px 1fr auto;
+  grid-template-columns: auto auto auto;
   justify-items: center;
   align-items: center;
   column-gap: 20px;
@@ -377,7 +400,8 @@ nav img {
   padding: 8px 12px;
   border-radius: 8px;
   border: 2px dashed #dadada;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
   justify-content: center;
   align-items: center;
   column-gap: 10px;
@@ -402,6 +426,15 @@ nav img {
 }
 
 @media only screen and (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  nav {
+    height: 60px;
+  }
+  nav .logo, nav img {
+    width: 90px;
+  }
   nav .nav-back span,
   nav .nav-username span {
     display: none;
@@ -423,14 +456,14 @@ nav img {
     display: none;
   }
   nav .nav-user .user-dropdown {
-    margin: 220px 0 0 -140px;
+    right: 0px;
   }
   .container {
-    min-height: calc(100vh - 71px - 30px - 10vh) !important;
+    min-height: calc(100vh - 61px - 30px - 10vh) !important;
     margin-top: calc(71px + 30px) !important;
     padding-bottom: 0 !important;
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: min-content !important;
+    grid-template-rows: max-content max-content !important;
   }
   .container.row {
     padding-bottom: 100px !important;
@@ -449,8 +482,19 @@ nav img {
   .card button:focus-within {
     background: #eee !important;
   }
-  .card.request {
+  .card.form {
+    width: 220px !important;
     padding: 28px 28px 20px 28px;
+  }
+  /*
+ * Request view (payment)
+*/
+  .payment {
+    margin-bottom: 100px;
+    padding: 0px !important;
+  }
+  .payment .payment-info img {
+    height: 40px;
   }
   footer {
     display: flex;
@@ -534,7 +578,8 @@ nav img {
 .fab-container .fab {
   width: 48px;
   padding: 12px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
   align-items: center;
   position: fixed;
   right: 40px;
@@ -542,7 +587,7 @@ nav img {
   background: dodgerblue;
   border-radius: 50%;
   z-index: 99;
-  transition: 0.25s ease-out;
+  transition: 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .fab-container .fab:hover {
@@ -551,7 +596,7 @@ nav img {
 
 .fab-container .fab.expanded {
   padding: 12px 136px 12px 16px;
-  border-radius: 16px;
+  border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -576,8 +621,9 @@ nav img {
 }
 
 .fab-container .fab-actions {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: max-content;
+  justify-items: end;
   row-gap: 20px;
   position: fixed;
   right: 40px;
@@ -600,7 +646,6 @@ nav img {
 
 .fab-container .fab-actions button {
   width: max-content;
-  align-self: flex-end;
   padding: 8px 16px;
   border-radius: 16px 16px 6px 16px;
   background: white;
@@ -670,39 +715,28 @@ nav {
   min-height: calc(100vh - 71px - 100px - 10vh);
   margin-top: calc(71px + 40px);
   padding-bottom: 100px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
   justify-content: center;
   column-gap: 50px;
   row-gap: 40px;
 }
 
 .container.center {
-  align-items: center;
+  margin-top: 71px !important;
+  align-content: center;
 }
 
 .container.row {
-  flex-direction: column;
-  align-items: center;
-  justify-content: unset;
-}
-
-.container.form label {
-  margin-bottom: 12px;
+  grid-template-rows: min-content;
+  grid-template-columns: unset;
+  justify-content: center;
 }
 
 .container .heading {
   display: flex;
   align-items: center;
   column-gap: 20px;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: black;
-  }
-  .loading-screen {
-    background: black;
-  }
 }
 
 .loading-screen {
