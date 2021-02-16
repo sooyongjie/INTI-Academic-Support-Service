@@ -1,10 +1,9 @@
-@import "student";
-
-* {
-  color: #ccc !important;
-}
+@import "../colors";
 
 body.dark {
+  * {
+    color: #ccc !important;
+  }
   background: black !important;
 
   nav,
@@ -69,9 +68,6 @@ body.dark {
   input {
     border-color: #444 !important;
     background: none;
-
-    &:hover {
-    }
 
     &:focus {
       border-color: $red !important;

@@ -32,28 +32,23 @@ document.getElementById("theme-btn").addEventListener("click", () => {
     localStorage.setItem("theme", "light");
     setTheme("light");
   }
-  console.log(`Loading ${localStorage.getItem("theme")} theme...`);
+  document.body.classList.toggle('dark')
 });
 
 setTheme = (theme) => {
+  console.log(`Loading ${localStorage.getItem("theme")} theme...`);
   if (theme == "light") {
-    linkList[3].href = "../css/student/student.css";
     document.querySelector(".inti-logo").src = "../img/inti-logo-half.svg";
     themeIcon.className = "fad fa-moon-cloud";
     setTimeout(() => {
       themeIcon.className = "fad fa-sun shown";
     }, 300);
   } else {
-    linkList[3].href = "../css/student/student-dark.css";
     document.querySelector(".inti-logo").src = "../img/inti-logo-half-dark.svg";
     themeIcon.className = "fad fa-sun";
     setTimeout(() => {
       themeIcon.className = "fad fa-moon-cloud shown";
     }, 300);
-  }
-  console.log(`Loading ${theme} theme...`);
-  if (document.body.classList.length == 0) {
-    document.body.classList.toggle("dark");
   }
 };
 
@@ -65,5 +60,8 @@ if (!localStorage.getItem("theme")) {
   checkPrefferedTheme();
 } else {
   setTheme(localStorage.getItem("theme"));
+  if (localStorage.getItem("theme") == 'dark') {
+    document.body.classList.toggle('dark')
+  }
 }
 // console.log(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);

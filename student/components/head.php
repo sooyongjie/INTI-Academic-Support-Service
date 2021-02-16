@@ -5,7 +5,6 @@
 <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
-<link rel="manifest" href="../img/favicon/site.webmanifest">
 <title>INTI Academic Services</title>
 <meta name="title" content="INTI Academic Services — Purchase Course Structure">
 <meta name="description" content="⚒ Site Under Construction ⚒">
@@ -30,5 +29,6 @@
 <!-- <link rel="stylesheet" href="../css/fontawesome/all.min.css" /> -->
 <link rel="stylesheet" href="../css/style.css" />
 <link rel="stylesheet" href="../css/student/student.css" />
+<link rel="stylesheet" href="../css/student/student-dark.css" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
