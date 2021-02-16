@@ -569,39 +569,44 @@ nav img {
 }
 
 .fab-container .fab {
+  height: 48px;
   width: 48px;
   padding: 12px;
   display: grid;
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(2, min-content);
   align-items: center;
+  align-content: center;
+  text-align: center;
   position: fixed;
   right: 40px;
   bottom: 40px;
-  background: dodgerblue;
+  background: white;
+  border: 1px solid #f3f3f3;
   border-radius: 50%;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
   z-index: 99;
-  transition: 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+  overflow: hidden;
 }
 
 .fab-container .fab:hover {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .fab-container .fab.expanded {
   padding: 12px 136px 12px 16px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
 }
 
 .fab-container .fab.expanded span {
+  display: block;
   z-index: 1;
   opacity: 1;
-  display: block;
 }
 
 .fab-container .fab span {
   margin-left: 12px;
-  color: white;
+  color: #e20c18;
   z-index: -1;
   opacity: 0;
   pointer-events: none;
@@ -609,15 +614,16 @@ nav img {
 }
 
 .fab-container .fab i {
-  color: white;
+  color: #e20c18;
   font-size: 24px;
 }
 
 .fab-container .fab-actions {
   display: grid;
   grid-template-rows: max-content;
+  align-items: center;
   justify-items: end;
-  row-gap: 20px;
+  row-gap: 16px;
   position: fixed;
   right: 40px;
   bottom: 110px;
@@ -633,16 +639,12 @@ nav img {
   opacity: 1;
 }
 
-.fab-container .fab-actions.shown button span {
-  color: black !important;
-}
-
 .fab-container .fab-actions button {
   width: max-content;
   padding: 8px 16px;
   border-radius: 16px 16px 6px 16px;
-  background: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  background: #e20c18;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
   opacity: 0;
 }
 

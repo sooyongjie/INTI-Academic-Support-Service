@@ -65,7 +65,7 @@ toggleFab = () => {
   } else {
     fabOpened = true;
     gsap.to(fabActionButtons, {
-      delay: "0.05",
+      delay: "0.2",
       opacity: "1",
       duration: 0.2,
       stagger: 0.05,
