@@ -1,0 +1,45 @@
+.chosen-value {
+  transition: 0.3s ease-in-out;
+}
+
+.chosen-value::-webkit-input-placeholder {
+  color: #333;
+}
+
+.chosen-value:hover {
+  cursor: pointer;
+}
+
+.chosen-value:hover::-webkit-input-placeholder {
+  color: #333;
+}
+
+.chosen-value:focus::-webkit-input-placeholder, .chosen-value.open::-webkit-input-placeholder {
+  color: #000;
+}
+
+.value-list {
+  list-style: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.value-list.open {
+  max-height: 320px;
+  overflow: auto;
+}
+
+.value-list li {
+  cursor: pointer;
+  transition: background-color 0.3s;
+  opacity: 1;
+}
+
+.value-list li.closed {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+}
+/*# sourceMappingURL=style.css.map */

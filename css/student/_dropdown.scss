@@ -1,0 +1,62 @@
+.chosen-value,
+.value-list {
+  z-index: 1;
+}
+
+.value-list {
+  position: absolute;
+  top: 420px;
+}
+
+.chosen-value {
+  &::-webkit-input-placeholder {
+    color: #333;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &::-webkit-input-placeholder {
+      color: #333;
+    }
+  }
+
+  &:focus,
+  &.open {
+    &::-webkit-input-placeholder {
+      color: #000;
+    }
+  }
+}
+
+.value-list {
+  max-height: 0;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.3s ease-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  &.open {
+    max-height: 320px;
+    // overflow: auto;
+    overflow: none;
+  }
+
+  .value {
+    padding: 12px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: unset;
+    &:hover {
+      background: #f3f3f3;
+    }
+    &.closed {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
+    }
+  }
+}

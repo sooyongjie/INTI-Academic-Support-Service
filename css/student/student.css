@@ -333,6 +333,11 @@ nav img {
   border-color: #e20c18;
 }
 
+.card.form input::placeholder,
+.card.request input::placeholder {
+  color: #666;
+}
+
 .card.form p,
 .card.request p {
   margin-bottom: 16px;
@@ -695,6 +700,66 @@ nav img {
   100% {
     transform: scale(0);
   }
+}
+
+.chosen-value,
+.value-list {
+  z-index: 1;
+}
+
+.value-list {
+  position: absolute;
+  top: 420px;
+}
+
+.chosen-value::-webkit-input-placeholder {
+  color: #333;
+}
+
+.chosen-value:hover {
+  cursor: pointer;
+}
+
+.chosen-value:hover::-webkit-input-placeholder {
+  color: #333;
+}
+
+.chosen-value:focus::-webkit-input-placeholder, .chosen-value.open::-webkit-input-placeholder {
+  color: #000;
+}
+
+.value-list {
+  max-height: 0;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.3s ease-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+}
+
+.value-list.open {
+  max-height: 320px;
+  overflow: none;
+}
+
+.value-list .value {
+  padding: 12px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: unset;
+}
+
+.value-list .value:hover {
+  background: #f3f3f3;
+}
+
+.value-list .value.closed {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
 }
 
 body,

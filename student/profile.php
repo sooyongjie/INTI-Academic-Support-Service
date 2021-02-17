@@ -18,7 +18,14 @@
       <label for="session">Student e-mail</label>
       <input type="text" id="session" value="j17025666@student.newinti.edu.my" />
       <label for="course-code">Programme</label>
-      <input type="text" id="course-code" value="University of Wollongong" />
+      <input class="chosen-value" type="text" value="" placeholder="Type to search">
+      <ul class="value-list">
+        <a class="value">Swinburne University of Technology</a>
+        <a class="value">University of Wollongong</a>
+        <a class="value">University Coventry</a>
+      </ul>
+      <label for="">Subject</label>
+      <input type="text" value="CSIT321 Project">
       <button>
         <span>Submit</span>
       </button>
@@ -31,5 +38,6 @@
 
 <script src="js/script.js"></script>
 <script src="js/theme.js"></script>
+<script src="js/dropdown.js"></script>
 
 </html>

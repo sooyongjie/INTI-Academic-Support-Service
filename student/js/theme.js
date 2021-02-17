@@ -38,13 +38,13 @@ document.getElementById("theme-btn").addEventListener("click", () => {
 setTheme = (theme) => {
   console.log(`Loading ${localStorage.getItem("theme")} theme...`);
   if (theme == "light") {
-    document.querySelector(".inti-logo").src = "../img/inti-logo-half.svg";
+    // document.querySelector(".inti-logo").src = "../img/inti-logo-half.svg";
     themeIcon.className = "fad fa-moon-cloud";
     setTimeout(() => {
       themeIcon.className = "fad fa-sun shown";
     }, 300);
   } else {
-    document.querySelector(".inti-logo").src = "../img/inti-logo-half-dark.svg";
+    // document.querySelector(".inti-logo").src = "../img/inti-logo-half-dark.svg";
     themeIcon.className = "fad fa-sun";
     setTimeout(() => {
       themeIcon.className = "fad fa-moon-cloud shown";

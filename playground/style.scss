@@ -1,0 +1,51 @@
+.chosen-value,
+.value-list {
+}
+
+.chosen-value {
+  transition: 0.3s ease-in-out;
+
+  &::-webkit-input-placeholder {
+    color: #333;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &::-webkit-input-placeholder {
+      color: #333;
+    }
+  }
+
+  &:focus,
+  &.open {
+    &::-webkit-input-placeholder {
+      color: #000;
+    }
+  }
+}
+
+.value-list {
+  list-style: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: 0.3s ease-in-out;
+
+  &.open {
+    max-height: 320px;
+    overflow: auto;
+  }
+
+  li {
+    cursor: pointer;
+    transition: background-color 0.3s;
+    opacity: 1;
+
+    &.closed {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
+      opacity: 0;
+    }
+  }
+}
