@@ -5,13 +5,13 @@
         <span class="nav-item">Back</span>
     </a>
     <a href="./home.php" class="logo">
-        <!-- <img src="../img/inti-logo-half.svg" class="inti-logo" alt="INTI Logo" height="auto" width="100px" /> -->
-        <img src="https://via.placeholder.com/100" class="inti-logo" alt="INTI Logo" height="auto" width="100px" />
+        <img src="../img/inti-logo-half.svg" class="inti-logo" alt="INTI Logo" height="auto" width="100px" />
+        <!-- <img src="https://via.placeholder.com/100" class="inti-logo" alt="INTI Logo" height="auto" width="100px" /> -->
     </a>
     <div class="nav-user">
         <div class="nav-item nav-username">
             <i class="fas fa-user-circle"></i>
-            <span class="username">User</span>
+            <span class="username">sooyongjie</span>
         </div>
         <i class="fas fa-caret-down"></i>
         <!-- Dropdown -->
