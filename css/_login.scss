@@ -1,0 +1,134 @@
+@import "colors";
+@import "mixin";
+
+body.login {
+  .container {
+    height: 100vh;
+    display: flex;
+  }
+  .img-container {
+    width: 45vw;
+    background-image: url("../img/red.jpg");
+    background-size: cover;
+    background-position: center;
+    .content-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .logo-container {
+      padding: 50px 80px;
+      height: 200px;
+      background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.5)
+      );
+      img {
+        width: 120px;
+      }
+    }
+    .bottom {
+      height: 30vh;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.8)
+      );
+      padding: 0 80px;
+      display: grid;
+      grid-template-rows: repeat(2, max-content);
+      align-content: center;
+      justify-content: center;
+      row-gap: 20px;
+      color: white;
+      #quote {
+        color: #fafafa;
+        transition: 0.1s ease-out;
+      }
+      #author {
+        justify-self: flex-end;
+        color: #f8f8f8;
+        transition: 0.4s ease-out;
+      }
+      #quote,
+      #author {
+        opacity: 0;
+      }
+    }
+  }
+  .login-container {
+    height: 90%;
+    width: 55vw;
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    img {
+      width: 400px;
+      margin-bottom: 60px;
+    }
+    h2.welcome {
+      font-weight: 600;
+    }
+    p {
+      margin: 10px 0 60px 0;
+      color: #888;
+      font-size: 15px;
+    }
+    form {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      .row-container {
+        margin-bottom: 10px;
+      }
+      .row-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span,
+        a {
+          font-size: 14px;
+          font-weight: 500;
+        }
+        span {
+          color: #444;
+        }
+        a {
+          color: #1b6fad;
+        }
+      }
+      label {
+        font-weight: 500;
+      }
+      input {
+        margin-left: -2px;
+        margin-bottom: 30px;
+        padding: 12px 8px;
+        background: #f5f6f8;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        transition: 0.2s ease-out;
+        &:hover {
+          background: #f2f2f2;
+        }
+        &:focus {
+          background: #ebebeb;
+        }
+      }
+    }
+    button {
+      width: max-content;
+      padding: 10px 24px;
+      background: $red;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: white;
+    }
+  }
+}
