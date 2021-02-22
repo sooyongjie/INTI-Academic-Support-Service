@@ -14,6 +14,7 @@
 <body>
   <?php include_once('./components/nav.php') ?>
   <div class="container">
+    <div class="content-container">
       <?php include_once('./components/options.php') ?>
       <div class="heading">
         <h2>Programmes</h2>
