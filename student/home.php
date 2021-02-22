@@ -18,16 +18,7 @@
       <span>View Requests</span>
     </a>
   </div>
-  <div class="toast-container">
-    <div class="toast">
-      <span class="toast-message">Welcome 👋🏻</span>
-      <div class="close-btn-container">
-        <button onclick="clearToast()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-    </div>
-  </div>
+  <?php include_once('./components/toast.php') ?>
   <?php include_once('./components/fab.php') ?>
   <?php include_once('./components/scroll-to-top.php') ?>
 </body>
