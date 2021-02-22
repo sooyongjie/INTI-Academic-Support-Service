@@ -1,6 +1,6 @@
 <nav>
     <a class="admin-logo-link" href="./requests.html">
-        <img class="admin-logo" src="../img/inti-logo.png" alt="" />
+        <img class="admin-logo" src="../img/inti-logo-half.svg" alt="" />
     </a>
     <div class="nav-items">
         <!-- <button class="active"> -->

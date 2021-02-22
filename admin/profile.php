@@ -5,45 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="stylesheet" href="../css/admin/admin.css" />
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 
-<body>
-  <nav>
-    <a href="./requests.html">
-      <img class="admin-logo" src="../img/inti-logo.png" alt="" />
-    </a>
-    <div class="nav-items">
-      <button class="" onclick="window.location.href='requests.html'">
-        <i class="fas fa-clipboard-list"></i>
-        <span>Requests</span>
-      </button>
-      <button class="" onclick="window.location.href='payment.html'">
-        <i class="far fa-credit-card"></i>
-        <span>Payment</span>
-      </button>
-      <button class="" onclick="window.location.href='programmes.html'">
-        <i class="fas fa-book"></i>
-        <span>Programmes</span>
-      </button>
-      <button class="nav-notification" onclick="window.location.href='notifications.html'">
-        <i class="fas fa-bell"></i>
-        <span>Notifications</span>
-      </button>
-    </div>
-    <hr />
-    <div class="nav-profile">
-      <button class="active" onclick="window.location.href='profile.html'">
-        <i class="fas fa-user-circle"></i>
-        <span>Soo Yong Jie</span>
-      </button>
-    </div>
-  </nav>
+<body> 
+  <?php include_once('./components/nav.php') ?>
   <div class="container">
     <div class="content-container">
       <div class="options-container">
