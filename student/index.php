@@ -46,22 +46,22 @@
         <div class="login-container">
             <img src="../img/inti-logo-full.svg" alt="">
             <h2 class="welcome">Welcome</h3>
-            <p>Enter login details here or create an account.</p>
-            <form action="" autocomplete="off">
-                <div class="row-container">
-                    <label for="">Username</label>
-                </div>
-                <input type="text" value="sooyongjie" autocomplete="off">
-                <div class="row-container">
-                    <label for="">Password</label>
-                    <a href="">Forgot Password</a>
-                </div>
-                <input type="password" value="poopandpee" autocomplete="off">
-                <div class="row-container">
-                    <button type="submit">Login</button>
-                    <a href="">Sign up here</a>
-                </div>
-            </form>
+                <p>Enter login details here or create an account.</p>
+                <form action="" autocomplete="off">
+                    <div class="row-container">
+                        <label for="">Username</label>
+                    </div>
+                    <input type="text" value="sooyongjie" autocomplete="off">
+                    <div class="row-container">
+                        <label for="">Password</label>
+                        <a href="">Forgot Password</a>
+                    </div>
+                    <input type="password" value="poopandpee" autocomplete="off">
+                    <div class="row-container">
+                        <button type="button" onclick="window.location.href='./home.php'">Login</button>
+                        <a href="">Sign up here</a>
+                    </div>
+                </form>
         </div>
     </div>
 </body>
