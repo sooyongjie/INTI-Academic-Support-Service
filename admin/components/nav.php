@@ -19,6 +19,7 @@
         <button class="nav-notification" onclick="window.location.href='./notifications.php'">
             <i class="fas fa-bell"></i>
             <span>Notifications</span>
+            <!-- <div class="notification-dot"></div> -->
         </button>
     </div>
     <hr />

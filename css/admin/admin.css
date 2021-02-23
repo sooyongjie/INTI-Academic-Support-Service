@@ -88,6 +88,14 @@ nav .nav-notification {
   bottom: 110px;
 }
 
+nav .nav-notification .notification-dot {
+  height: 5px;
+  width: 5px;
+  background: #e20c18;
+  color: #444;
+  border-radius: 50%;
+}
+
 nav hr {
   width: 100%;
   position: absolute;
