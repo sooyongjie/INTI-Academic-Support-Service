@@ -109,6 +109,11 @@ nav .nav-profile {
   bottom: 20px;
 }
 
+.loading-screen {
+  left: calc(18rem + 1px);
+  width: calc(100vw - 18rem) !important;
+}
+
 .options-container {
   margin: 20px 0 24px 0;
   display: flex;
