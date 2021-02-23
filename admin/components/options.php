@@ -6,23 +6,21 @@
     <div class="options">
         <div class="sort">
             <p>Sort By</p>
-            <form method="GET">
-                <input type="hidden" name="sort" value="name" />
-                <button type="submit">
-                    <span>Name</span>
-                </button>
-            </form>
-            <form method="GET">
-                <input type="hidden" name="sort" value="date" />
-                <button type="submit">
-                    <span>Date</span>
-                </button>
-            </form>
+            <a href="?sort=name">
+                <span>Name</span>
+            </a>
+            <a href="?sort=date">
+                <span>Date</span>
+            </a>
         </div>
-        <form method="GET">
+        <form method="GET" class="offset-form">
             <span>Show</span>
             <input type="number" name="entries" value="5" required />
             <span>entries</span>
+        </form>
+        <form class="search">
+            <input type="text" placeholder="Search">
+            <i class="fas fa-search"></i>
         </form>
     </div>
 </div>

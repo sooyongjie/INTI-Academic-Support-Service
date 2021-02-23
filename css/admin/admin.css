@@ -101,6 +101,134 @@ nav .nav-profile {
   bottom: 20px;
 }
 
+.options-container {
+  margin: 20px 0 24px 0;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  overflow: hidden;
+}
+
+.options-container span,
+.options-container p,
+.options-container input {
+  font-size: 14px !important;
+  font-family: "Poppins", sans-serif;
+}
+
+.options-container a span {
+  font-size: 13px;
+}
+
+.options-container:focus-within .show-options, .options-container:hover .show-options {
+  color: #000;
+}
+
+.options-container:focus-within .show-options i, .options-container:hover .show-options i {
+  animation: slide-right 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  color: #000;
+}
+
+.options-container:focus-within .options, .options-container:hover .options {
+  transform: translateX(0px);
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.options-container .show-options {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  color: #444;
+}
+
+.options-container .show-options i {
+  color: #aaa;
+  animation: slide-left 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  font-size: 10px;
+}
+
+.options-container .options {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  transform: translateX(-15px);
+  transition: 0.1s ease-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.options-container .options .sort {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.options-container .options .sort a {
+  padding: 4px 8px;
+  background: #f3f3f3;
+  border-radius: 16px;
+}
+
+.options-container .options .sort a:hover {
+  background: #ddd;
+}
+
+.options-container .options .sort a:focus {
+  background: #ccc;
+}
+
+.options-container .options form input {
+  height: 28px;
+  padding: 0 0 0 10px;
+}
+
+.options-container .options form.offset-form input {
+  width: 35px;
+  background: #f3f3f3;
+  border-radius: 8px;
+}
+
+.options-container .options form.offset-form input::-webkit-inner-spin-button {
+  opacity: 1;
+}
+
+.options-container .options form.search:focus-within i.fa-search {
+  transform: translateX(4px);
+}
+
+.options-container .options form.search input {
+  width: 160px;
+}
+
+.options-container .options form.search i.fa-search {
+  font-size: 14px;
+  font-weight: 500;
+  transform: translateX(-20px);
+  transition: 0.2s ease-out;
+  cursor: pointer;
+  position: relative;
+  z-index: -99;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .button i {
   font-size: 16px !important;
 }
@@ -192,7 +320,7 @@ h3 {
   .container {
     width: 100vw !important;
     margin: 0 0 0 0 !important;
-    padding: 50px 0 50px 0;
+    padding: 50px 0 50px 0 !important;
     display: flex;
     justify-content: center;
   }
@@ -201,7 +329,7 @@ h3 {
 .container {
   width: 64vw;
   margin: 0 0 0 18rem;
-  padding: 12px 0 0 100px;
+  padding: 0 0 0 100px !important;
   display: flex;
 }
 
@@ -285,112 +413,6 @@ h3 {
   opacity: 1;
 }
 
-@keyframes slide-right {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(5px);
-  }
-}
-
-@keyframes slide-left {
-  0% {
-    transform: translateX(5px);
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: translateX(0);
-    transform: rotate(0deg);
-  }
-}
-
-.options-container {
-  margin-bottom: 18px;
-  display: flex;
-  align-items: center;
-  column-gap: 20px;
-  overflow: hidden;
-}
-
-.options-container span,
-.options-container p,
-.options-container input {
-  font-size: 12px;
-  font-family: "Poppins", sans-serif;
-}
-
-.options-container:focus-within .show-options, .options-container:hover .show-options {
-  color: #000;
-}
-
-.options-container:focus-within .show-options i, .options-container:hover .show-options i {
-  animation: slide-right 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  color: #000;
-}
-
-.options-container:focus-within .options, .options-container:hover .options {
-  transform: translateX(0px);
-  opacity: 1;
-  pointer-events: visible;
-}
-
-.options-container .show-options {
-  display: flex;
-  align-items: center;
-  column-gap: 8px;
-  color: #444;
-}
-
-.options-container .show-options i {
-  color: #aaa;
-  animation: slide-left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  font-size: 10px;
-}
-
-.options-container .options {
-  display: flex;
-  align-items: center;
-  column-gap: 30px;
-  transform: translateX(-15px);
-  transition: 0.1s ease-out;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.options-container .options .sort {
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-}
-
-.options-container .options .sort form button {
-  padding: 4px 8px;
-  background: #f3f3f3;
-  border-radius: 16px;
-}
-
-.options-container .options .sort form button:hover {
-  background: #ddd;
-}
-
-.options-container .options .sort form button:focus {
-  background: #ccc;
-}
-
-.options-container .options form input {
-  height: 25px;
-  width: 35px;
-  padding: 0 0 0 10px;
-  background: #f3f3f3;
-  border-radius: 8px;
-  border: 1px solid #fff;
-}
-
-.options-container .options form input::-webkit-inner-spin-button {
-  opacity: 1;
-}
-
 .card {
   min-height: 50px;
   width: auto;
@@ -425,17 +447,16 @@ form input {
   background: #f3f3f3;
   border: none;
   border-radius: 8px;
-  height: 40px;
   transition: 0.1s ease-out;
   border-bottom: 1px solid #f3f3f3;
 }
 
 form input:hover {
-  background: #eaeaea;
+  background: #eee;
 }
 
 form input:focus {
-  background: #eaeaea;
+  background: #eee;
   border-bottom: 1px solid #888;
   transition: 0.2s ease-out;
 }
@@ -496,7 +517,7 @@ table .status .arrow i {
 }
 
 table .status .arrow i:focus {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 table .status:hover i, table .status:focus i {
