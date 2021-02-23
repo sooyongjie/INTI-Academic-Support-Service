@@ -117,6 +117,7 @@ nav .nav-profile {
   overflow: hidden;
 }
 
+.options-container label,
 .options-container span,
 .options-container p,
 .options-container input {

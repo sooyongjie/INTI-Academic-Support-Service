@@ -1,6 +1,6 @@
 <nav>
     <a class="admin-logo-link" href="./requests.php">
-        <img class="admin-logo" src="../img/inti-logo-half.svg" alt="" />
+        <img class="admin-logo" src="../img/inti-logo-half.svg" alt="Loading logo..." height="42.375" width="140"/>
     </a>
     <div class="nav-items">
         <!-- <button class="active"> -->

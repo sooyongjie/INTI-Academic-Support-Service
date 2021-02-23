@@ -14,8 +14,8 @@
             </a>
         </div>
         <form method="GET" class="offset-form">
-            <span>Show</span>
-            <input type="number" name="entries" value="5" required />
+            <label for="entries">Show</label>
+            <input type="number" name="entries" value="5" id="entries" />
             <span>entries</span>
         </form>
         <form class="search">
