@@ -205,7 +205,7 @@ nav .nav-profile {
   font-size: 14px;
   font-weight: 500;
   transform: translateX(-20px);
-  transition: 0.2s ease-out;
+  transition: 0.2s ease-in-out;
   cursor: pointer;
   position: relative;
   z-index: -99;
