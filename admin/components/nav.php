@@ -1,5 +1,5 @@
 <nav>
-    <a class="admin-logo-link" href="./requests.html">
+    <a class="admin-logo-link" href="./requests.php">
         <img class="admin-logo" src="../img/inti-logo-half.svg" alt="" />
     </a>
     <div class="nav-items">
