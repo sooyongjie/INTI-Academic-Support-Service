@@ -278,8 +278,9 @@ nav .nav-profile {
 
 .day .notification .notification-heading {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  column-gap: 8px;
 }
 
 .day .notification .notification-heading button {
