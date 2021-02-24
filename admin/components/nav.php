@@ -30,6 +30,7 @@
         </button>
     </div>
 </nav>
+<?php include_once('./components/spinner.php') ?>
 
 <script>
     var segment_array = window.location.pathname.split('/');

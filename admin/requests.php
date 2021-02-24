@@ -8,7 +8,6 @@
 
 <body>
   <?php include_once('./components/nav.php') ?>
-  <?php include_once('./components/spinner.php') ?>
   <div class="container">
     <div class="content-container">
       <?php include_once('./components/options.php') ?>

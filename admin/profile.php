@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<?php include_once('./components/head.php') ?>
+  <?php include_once('./components/head.php') ?>
   <title>Profile</title>
 </head>
 
