@@ -12,9 +12,6 @@
     font-size: 14px !important;
     @include poppins;
   }
-  a span {
-    font-size: 13px;
-  }
 
   &:focus-within,
   &:hover {
@@ -55,7 +52,7 @@
       align-items: center;
       column-gap: 10px;
       a {
-        padding: 4px 8px;
+        padding: 4px 10px;
         background: #f3f3f3;
         border-radius: 16px;
         &:hover {

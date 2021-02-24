@@ -130,10 +130,6 @@ nav .nav-profile {
   font-family: "Poppins", sans-serif;
 }
 
-.options-container a span {
-  font-size: 13px;
-}
-
 .options-container:focus-within .show-options, .options-container:hover .show-options {
   color: #000;
 }
@@ -179,7 +175,7 @@ nav .nav-profile {
 }
 
 .options-container .options .sort a {
-  padding: 4px 8px;
+  padding: 4px 10px;
   background: #f3f3f3;
   border-radius: 16px;
 }
