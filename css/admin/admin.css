@@ -350,6 +350,10 @@ h3 {
   flex-direction: column;
 }
 
+.section {
+  opacity: 0;
+}
+
 .heading {
   margin-bottom: 20px;
   display: flex;

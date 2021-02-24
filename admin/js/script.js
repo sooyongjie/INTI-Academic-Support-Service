@@ -5,10 +5,9 @@ window.addEventListener("load", function () {
   setTimeout(() => {
     document.querySelector(".loading-screen").remove();
     gsap.to(".section", {
-      delay: "0.1",
       opacity: "1",
       duration: 0.2,
-      stagger: 0.04,
+      stagger: 0.05,
     });
   }, 50);
 });
