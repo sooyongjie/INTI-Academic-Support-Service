@@ -1,4 +1,5 @@
 .request-details {
+  padding-bottom: 16px !important;
   display: grid !important;
   grid-template-columns: repeat(4, max-content);
   grid-template-rows: repeat(2, max-content);
@@ -20,9 +21,9 @@
   column-gap: 30px;
   flex-wrap: wrap;
   .request-subject {
-    width: min-content !important;
+    width: max-content !important;
     display: grid !important;
-    grid-template-columns: max-content;
+    grid-template-columns: 1fr;
     grid-template-rows: max-content;
     padding-bottom: 10px !important;
     label {

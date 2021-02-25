@@ -1,10 +1,10 @@
 // dropdown
 .options-container {
+  width: 100%;
   margin: 20px 0 24px 0;
   display: flex;
   align-items: center;
   column-gap: 20px;
-  overflow: hidden;
   label,
   span,
   p,
@@ -80,6 +80,7 @@
     form.search {
       &:focus-within i.fa-search {
         transform: translateX(4px);
+        z-index: 1;
       }
       input {
         width: 160px;
@@ -91,7 +92,7 @@
         transition: 0.2s ease-in-out;
         cursor: pointer;
         position: relative;
-        z-index: -99;
+        z-index: -1;
       }
     }
   }

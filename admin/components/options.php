@@ -18,8 +18,8 @@
             <input type="number" name="entries" value="5" id="entries" />
             <span>entries</span>
         </form>
-        <form class="search">
-            <input type="text" placeholder="Search">
+        <form method="get" class="search">
+            <input type="text" name="id" placeholder="Search">
             <i class="fas fa-search"></i>
         </form>
     </div>

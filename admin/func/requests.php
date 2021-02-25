@@ -102,7 +102,8 @@ function requestDetails($id)
                 ?>
             </span>
         <?php   }
-    }
+        return 1;
+    } else return 0;
 }
 
 function requestSubjects($id)

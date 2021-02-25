@@ -115,11 +115,11 @@ nav .nav-profile {
 }
 
 .options-container {
+  width: 100%;
   margin: 20px 0 24px 0;
   display: flex;
   align-items: center;
   column-gap: 20px;
-  overflow: hidden;
 }
 
 .options-container label,
@@ -205,6 +205,7 @@ nav .nav-profile {
 
 .options-container .options form.search:focus-within i.fa-search {
   transform: translateX(4px);
+  z-index: 1;
 }
 
 .options-container .options form.search input {
@@ -218,7 +219,7 @@ nav .nav-profile {
   transition: 0.2s ease-in-out;
   cursor: pointer;
   position: relative;
-  z-index: -99;
+  z-index: -1;
 }
 
 @keyframes slide-right {
@@ -240,6 +241,7 @@ nav .nav-profile {
 }
 
 .request-details {
+  padding-bottom: 16px !important;
   display: grid !important;
   grid-template-columns: repeat(4, max-content);
   grid-template-rows: repeat(2, max-content);
@@ -265,9 +267,9 @@ nav .nav-profile {
 }
 
 .subjects .request-subject {
-  width: min-content !important;
+  width: max-content !important;
   display: grid !important;
-  grid-template-columns: max-content;
+  grid-template-columns: 1fr;
   grid-template-rows: max-content;
   padding-bottom: 10px !important;
 }
@@ -388,7 +390,6 @@ h3 {
 
 .content-container {
   display: flex;
-  justify-content: center;
   flex-direction: column;
 }
 
@@ -472,9 +473,10 @@ h3 {
 
 .card {
   min-height: 50px;
+  width: 100%;
   max-width: 700px !important;
   margin-bottom: 60px;
-  padding: 16px 20px 16px 20px;
+  padding: 16px 20px 4px 20px;
   display: flex;
   row-gap: 8px;
   border: 2px solid #ddd;
