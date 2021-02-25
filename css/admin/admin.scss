@@ -2,6 +2,7 @@
 @import "nav";
 @import "spinner";
 @import "options";
+@import "request-details";
 @import "notifications";
 @import "profile";
 
@@ -110,9 +111,9 @@ h3 {
 
 .card {
   min-height: 50px;
-  width: auto;
+  max-width: 700px !important;
   margin-bottom: 60px;
-  padding: 16px 24px 16px 24px;
+  padding: 16px 20px 16px 20px;
   display: flex;
   row-gap: 8px;
   border: 2px solid #ddd;
@@ -154,7 +155,7 @@ form {
 }
 
 table {
-  width: auto;
+  width: 100%;
   border-collapse: collapse;
   tr {
     text-align: left;
@@ -172,7 +173,7 @@ table {
     font-weight: 400;
   }
   td {
-    padding: 12px 80px 12px 0;
+    padding: 12px 0;
     border-top: 1px solid #ddd;
   }
   .status {

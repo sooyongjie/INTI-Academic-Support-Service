@@ -1,0 +1,36 @@
+.request-details {
+  display: grid !important;
+  grid-template-columns: repeat(4, max-content);
+  grid-template-rows: repeat(2, max-content);
+  column-gap: 60px;
+  row-gap: 12px !important;
+  label {
+    color: #666;
+    font-size: 15px;
+  }
+  input {
+    width: 100px;
+    border: none;
+    padding: 0;
+  }
+}
+
+.subjects {
+  display: flex;
+  column-gap: 30px;
+  flex-wrap: wrap;
+  .request-subject {
+    width: min-content !important;
+    display: grid !important;
+    grid-template-columns: max-content;
+    grid-template-rows: max-content;
+    padding-bottom: 10px !important;
+    label {
+      color: #666;
+      font-size: 15px;
+    }
+    span {
+      margin-bottom: 8px;
+    }
+  }
+}

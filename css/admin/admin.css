@@ -239,6 +239,48 @@ nav .nav-profile {
   }
 }
 
+.request-details {
+  display: grid !important;
+  grid-template-columns: repeat(4, max-content);
+  grid-template-rows: repeat(2, max-content);
+  column-gap: 60px;
+  row-gap: 12px !important;
+}
+
+.request-details label {
+  color: #666;
+  font-size: 15px;
+}
+
+.request-details input {
+  width: 100px;
+  border: none;
+  padding: 0;
+}
+
+.subjects {
+  display: flex;
+  column-gap: 30px;
+  flex-wrap: wrap;
+}
+
+.subjects .request-subject {
+  width: min-content !important;
+  display: grid !important;
+  grid-template-columns: max-content;
+  grid-template-rows: max-content;
+  padding-bottom: 10px !important;
+}
+
+.subjects .request-subject label {
+  color: #666;
+  font-size: 15px;
+}
+
+.subjects .request-subject span {
+  margin-bottom: 8px;
+}
+
 .button i {
   font-size: 16px !important;
 }
@@ -430,9 +472,9 @@ h3 {
 
 .card {
   min-height: 50px;
-  width: auto;
+  max-width: 700px !important;
   margin-bottom: 60px;
-  padding: 16px 24px 16px 24px;
+  padding: 16px 20px 16px 20px;
   display: flex;
   row-gap: 8px;
   border: 2px solid #ddd;
@@ -477,7 +519,7 @@ form input:focus {
 }
 
 table {
-  width: auto;
+  width: 100%;
   border-collapse: collapse;
 }
 
@@ -501,7 +543,7 @@ table th {
 }
 
 table td {
-  padding: 12px 80px 12px 0;
+  padding: 12px 0;
   border-top: 1px solid #ddd;
 }
 

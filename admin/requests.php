@@ -35,20 +35,27 @@
             <?php allRequests() ?>
           </div>
         </div>
-
-      <?php } else { ?>
-
+      <?php
+      } else { ?>
         <!-- Request Details  -->
         <div class="section">
           <div class="heading">
-            <h2>Request <?php echo $_GET['id'] ?></h2>
+            <h3>Request <?php echo $_GET['id'] ?></h3>
           </div>
-          <div class="card request-list">
-            <?php echo "Request details" ?>
+          <div class="card request-details">
+            <?php requestDetails($_GET['id']) ?>
+          </div>
+          <div class="heading">
+            <h3>Subjects</h3>
+          </div>
+          <div class="subjects">
+            <div class="card request-subject">
+              <?php requestSubjects($_GET['id']) ?>
+            </div>
           </div>
         </div>
-
-      <?php }
+      <?php
+      }
       ?>
     </div>
   </div>
