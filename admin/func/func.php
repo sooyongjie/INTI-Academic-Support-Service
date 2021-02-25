@@ -2,6 +2,13 @@
 
 require("../db_connect.php");
 
+if(isset($_POST['limit'])) {
+    $_SESSION['limit'] = $_POST['limit'];
+}
+else if(!isset($_SESSION['limit'])) {
+    $_SESSION['limit'] = 5;
+}
+
 function selectQuery($query)
 {
     $db = db_connect();

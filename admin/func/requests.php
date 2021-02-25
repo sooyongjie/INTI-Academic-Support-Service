@@ -49,13 +49,20 @@ function requests($result)
 
 function pendingRequests()
 {
-    $query = "SELECT reqID, fullname, `datetime`, `status` FROM requests r
-    INNER JOIN user u on r.uid = u.uid 
-    WHERE `status` = '1' ";
+    if (isset($_GET['sort'])) {
+        $sort = $_GET['sort'];
+        $query = "SELECT reqID, fullname, `datetime`, `status` FROM requests r
+        INNER JOIN user u on r.uid = u.uid 
+        WHERE `status` = '1' ORDER BY $sort LIMIT " . $_SESSION['limit'] . " ";
+    } else {
+        $query = "SELECT reqID, fullname, `datetime`, `status` FROM requests r
+        INNER JOIN user u on r.uid = u.uid 
+        WHERE `status` = '1' LIMIT " . $_SESSION['limit'] . " ";
+    }
+
     $result = selectQuery($query);
     if ($result) {
         requests($result);
-    } else {
     }
 }
 

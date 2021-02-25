@@ -15,7 +15,6 @@
       <?php include_once('./components/options.php') ?>
       <?php
       if (!isset($_GET['id'])) { ?>
-
         <!-- Pending Requests  -->
         <div class="section">
           <div class="heading">
@@ -25,7 +24,6 @@
             <?php pendingRequests() ?>
           </div>
         </div>
-
         <!-- All Requests  -->
         <div class="section">
           <div class="heading">

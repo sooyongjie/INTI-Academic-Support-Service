@@ -11,3 +11,7 @@ window.addEventListener("load", function () {
     });
   }, 50);
 });
+
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
