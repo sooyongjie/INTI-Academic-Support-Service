@@ -47,12 +47,14 @@
 
           <?php
           if ($result) { ?>
-            <div class="heading">
-              <h3>Subjects</h3>
-            </div>
-            <div class="subjects">
-              <div class="card request-subject">
-                <?php requestSubjects($_GET['id']) ?>
+            <div class="section">
+              <div class="heading">
+                <h3>Subjects</h3>
+              </div>
+              <div class="subjects">
+                <div class="card request-subject">
+                  <?php requestSubjects($_GET['id']) ?>
+                </div>
               </div>
             </div>
           <?php
@@ -64,8 +66,7 @@
       ?>
     </div>
   </div>
-  <?php include_once('./components/toast.php') ?>
-  <script src="./js/toast.js"></script>
+  <?php if (isset($_SESSION['toast'])) include_once('./components/toast.php') ?>
 </body>
 
 

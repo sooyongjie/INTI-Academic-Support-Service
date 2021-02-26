@@ -73,7 +73,6 @@ function allRequests()
     $result = selectQuery($query);
     if ($result) {
         requests($result);
-    } else {
     }
 }
 
@@ -103,7 +102,10 @@ function requestDetails($id)
             </span>
         <?php   }
         return 1;
-    } else return 0;
+    } else {
+        $_SESSION['toast'] = "No results were returned";
+        return 0;
+    };
 }
 
 function requestSubjects($id)

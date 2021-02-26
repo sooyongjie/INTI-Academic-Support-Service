@@ -12,3 +12,5 @@ showToast = () => {
 clearToast = () => {
   toast.className = "toast-container";
 };
+
+showToast();

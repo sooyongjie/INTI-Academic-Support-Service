@@ -10,7 +10,6 @@ window.addEventListener("load", function () {
       stagger: 0.05,
     });
   }, 50);
-  // showToast()
 });
 
 if (window.history.replaceState) {
