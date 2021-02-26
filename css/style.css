@@ -219,7 +219,7 @@ body {
   justify-content: center;
   position: fixed;
   left: 0;
-  bottom: 20px;
+  bottom: 40px;
   transform: translateY(10px);
   opacity: 0;
   z-index: -1;
@@ -250,6 +250,10 @@ body {
   border: 1px solid #ccc;
   border-radius: 12px;
   font-size: 15px;
+}
+
+.toast-container .toast .toast-message {
+  margin-bottom: 2px;
 }
 
 .toast-container .toast .close-btn-container {
