@@ -525,6 +525,7 @@ table {
 
 table tr {
   text-align: left;
+  transition: 0.06s ease-out;
 }
 
 table tr:focus-within {
@@ -554,8 +555,8 @@ table .status {
 }
 
 table .status .arrow {
+  width: 50% !important;
   position: relative;
-  left: 40px;
   height: 12px;
   width: 12px;
   display: flex;
