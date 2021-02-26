@@ -343,13 +343,32 @@ nav .nav-profile {
   font-weight: 400;
 }
 
-.profile-card {
-  width: 280px !important;
-  flex-direction: column;
+.content-container.profile {
+  margin-top: 73px;
 }
 
-.card button {
+.content-container.profile .profile-card {
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+.content-container.profile .card button {
   margin-top: 10px;
+}
+
+.content-container.profile form label {
+  color: #444;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+
+.content-container.profile form input {
+  height: 35px;
+  width: 250px;
+  margin-bottom: 12px;
+  padding-left: 12px;
+  font-family: "Poppins", sans-serif;
 }
 
 * {
@@ -368,6 +387,14 @@ label {
 
 h2 {
   font-size: 22px;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+button span {
+  font-family: "Poppins", sans-serif;
 }
 
 @media screen and (min-width: 1500px) and (max-width: 3000px) {
@@ -390,6 +417,7 @@ h2 {
 .content-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .section {
@@ -486,17 +514,13 @@ h2 {
 }
 
 .card button {
-  padding: 10px 12px;
+  padding: 8px 12px;
   border: none;
   border-radius: 8px;
   align-self: flex-start;
   font-size: 14px;
   background: #e20c18;
   color: white;
-}
-
-form label {
-  font-size: 20px;
 }
 
 form input {
@@ -549,20 +573,22 @@ table td {
 }
 
 table .status {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 
 table .status .arrow {
-  width: 50% !important;
-  position: relative;
   height: 12px;
   width: 12px;
+  padding: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6px;
+  position: relative;
+  right: 40px;
   cursor: pointer;
 }
 

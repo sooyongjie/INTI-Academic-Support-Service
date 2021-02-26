@@ -9,10 +9,9 @@
 <body>
   <?php include_once('./components/nav.php') ?>
   <div class="container">
-    <div class="content-container">
-      <?php include_once('./components/options.php') ?>
+    <div class="content-container profile">
       <div class="heading">
-        <h1>Profile</h1>
+        <h2>Profile</h2>
         <a href="./index.html" class="show">
           <i class="fas fa-sign-out-alt"></i>
           <span>Logout</span>

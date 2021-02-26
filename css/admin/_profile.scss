@@ -1,8 +1,28 @@
-.profile-card {
-    width: 280px !important;
-    flex-direction: column;
-}
+.content-container.profile {
+  margin-top: 73px;
 
-.card button {
+  .profile-card {
+    flex-direction: column;
+    row-gap: 6px;
+  }
+
+  .card button {
     margin-top: 10px;
+  }
+
+  form {
+    label {
+      color: #444;
+      font-size: 14px;
+      font-weight: 400;
+      @include poppins;
+    }
+    input {
+      height: 35px;
+      width: 250px;
+      margin-bottom: 12px;
+      padding-left: 12px;
+      @include poppins;
+    }
+  }
 }
