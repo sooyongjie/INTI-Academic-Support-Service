@@ -5,6 +5,7 @@ function requests($result)
 ?>
     <table>
         <tr>
+            <th class="id">ID</th>
             <th>Name</th>
             <th>Date</th>
             <th>Time</th>
@@ -14,8 +15,9 @@ function requests($result)
         foreach ($result as $row) {
         ?>
             <tr>
+                <td><?php echo $row['reqID'] ?></td>
                 <td><?php echo $row['fullname'] ?></td>
-                <td><?php echo date("d/m/Y", strtotime($row['datetime'])) ?></td>
+                <td><?php echo date("d M Y", strtotime($row['datetime'])) ?></td>
                 <td><?php echo date("g:ia", strtotime($row['datetime'])) ?></td>
                 <td class="status">
                     <span>
