@@ -40,7 +40,7 @@ showToast = () => {
 };
 
 clearToast = () => {
-  toast.className = "toast-container";
+  // toast.className = "toast-container";
 };
 
 // showToast()

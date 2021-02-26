@@ -64,6 +64,9 @@
       ?>
     </div>
   </div>
+  <?php include_once('./components/toast.php') ?>
+  <script src="./js/toast.js"></script>
 </body>
+
 
 </html>
