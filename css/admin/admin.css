@@ -608,4 +608,10 @@ table .status:hover i, table .status:focus i {
   font-size: 16px;
   opacity: 1;
 }
+
+@media screen and (min-height: 600px) and (max-height: 700px) {
+  .container {
+    margin: 0 0 0 15rem !important;
+  }
+}
 /*# sourceMappingURL=admin.css.map */
