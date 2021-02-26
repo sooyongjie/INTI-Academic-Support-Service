@@ -20,9 +20,8 @@ label {
   font-size: 16px;
 }
 
-h2,
-h3 {
-  font-weight: 500;
+h2 {
+  font-size: 22px;
 }
 
 // aligned to center, 100% zoom at 1920x1080
@@ -30,7 +29,7 @@ h3 {
   .container {
     width: 100vw !important;
     margin: 0 0 0 0 !important;
-    padding: 50px 0 50px 0 !important;
+    padding: 0 0 50px 0 !important;
     display: flex;
     justify-content: center;
   }
@@ -40,7 +39,7 @@ h3 {
 .container {
   width: 64vw;
   margin: 0 0 0 18rem;
-  padding: 0 0 0 100px !important;
+  padding: 0 0 0 100px;
   display: flex;
 }
 
@@ -110,8 +109,7 @@ h3 {
 
 .card {
   min-height: 50px;
-  width: 100%;
-  max-width: 700px !important;
+  // max-width: calc(700px + 40px) !important;
   margin-bottom: 60px;
   padding: 16px 20px 4px 20px;
   display: flex;
@@ -156,6 +154,7 @@ form {
 
 table {
   width: 100%;
+  max-width: 700px !important;
   border-collapse: collapse;
   tr {
     text-align: left;
