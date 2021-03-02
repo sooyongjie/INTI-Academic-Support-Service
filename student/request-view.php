@@ -8,57 +8,88 @@
 <body>
     <?php include_once('./components/nav.php') ?>
     <?php include_once('./components/spinner.php') ?>
-    <div class="container">
-        <div class="card request section">
-            <div class="heading">
-                <h2>Request #10001</h3>
+    <div class="container row">
+        <div class="top-section">
+            <div class="card request section">
+                <div class="heading">
+                    <h2>Request #10001</h3>
+                </div>
+                <label for="">Date</label>
+                <p>28th February 2021</p>
+                <label for="">Status</label>
+                <p>Pending</p>
+                <label for="">Total Amount</label>
+                <p>RM1</p>
+                <label for="">Payment</label>
+                <p>Pending</p>
             </div>
-            <label for="">Programme</label>
-            <p>University of Wollongong</p>
-            <label for="">Course Code</label>
-            <p>CSIT321</p>
-            <label for="">Session</label>
-            <p>July 2019</p>
-            <label for="">Status</label>
-            <p>Pending</p>
-            <label for="">Total Amount</label>
-            <p>RM1</p>
+            <div class="payment-section section">
+                <div class="heading">
+                    <h2>Payment Method</h2>
+                </div>
+                <p>Bank Transfer only</p>
+                <div class="card">
+                    <div class="payment-info">
+                        <img src="../img/mb.png" alt="">
+                        <div>
+                            <p>Soo Yong Jie</p>
+                            <p>10988333</p>
+                        </div>
+                        <a href="https://www.maybank2u.com.my/">
+                            <i class="fas fa-external-link-square-alt"></i>
+                        </a>
+                    </div>
+                    <div class="payment-info">
+                        <img src="../img/pb.png" alt="">
+                        <div>
+                            <p>Soo Yong Jie</p>
+                            <p>10988333</p>
+                        </div>
+                        <a href="https://www2.pbebank.com/myIBK/apppbb/servlet/">
+                            <i class="fas fa-external-link-square-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="heading">
+                    <h2>Payment Details</h3>
+                </div>
+                <label for="receipt-input" class="receipt-input">
+                    <i class="fas fa-upload"></i>
+                    <span>Upload Receipt</span>
+                    <input type="file" name="" id="receipt-input">
+                </label>
+            </div>
         </div>
-        <div class="payment section">
+        <div class="bottom-section section">
             <div class="heading">
-                <h2>Payment Method</h2>
+                <h3>Subjects</h3>
             </div>
-            <p>Bank Transfer only</p>
-            <div class="card">
-                <div class="payment-info">
-                    <img src="../img/mb.png" alt="">
-                    <div>
-                        <p>Soo Yong Jie</p>
-                        <p>10988333</p>
-                    </div>
-                    <a href="https://www.maybank2u.com.my/">
-                        <i class="fas fa-external-link-square-alt"></i>
-                    </a>
+            <div class="subjects">
+                <div class="card subject">
+                    <label for="">Programme</label>
+                    <p>University of Wollongong</p>
+                    <label for="">Course</label>
+                    <p>CSIT321 Project (July 2019)</p>
+                    <label for="">Amount</label>
+                    <p>RM1</p>
                 </div>
-                <div class="payment-info">
-                    <img src="../img/pb.png" alt="">
-                    <div>
-                        <p>Soo Yong Jie</p>
-                        <p>10988333</p>
-                    </div>
-                    <a href="https://www2.pbebank.com/myIBK/apppbb/servlet/">
-                        <i class="fas fa-external-link-square-alt"></i>
-                    </a>
+                <div class="card subject">
+                    <label for="">Programme</label>
+                    <p>University of Wollongong</p>
+                    <label for="">Course</label>
+                    <p>CSIT321 Project (July 2019)</p>
+                    <label for="">Amount</label>
+                    <p>RM1</p>
+                </div>
+                <div class="card subject">
+                    <label for="">Programme</label>
+                    <p>University of Wollongong</p>
+                    <label for="">Course</label>
+                    <p>CSIT321 Project (July 2019)</p>
+                    <label for="">Amount</label>
+                    <p>RM1</p>
                 </div>
             </div>
-            <div class="heading">
-                <h2>Payment Details</h3>
-            </div>
-            <label for="receipt-input" class="receipt-input">
-                <i class="fas fa-upload"></i>
-                <span>Upload Receipt</span>
-                <input type="file" name="" id="receipt-input">
-            </label>
         </div>
     </div>
     <div class="toast-container">

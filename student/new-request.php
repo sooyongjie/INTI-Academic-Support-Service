@@ -8,10 +8,10 @@
 <body>
   <?php include_once('./components/nav.php') ?>
   <?php include_once('./components/spinner.php') ?>
-  <div class="container row">
-    <form class="card form section">
+  <div class="container row request-form">
+    <form method="post" class="card form section">
       <div class="heading">
-        <h2>New Request</h2>
+        <h2>Request Form</h2>
       </div>
       <label for="programme">Programme</label>
       <input type="text" id="programme" value="University of Wollongong" />
@@ -19,10 +19,17 @@
       <input type="text" id="session" value="July 2020" />
       <label for="course-code">Course Code</label>
       <input type="text" id="course-code" value="CSIT321" />
-      <button>
-        <span>Submit</span>
-      </button>
     </form>
+    <div class="button-row section">
+      <button>
+        <i class="fas fa-plus"></i>
+        <span>Add</span>
+      </button>
+      <button>
+        <i class="fas fa-check"></i>
+        <span>Done</span>
+      </button>
+    </div>
   </div>
   <?php include_once('./components/fab.php') ?>
   <?php include_once('./components/scroll-to-top.php') ?>

@@ -239,6 +239,7 @@ nav img {
   height: 35px;
   width: 35px;
   margin-top: -10px;
+  margin-right: 24px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -295,11 +296,51 @@ nav img {
   column-gap: 8px;
 }
 
+.form label,
+.request label,
+.subject label {
+  color: #888;
+}
+
+.form input,
+.request input,
+.subject input {
+  margin-bottom: 20px;
+  padding: 0 0 10px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  transition: 0.15s ease-out;
+}
+
+.form input:hover,
+.request input:hover,
+.subject input:hover {
+  border-color: #fdf0f0;
+}
+
+.form input:focus,
+.request input:focus,
+.subject input:focus {
+  border-color: #e20c18;
+}
+
+.form input::placeholder,
+.request input::placeholder,
+.subject input::placeholder {
+  color: #666;
+}
+
+.form p,
+.request p,
+.subject p {
+  margin-bottom: 16px;
+}
+
 .card.form,
 .card.request {
   min-height: 200px;
   width: 250px;
-  padding: 24px 32px 16px 32px;
+  padding: 24px 0px 16px 32px;
   justify-content: unset;
   align-items: unset;
 }
@@ -309,68 +350,46 @@ nav img {
   border-color: #f9ced0;
 }
 
-.card.form label,
-.card.request label {
-  color: #888;
-}
-
-.card.form input,
-.card.request input {
-  margin-bottom: 20px;
-  padding: 0 0 10px 0;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  transition: 0.15s ease-out;
-}
-
-.card.form input:hover,
-.card.request input:hover {
-  border-color: #fdf0f0;
-}
-
-.card.form input:focus,
-.card.request input:focus {
-  border-color: #e20c18;
-}
-
-.card.form input::placeholder,
-.card.request input::placeholder {
-  color: #666;
-}
-
-.card.form p,
-.card.request p {
-  margin-bottom: 16px;
-}
-
-.card.form label {
+.form label {
   margin-bottom: 12px;
 }
 
-.card.request label {
+.request label,
+.subject label {
   margin-bottom: 8px;
 }
 
-.payment {
-  padding: 12px 36px 0 36px;
+.subject {
+  width: max-content;
+  padding: 20px 20px 4px 20px;
+  align-items: unset;
+}
+
+.top-section {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  column-gap: 50px;
+}
+
+.payment-section {
   display: flex;
   flex-direction: column;
 }
 
-.payment .heading {
+.payment-section .heading {
   margin-bottom: 10px;
 }
 
-.payment .card {
+.payment-section .card {
   display: grid;
   grid-template-rows: 1fr 1fr;
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   padding: 20px 24px;
   row-gap: 20px;
 }
 
-.payment .card .payment-info {
+.payment-section .card .payment-info {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-items: center;
@@ -378,23 +397,27 @@ nav img {
   column-gap: 20px;
 }
 
-.payment .card .payment-info p {
+.payment-section .card .payment-info img {
+  width: 50px !important;
+}
+
+.payment-section .card .payment-info p {
   font-family: "Poppins", sans-serif;
   cursor: text;
 }
 
-.payment .card .payment-info a i:hover,
-.payment .card .payment-info a:focus-within i {
+.payment-section .card .payment-info a i:hover,
+.payment-section .card .payment-info a:focus-within i {
   color: #e20c18;
 }
 
-.payment .card .payment-info a i {
+.payment-section .card .payment-info a i {
   color: #888;
   font-weight: 400;
   margin: 0 8px;
 }
 
-.payment .receipt-input {
+.payment-section .receipt-input {
   padding: 8px 12px;
   border-radius: 8px;
   border: 2px dashed #dadada;
@@ -407,20 +430,65 @@ nav img {
   cursor: pointer;
 }
 
-.payment .receipt-input:hover, .payment .receipt-input:focus-within {
+.payment-section .receipt-input:hover, .payment-section .receipt-input:focus-within {
   border: 2px dashed #e20c18;
   background: #fdf0f0;
 }
 
-.payment .receipt-input span {
+.payment-section .receipt-input span {
   font-family: "Poppins", sans-serif;
 }
 
-.payment input[type="file"] {
+.payment-section input[type="file"] {
   position: absolute;
   height: 0px;
   width: 0px;
   pointer-events: none;
+}
+
+.subjects {
+  width: 605.41px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.subjects .card {
+  margin: 0 30px 30px 0;
+}
+
+.container.request-form {
+  row-gap: 20px;
+}
+
+.container.request-form .button-row {
+  padding: 0 12px;
+  align-self: flex-start;
+}
+
+.container.request-form .button-row button {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  align-items: center;
+  column-gap: 8px;
+}
+
+.request-form .card {
+  padding-right: 32px;
+}
+
+.button-row {
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-row button i {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.button-row button span {
+  font-size: 15px;
 }
 
 @media only screen and (max-width: 768px) {

@@ -1,8 +1,12 @@
-.payment {
-  padding: 12px 36px 0 36px;
+.top-section {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  column-gap: 50px;
+}
+
+.payment-section {
   display: flex;
   flex-direction: column;
-
   .heading {
     margin-bottom: 10px;
   }
@@ -11,7 +15,7 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding: 20px 24px;
     row-gap: 20px;
 
@@ -21,7 +25,9 @@
       justify-items: center;
       align-items: center;
       column-gap: 20px;
-
+      img {
+        width: 50px !important;
+      }
       p {
         @include poppins;
         cursor: text;
@@ -70,5 +76,14 @@
     height: 0px;
     width: 0px;
     pointer-events: none;
+  }
+}
+
+.subjects {
+  width: 605.41px;
+  display: flex;
+  flex-wrap: wrap;
+  .card {
+    margin: 0 30px 30px 0;
   }
 }

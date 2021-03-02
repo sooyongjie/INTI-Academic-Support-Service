@@ -13,10 +13,10 @@
             <div class="heading">
                 <h2>Request #10001</h3>
             </div>
-            <label for="">Course Code</label>
-            <p>CSIT321</p>
-            <label for="">Session</label>
-            <p>July 2019</p>
+            <label for="">Date</label>
+            <p>28th February 2021</p>
+            <label for="">Subjects</label>
+            <p>3</p>
             <label for="">Status</label>
             <div class="col">
                 <p>Pending</p>
@@ -29,10 +29,10 @@
             <div class="heading">
                 <h2>Request #10001</h3>
             </div>
-            <label for="">Course Code</label>
-            <p>CSIT321</p>
-            <label for="">Session</label>
-            <p>July 2019</p>
+            <label for="">Date</label>
+            <p>28th February 2021</p>
+            <label for="">Subjects</label>
+            <p>3</p>
             <label for="">Status</label>
             <div class="col">
                 <p>Pending</p>

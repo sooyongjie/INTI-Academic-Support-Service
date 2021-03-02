@@ -20,17 +20,16 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
     a.view-request {
       height: 35px;
       width: 35px;
       margin-top: -10px;
+      margin-right: 24px;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       opacity: 0;
-
       i {
         font-size: 0px;
         transition: 0.2s ease-out;
@@ -76,18 +75,9 @@
   }
 }
 
-.card.form,
-.card.request {
-  min-height: 200px;
-  width: 250px;
-  padding: 24px 32px 16px 32px;
-  justify-content: unset;
-  align-items: unset;
-
-  &:focus-within {
-    border-color: $redBorder;
-  }
-
+.form,
+.request,
+.subject {
   label {
     color: #888;
   }
@@ -110,20 +100,39 @@
       color: #666;
     }
   }
-
   p {
     margin-bottom: 16px;
   }
 }
 
-.card.form {
+.card.form,
+.card.request {
+  min-height: 200px;
+  width: 250px;
+  padding: 24px 0px 16px 32px;
+  justify-content: unset;
+  align-items: unset;
+
+  &:focus-within {
+    border-color: $redBorder;
+  }
+}
+
+.form {
   label {
     margin-bottom: 12px;
   }
 }
 
-.card.request {
+.request,
+.subject {
   label {
     margin-bottom: 8px;
   }
+}
+
+.subject {
+  width: max-content;
+  padding: 20px 20px 4px 20px;
+  align-items: unset;
 }
