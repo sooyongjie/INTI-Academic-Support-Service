@@ -112,7 +112,7 @@ function requestDetails($id)
 
 function requestSubjects($id)
 {
-    $query = "SELECT progName, sessYear, sub.subID, subName FROM request_subjects rs
+    $query = "SELECT progName, sessName, sub.subID, subName FROM request_subjects rs
     INNER JOIN programme p on rs.progID = p.progID 
     INNER JOIN `session` sess on rs.sessID = sess.sessID 
     INNER JOIN `subject` sub on rs.subID = sub.subID 
@@ -124,7 +124,7 @@ function requestSubjects($id)
             <label for="">Programme</label>
             <span><?php echo $row['progName'] ?></span>
             <label for="">Session</label>
-            <span><?php echo $row['sessYear'] ?></span>
+            <span><?php echo $row['sessName'] ?></span>
             <label for="">Course</label>
             <span><?php echo $row['subID'] . " " . $row['subName'] ?></span>
 <?php
