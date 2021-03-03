@@ -24,7 +24,7 @@ function requests()
                     <h2>Request #<?php echo $row['reqID'] ?></h3>
                 </div>
                 <label for="">Date</label>
-                <p><?php echo date("d M Y", strtotime($row['datetime'])) ?></p>
+                <p><?php echo date("jS F Y", strtotime($row['datetime'])) ?></p>
                 <label for="">Subjects</label>
                 <p><?php echo $row['subCount'] ?></p>
                 <label for="">Status</label>
@@ -53,7 +53,7 @@ function requestView()
                     <h2>Request #<?php echo $row['reqID'] ?></h3>
                 </div>
                 <label for="">Date</label>
-                <p><?php echo date("d M Y", strtotime($row['datetime'])) ?></p>
+                <p><?php echo date("jS F Y", strtotime($row['datetime'])) ?></p>
                 <label for="">Total Amount</label>
                 <p><?php echo 'RM' . $row['amount'] ?></p>
                 <label for="">Status</label>
