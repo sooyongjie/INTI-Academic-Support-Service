@@ -4,7 +4,8 @@
   }
   nav {
     height: 60px;
-    .logo, img {
+    .logo,
+    img {
       width: 90px;
     }
     .nav-back,
@@ -65,15 +66,18 @@
   }
 
   /*
- * Request view (payment)
-*/
+   * Request view (payment)
+   */
 
-  .payment {
-    margin-bottom: 100px;
-    padding: 0px !important;
-    .payment-info {
-      img {
-        height: 40px;
+   .top-section {
+     column-gap: 50px;
+    .payment {
+      margin-bottom: 100px;
+      padding: 0px !important;
+      .payment-info {
+        img {
+          height: 40px;
+        }
       }
     }
   }
@@ -83,5 +87,18 @@
     justify-content: center;
     align-items: center;
     height: 10vh;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .top-section {
+    grid-template-columns: unset;
+  }
+  .subjects {
+    width: 284px;
+    .subject {
+      width: 100%;
+      margin-right: 0;
+    }
   }
 }

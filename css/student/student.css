@@ -359,20 +359,15 @@ nav img {
   margin-bottom: 8px;
 }
 
-.subject {
-  width: max-content;
-  padding: 20px 20px 4px 20px;
-  align-items: unset;
-}
-
 .card.profile {
   padding-right: 28px;
 }
 
 .top-section {
+  width: max-content;
   display: grid;
   grid-template-columns: repeat(2, max-content);
-  column-gap: 50px;
+  column-gap: 100px;
 }
 
 .payment-section {
@@ -456,7 +451,10 @@ nav img {
   flex-wrap: wrap;
 }
 
-.subjects .card {
+.subjects .card.subject {
+  width: max-content;
+  padding: 20px 20px 8px 20px;
+  align-items: unset;
   margin: 0 30px 30px 0;
 }
 
@@ -502,7 +500,8 @@ nav img {
   nav {
     height: 60px;
   }
-  nav .logo, nav img {
+  nav .logo,
+  nav img {
     width: 90px;
   }
   nav .nav-back span,
@@ -557,13 +556,16 @@ nav img {
     padding: 28px 28px 20px 28px;
   }
   /*
- * Request view (payment)
-*/
-  .payment {
+   * Request view (payment)
+   */
+  .top-section {
+    column-gap: 50px;
+  }
+  .top-section .payment {
     margin-bottom: 100px;
     padding: 0px !important;
   }
-  .payment .payment-info img {
+  .top-section .payment .payment-info img {
     height: 40px;
   }
   footer {
@@ -571,6 +573,19 @@ nav img {
     justify-content: center;
     align-items: center;
     height: 10vh;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .top-section {
+    grid-template-columns: unset;
+  }
+  .subjects {
+    width: 284px;
+  }
+  .subjects .subject {
+    width: 100%;
+    margin-right: 0;
   }
 }
 
