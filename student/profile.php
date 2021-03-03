@@ -9,13 +9,13 @@
   <?php include_once('./components/nav.php') ?>
   <?php include_once('./components/spinner.php') ?>
   <div class="container row">
-    <form class="card form section">
+    <form class="card form profile section">
       <div class="heading">
         <h2>Profile</h2>
       </div>
       <label for="programme">Username</label>
       <input type="text" id="programme" value="sooyongjie" />
-      <label for="session">Student e-mail</label>
+      <label for="session">Email</label>
       <input type="text" id="session" value="j17025666@student.newinti.edu.my" />
       <label for="course-code">Programme</label>
       <input class="chosen-value" type="text" value="" placeholder="Type to search">

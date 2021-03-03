@@ -365,6 +365,10 @@ nav img {
   align-items: unset;
 }
 
+.card.profile {
+  padding-right: 28px;
+}
+
 .top-section {
   display: grid;
   grid-template-columns: repeat(2, max-content);
