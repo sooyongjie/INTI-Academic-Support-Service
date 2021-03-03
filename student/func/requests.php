@@ -93,89 +93,57 @@ function subjects()
                 <label for="">Amount</label>
                 <p><?php echo $row['sessName'] ?></p>
             </div>
-        <?php
+    <?php
         }
     }
 }
 
 function payment()
 {
-    if ($GLOBALS['payment'] == 1) {
-        ?>
-        <div class="heading">
-            <h2>Payment Method</h2>
-        </div>
-        <p>Bank Transfer only</p>
-        <div class="card">
-            <div class="payment-info">
-                <img src="../img/mb.png" alt="">
-                <div>
-                    <p>Soo Yong Jie</p>
-                    <p>10988333</p>
-                </div>
-                <a href="https://www.maybank2u.com.my/">
-                    <i class="fas fa-external-link-square-alt"></i>
-                </a>
-            </div>
-            <div class="payment-info">
-                <img src="../img/pb.png" alt="">
-                <div>
-                    <p>Soo Yong Jie</p>
-                    <p>10988333</p>
-                </div>
-                <a href="https://www2.pbebank.com/myIBK/apppbb/servlet/">
-                    <i class="fas fa-external-link-square-alt"></i>
-                </a>
-            </div>
-        </div>
-        <div class="heading">
-            <h2>Payment Details</h3>
-        </div>
-        <label for="receipt-input" class="receipt-input">
-            <i class="fas fa-upload"></i>
-            <span>Upload Receipt</span>
-            <input type="file" name="" id="receipt-input">
-        </label>
-    <?php
-    } else {
     ?>
-        <div class="heading">
-            <h2>Payment Details</h3>
+    <div class="heading">
+        <h2>Payment Method</h2>
+    </div>
+    <p>Bank Transfer only</p>
+    <div class="card">
+        <div class="payment-info">
+            <img src="../img/mb.png" alt="">
+            <div>
+                <p>Soo Yong Jie</p>
+                <p>10988333</p>
+            </div>
+            <a href="https://www.maybank2u.com.my/">
+                <i class="fas fa-external-link-square-alt"></i>
+            </a>
         </div>
+        <div class="payment-info">
+            <img src="../img/pb.png" alt="">
+            <div>
+                <p>Soo Yong Jie</p>
+                <p>10988333</p>
+            </div>
+            <a href="https://www2.pbebank.com/myIBK/apppbb/servlet/">
+                <i class="fas fa-external-link-square-alt"></i>
+            </a>
+        </div>
+    </div>
+    <div class="heading">
+        <h2>Payment</h3>
+    </div>
+    <?php
+    if ($GLOBALS['payment'] == 1) {
+    ?>
         <p class="payment-receipt">
             <i class="far fa-file-image"></i>
             <span>Hello am file</span>
         </p>
-        <div class="card">
-            <div class="payment-info">
-                <img src="../img/mb.png" alt="">
-                <div>
-                    <p>Soo Yong Jie</p>
-                    <p>10988333</p>
-                </div>
-                <a href="https://www.maybank2u.com.my/">
-                    <i class="fas fa-external-link-square-alt"></i>
-                </a>
-            </div>
-            <div class="payment-info">
-                <img src="../img/pb.png" alt="">
-                <div>
-                    <p>Soo Yong Jie</p>
-                    <p>10988333</p>
-                </div>
-                <a href="https://www2.pbebank.com/myIBK/apppbb/servlet/">
-                    <i class="fas fa-external-link-square-alt"></i>
-                </a>
-            </div>
-        </div>
-        <div class="heading">
-            <h2>Payment Details</h3>
-        </div>
-        <label for="receipt-input" class="receipt-input">
-            <i class="fas fa-upload"></i>
-            <span>Re-Upload Receipt</span>
-            <input type="file" name="" id="receipt-input">
-        </label>
-<?php
+    <?php
     }
+    ?>
+    <label for="receipt-input" class="receipt-input">
+        <i class="fas fa-upload"></i>
+        <span>Upload Receipt</span>
+        <input type="file" name="" id="receipt-input">
+    </label>
+    <?php
 }
