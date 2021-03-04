@@ -52,9 +52,7 @@
                 <h3>Subjects</h3>
               </div>
               <div class="subjects">
-                <div class="card request-subject">
-                  <?php requestSubjects($_GET['id']) ?>
-                </div>
+                <?php requestSubjects($_GET['id']) ?>
               </div>
             </div>
           <?php
