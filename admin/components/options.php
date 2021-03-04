@@ -6,12 +6,8 @@
     <div class="options">
         <div class="sort">
             <p>Sort By</p>
-            <a href="?sort=fullname">
-                <span>Name</span>
-            </a>
-            <a href="?sort=datetime">
-                <span>Date</span>
-            </a>
+            <?php printSortButton("fullname", "Name") ?>
+            <?php printSortButton("datetime", "Date") ?>
         </div>
         <form method="post" class="offset-form">
             <label for="entries">Show</label>
@@ -24,3 +20,21 @@
         </form>
     </div>
 </div>
+
+<?php
+
+function printSortButton($sort, $name)
+{
+    if (isset($_GET['sort']) && ($_GET['sort'] == $sort)) { ?>
+        <a href="?">
+            <span><?php echo $name ?></span>
+            <i class="fas fa-times-circle"></i>
+        </a>
+    <?php } else { ?>
+        <a href="?sort=<?php echo $sort ?>">
+            <span><?php echo $name ?></span>
+        </a>
+<?php }
+}
+
+?>
