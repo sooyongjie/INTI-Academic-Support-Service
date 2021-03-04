@@ -55,7 +55,7 @@ function pendingRequests()
         $sort = $_GET['sort'];
         $query = "SELECT reqID, fullname, `datetime`, `status` FROM requests r
         INNER JOIN user u on r.uid = u.uid 
-        WHERE `status` = '1' ORDER BY $sort LIMIT " . $_SESSION['limit'] . " ";
+        WHERE `status` = '1' ORDER BY $sort desc LIMIT " . $_SESSION['limit'] . " ";
     } else {
         $query = "SELECT reqID, fullname, `datetime`, `status` FROM requests r
         INNER JOIN user u on r.uid = u.uid 
