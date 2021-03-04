@@ -67,6 +67,8 @@ body.login {
     align-content: center;
     justify-content: center;
     flex-direction: column;
+    opacity: 0;
+    transition: 0.1s ease-out;
     img {
       width: 400px;
       margin-bottom: 60px;
