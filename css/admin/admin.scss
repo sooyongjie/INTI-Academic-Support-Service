@@ -24,6 +24,12 @@ h2 {
   font-size: 22px;
 }
 
+form input {
+  border: none;
+  padding: 0;
+  transition: 0.1s ease-out;
+}
+
 button {
   @include poppins;
   span {
@@ -61,6 +67,7 @@ button {
 }
 
 .heading {
+  margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -115,10 +122,59 @@ button {
   }
 }
 
+.pagination {
+  margin: 15px 0 15px 0;
+  display: flex;
+  align-items: center;
+  input {
+    height: 16px;
+    width: 32px;
+    color: #666;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    @include poppins;
+    &::-webkit-inner-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+  }
+  button {
+    &.pagination-disabled {
+      pointer-events: none;
+      i {
+        border: none;
+        color: #aaa;
+      }
+    }
+    i {
+      height: 24px;
+      width: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: 400;
+      transition: 0.05s ease-out;
+    }
+    &:hover,
+    &:focus {
+      i.pagination-enabled {
+        border-color: $redBorder;
+        background: $redHover;
+        color: $red;
+      }
+    }
+  }
+}
+
 .card {
   min-height: 50px;
   // max-width: calc(700px + 40px) !important;
-  margin-bottom: 60px;
   padding: 16px 20px 4px 20px;
   display: flex;
   row-gap: 8px;
@@ -138,12 +194,12 @@ button {
   }
 }
 
-form {
+form.profile-card,
+.offset-form,
+.search {
   input {
     background: #f3f3f3;
-    border: none;
     border-radius: 8px;
-    transition: 0.1s ease-out;
     border-bottom: 1px solid #f3f3f3;
     &:hover {
       background: #eee;
@@ -154,6 +210,9 @@ form {
       transition: 0.2s ease-out;
     }
   }
+}
+
+form.pagination {
 }
 
 table {

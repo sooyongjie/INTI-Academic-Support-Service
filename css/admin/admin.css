@@ -116,7 +116,7 @@ nav .nav-profile {
 
 .options-container {
   width: 100%;
-  margin: 20px 0 24px 0;
+  margin: 20px 0 0 0;
   display: flex;
   align-items: center;
   column-gap: 20px;
@@ -399,6 +399,12 @@ h2 {
   font-size: 22px;
 }
 
+form input {
+  border: none;
+  padding: 0;
+  transition: 0.1s ease-out;
+}
+
 button {
   font-family: "Poppins", sans-serif;
 }
@@ -435,6 +441,7 @@ button span {
 }
 
 .heading {
+  margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -508,9 +515,59 @@ button span {
   opacity: 1;
 }
 
+.pagination {
+  margin: 15px 0 15px 0;
+  display: flex;
+  align-items: center;
+}
+
+.pagination input {
+  height: 16px;
+  width: 32px;
+  color: #666;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.pagination input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.pagination button.pagination-disabled {
+  pointer-events: none;
+}
+
+.pagination button.pagination-disabled i {
+  border: none;
+  color: #aaa;
+}
+
+.pagination button i {
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 400;
+  transition: 0.05s ease-out;
+}
+
+.pagination button:hover i.pagination-enabled, .pagination button:focus i.pagination-enabled {
+  border-color: #f9ced0;
+  background: #fdf0f0;
+  color: #e20c18;
+}
+
 .card {
   min-height: 50px;
-  margin-bottom: 60px;
   padding: 16px 20px 4px 20px;
   display: flex;
   row-gap: 8px;
@@ -533,19 +590,23 @@ button span {
   color: white;
 }
 
-form input {
+form.profile-card input,
+.offset-form input,
+.search input {
   background: #f3f3f3;
-  border: none;
   border-radius: 8px;
-  transition: 0.1s ease-out;
   border-bottom: 1px solid #f3f3f3;
 }
 
-form input:hover {
+form.profile-card input:hover,
+.offset-form input:hover,
+.search input:hover {
   background: #eee;
 }
 
-form input:focus {
+form.profile-card input:focus,
+.offset-form input:focus,
+.search input:focus {
   background: #eee;
   border-bottom: 1px solid #888;
   transition: 0.2s ease-out;

@@ -23,6 +23,15 @@
           <div class="card request-list">
             <?php pendingRequests() ?>
           </div>
+          <form class="pagination">
+            <button class="pagination-disabled">
+              <i class="fas fa-angle-left"></i>
+            </button>
+            <input type="number" value="1">
+            <button>
+              <i class="fas fa-angle-right pagination-enabled"></i>
+            </button>
+          </form>
         </div>
         <!-- All Requests  -->
         <div class="section">
