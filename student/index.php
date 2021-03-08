@@ -30,7 +30,7 @@
     <!-- <script src="./js/theme.js"></script> -->
 </head>
 
-<body class="login">
+<body class="index register">
     <div class="container">
         <div class="img-container">
             <div class="content-container">
@@ -43,10 +43,13 @@
                 </div>
             </div>
         </div>
-        <div class="login-container">
-            <img src="../img/inti-logo-full.svg" alt="">
-            <h2 class="welcome">Welcome</h3>
-                <p>Enter login details here or create an account.</p>
+        <div class="container-container">
+            <div id="login-form" class="form">
+                <img src="../img/inti-logo-full.svg" alt="">
+                <div class="heading">
+                    <h2 class="heading-txt">Welcome</h2>
+                    <p class="subheading">Enter login details here or create an account.</p>
+                </div>
                 <form action="" autocomplete="off">
                     <div class="row-container">
                         <label for="">Username</label>
@@ -59,9 +62,45 @@
                     <input type="password" value="poopandpee" autocomplete="off">
                     <div class="row-container">
                         <button type="button" onclick="window.location.href='./home.php'">Login</button>
-                        <a href="">Sign up here</a>
+                        <a id="register-btn">Sign up here</a>
                     </div>
                 </form>
+            </div>
+            <div id="register-form" class="form">
+                <img src="../img/inti-logo-full.svg" alt="">
+                <div class="heading">
+                    <h2 class="heading-txt">Register</h2>
+                    <p class="subheading">Please enter the correct information.</p>
+                </div>
+                <form action="" autocomplete="off">
+                    <div class="input-row">
+                        <div>
+                            <div class="row-container">
+                                <label for="">Full name</label>
+                            </div>
+                            <input type="text" value="Soo Yong Jie" autocomplete="off">
+                        </div>
+                        <div>
+                            <div class="row-container">
+                                <label for="">Username</label>
+                            </div>
+                            <input type="text" value="sooyongjie" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="row-container">
+                        <label for="">Email</label>
+                    </div>
+                    <input type="text" name="email" value="sooyongjie@gmail.com">
+                    <div class="row-container">
+                        <label for="">Password</label>
+                    </div>
+                    <input type="password" value="poopandpee" autocomplete="off">
+                    <div class="row-container">
+                        <a id="login-btn">Have an account? Login here</a>
+                        <button type="button" onclick="window.location.href='./home.php'">Sign up</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>
@@ -72,15 +111,34 @@
     // } else {
     //     var api = `https://api.quotable.io/random?tags=inspirational`
     // }
-
     var api = `https://api.quotable.io/random?tags=inspirational`
     const quote = document.querySelector('#quote')
     const author = document.querySelector('#author')
 
+    const registerFormBtn = document.getElementById('register-btn');
+    const registerForm = document.getElementById('register-form');
+    const loginFormBtn = document.getElementById('login-btn');
+    const loginForm = document.getElementById('login-form');
+
+    registerFormBtn.addEventListener('click', () => {
+        loginForm.style.opacity = '0'
+        loginForm.style.zIndex = '-1'
+        registerForm.style.opacity = '1'
+        registerForm.style.zIndex = '1'
+    });
+
+    loginFormBtn.addEventListener('click', () => {
+        console.log("wad");
+        registerForm.style.opacity = '0'
+        registerForm.style.zIndex = '-1'
+        loginForm.style.opacity = '1'
+        loginForm.style.zIndex = '1'
+    });
+
     fetch(api)
         .then(response => {
             if (!response.ok) {
-                alert("What happened.")
+                alert("Error 69")
             }
             return response.json();
         })
@@ -93,8 +151,9 @@
             });
         })
 
+
     window.addEventListener("load", function() {
-        gsap.to(".login-container", {
+        gsap.to("#login-form", {
             delay: "0.3",
             opacity: "1",
         });

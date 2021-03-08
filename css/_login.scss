@@ -1,7 +1,40 @@
 @import "colors";
 @import "mixin";
 
-body.login {
+body {
+  .container-container {
+    .form {
+      position: absolute;
+    }
+  }
+}
+
+body.register {
+  .img-container {
+    width: 25vw !important;
+    .bottom {
+      opacity: 0;
+    }
+  }
+  .form {
+    width: 75vw !important;
+  }
+  #register-form {
+    form {
+      width: 450px !important;
+    }
+    .input-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      input {
+        width: 200px;
+      }
+    }
+  }
+}
+
+body.index {
   .container {
     height: 100vh;
     display: flex;
@@ -58,7 +91,11 @@ body.login {
       }
     }
   }
-  .login-container {
+  #register-form {
+    opacity: 0;
+    z-index: -1;
+  }
+  .form {
     height: 100%;
     transform: translateY(-5%);
     width: 55vw;
@@ -73,22 +110,23 @@ body.login {
       width: 400px;
       margin-bottom: 60px;
     }
-    h2.welcome {
-      font-weight: 600;
-    }
-    p {
-      margin: 10px 0 60px 0;
-      color: #888;
-      font-size: 15px;
+    .heading {
+      margin-bottom: 60px;
+      .heading-txt {
+        font-weight: 600 !important;
+      }
+      .subheading {
+        margin-top: 10px;
+        color: #888;
+        font-size: 15px;
+      }
     }
     form {
       width: 400px;
       display: flex;
       flex-direction: column;
       .row-container {
-        margin-bottom: 10px;
-      }
-      .row-container {
+        margin-bottom: 8px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -109,7 +147,7 @@ body.login {
       }
       input {
         margin-left: -2px;
-        margin-bottom: 30px;
+        margin-bottom: 28px;
         padding: 12px 8px;
         background: #f5f6f8;
         border: none;

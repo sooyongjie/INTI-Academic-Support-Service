@@ -89,9 +89,16 @@
             author.textContent = `- ${data.author}`
             gsap.to(["#quote", "#author"], {
                 opacity: "1",
-                stagger: 1,
+                stagger: "1.2",
             });
         })
+
+    window.addEventListener("load", function() {
+        gsap.to(".login-container", {
+            delay: "0.3",
+            opacity: "1",
+        });
+    });
 </script>
 
 </html>
