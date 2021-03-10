@@ -8,11 +8,6 @@
   src: url("/fonts/europa.woff");
 }
 
-html,
-body {
-  overflow: hidden;
-}
-
 body .img-container {
   transition: 0.5s ease-in-out;
 }
@@ -42,6 +37,10 @@ body.register #register-form .input-row {
 
 body.register #register-form .input-row input {
   width: 200px;
+}
+
+body.index {
+  overflow: hidden;
 }
 
 body.index .container {
