@@ -1,6 +1,7 @@
 @import "colors";
 @import "mixin";
 @import "login";
+@import "modal";
 
 * {
   padding: 0;
@@ -62,6 +63,10 @@ body {
     }
   }
 }
+
+/*
+ * Toast
+*/
 
 .toast-container {
   width: 100%;

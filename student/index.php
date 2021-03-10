@@ -30,7 +30,19 @@
     <!-- <script src="./js/theme.js"></script> -->
 </head>
 
-<body class="index register">
+<body class="index">
+    <div class="modal-container">
+        <div class="modal">
+            <img src="../img/mailbox.png" alt="">
+            <div class="modal-body">
+                <h3>Check your email</h3>
+                <p>We emailed a confirmation link to your email.</p>
+                <button>
+                    <span>Resend</span>
+                </button>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="img-container">
             <div class="content-container">
@@ -97,7 +109,7 @@
                     <input type="password" value="poopandpee" autocomplete="off">
                     <div class="row-container">
                         <a id="login-btn">Have an account? Login here</a>
-                        <button type="button" onclick="window.location.href='./home.php'">Sign up</button>
+                        <button type="button" onclick="modal()">Sign up</button>
                     </div>
                 </form>
             </div>
@@ -121,19 +133,42 @@
     const loginForm = document.getElementById('login-form');
 
     registerFormBtn.addEventListener('click', () => {
-        loginForm.style.opacity = '0'
-        loginForm.style.zIndex = '-1'
-        registerForm.style.opacity = '1'
-        registerForm.style.zIndex = '1'
+        hideElement(loginForm)
+        showElement(registerForm)
+        setTimeout(() => {
+            document.body.classList.toggle('register')
+        }, 100);
+        gsap.to(["#quote", "#author"], {
+            opacity: "0",
+            duration: "0"
+        });
     });
 
     loginFormBtn.addEventListener('click', () => {
-        console.log("wad");
-        registerForm.style.opacity = '0'
-        registerForm.style.zIndex = '-1'
-        loginForm.style.opacity = '1'
-        loginForm.style.zIndex = '1'
+        hideElement(registerForm)
+        showElement(loginForm)
+        setTimeout(() => {
+            document.body.classList.toggle('register')
+        }, 100);
+        gsap.to(["#quote", "#author"], {
+            delay: "0.6",
+            opacity: "1",
+            duration: "0.2"
+        });
     });
+
+    hideElement = (el) => {
+        el.style.opacity = '0'
+        el.style.zIndex = '-1'
+
+    }
+
+    showElement = (el) => {
+        setTimeout(() => {
+            el.style.opacity = '1'
+            el.style.zIndex = '1'
+        }, 500);
+    }
 
     fetch(api)
         .then(response => {
@@ -147,7 +182,6 @@
             author.textContent = `- ${data.author}`
             gsap.to(["#quote", "#author"], {
                 opacity: "1",
-                stagger: "1.2",
             });
         })
 
@@ -156,8 +190,17 @@
         gsap.to("#login-form", {
             delay: "0.3",
             opacity: "1",
+            duration: "0.4"
         });
     });
+
+    modal = () => {
+        document.querySelector('.modal-container').style.display = "flex"
+        gsap.to(".modal-container", {
+            opacity: "1",
+            duration: "0."
+        });
+    }
 </script>
 
 </html>
