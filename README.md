@@ -7,5 +7,7 @@ Admin
 Student
 ![](https://github.com/sooyongjie/INTI-Academic-Support-Service/blob/main/img/screenshots/student.png?raw=true)
 
-#Database
-![Yo](https://remotemysql.com/phpmyadmin/index.php)
+# Database
+[phpMyAdmin](https://remotemysql.com/phpmyadmin/index.php)
+| Username | Password |
+| RdAxHqzJBi | xoDHLmGBaU |
