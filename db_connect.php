@@ -7,6 +7,8 @@ function db_connect()
     // $password = "xoDHLmGBaU";
     // $dbname = "RdAxHqzJBi";
 
+    $dum = 123;
+
     $servername = "localhost";
     $username = "root";
     $password = "";
