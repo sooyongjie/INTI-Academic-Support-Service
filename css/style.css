@@ -203,7 +203,7 @@ body.index .form button {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.2);
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -221,18 +221,36 @@ body.index .form button {
   overflow: hidden;
 }
 
+.modal-container .modal h3 {
+  line-height: 1;
+}
+
 .modal-container .modal img {
   width: 100%;
+}
+
+.modal-container .modal .heading {
+  width: inherit;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+}
+
+.modal-container .modal .heading h3 {
+  padding: 20px 20px;
+}
+
+.modal-container .modal .heading .fa-times {
+  padding: 20px 20px;
+  align-self: flex-end;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 .modal-container .modal .modal-body {
   display: grid;
   row-gap: 10px;
   padding: 28px 32px 28px 32px;
-}
-
-.modal-container .modal .modal-body h3 {
-  line-height: 1;
 }
 
 .modal-container .modal .modal-body button {

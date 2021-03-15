@@ -32,7 +32,11 @@
 
 <body class="index">
     <div class="modal-container">
-        <div class="modal">
+        <div class="modal registration">
+            <div class="heading">
+                <h3></h3>
+                <i class="fas fa-times"></i>
+            </div>
             <img src="../img/mailbox.png" alt="">
             <div class="modal-body">
                 <h3>Check your email</h3>
