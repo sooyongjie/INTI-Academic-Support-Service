@@ -15,14 +15,17 @@
       </div>
       <label for="programme">Username</label>
       <input type="text" id="programme" value="sooyongjie" />
-      <label for="programme">Full name</label>
-      <input type="text" id="programme" value="Soo Yong Jie" />
       <label for="session">Email</label>
       <input type="text" id="session" value="j17025666@student.newinti.edu.my" />
-      <label for="">Current Password</label>
-      <input type="password" value="">
-      <label for="">New Password</label>
-      <input type="password" value="">
+      <label for="course-code">Programme</label>
+      <input class="chosen-value" type="text" value="" placeholder="Type to search">
+      <ul class="value-list">
+        <a class="value">Swinburne University of Technology</a>
+        <a class="value">University of Wollongong</a>
+        <a class="value">University Coventry</a>
+      </ul>
+      <label for="">Subject</label>
+      <input type="text" value="CSIT321 Project">
       <button>
         <span>Submit</span>
       </button>
