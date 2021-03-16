@@ -113,7 +113,8 @@
                     <input type="password" value="poopandpee" autocomplete="off">
                     <div class="row-container">
                         <a id="login-btn">Have an account? Login here</a>
-                        <button type="button" onclick="modal()">Sign up</button>
+                        <!-- <button type="button" onclick="modal()">Sign up</button> -->
+                        <button type="submit">Sign up</button>
                     </div>
                 </form>
             </div>
