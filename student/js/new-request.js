@@ -1,6 +1,6 @@
 const subjectForm = document.querySelector(".form");
 const inputField = subjectForm.querySelectorAll("input");
-let subjectArray = [];
+let requestArray = [];
 
 const getSubject = () => {
   let tempArr = [];
@@ -13,13 +13,13 @@ const getSubject = () => {
   }
 
   if (tempArr.length == 3) {
-    subjectArray.push(tempArr);
-    if (checkRepeatedSubjects(subjectArray)) {
+    requestArray.push(tempArr);
+    if (checkRepeatedValues(requestArray)) {
       showToast("The subject is already added");
-      subjectArray.pop();
+      requestArray.pop();
     } else {
       showToast("Subject added");
-      console.log("subjectArray: ", subjectArray);
+      console.log("requestArray: ", requestArray);
     }
   } else {
     showToast("Please fill in the form");
@@ -27,24 +27,16 @@ const getSubject = () => {
 };
 
 const submitForm = () => {
-  const inputName = ["prog", "sess", "sub"];
-  const newForm = document.createElement("form");
-  newForm.setAttribute("method", "post");
-  newForm.setAttribute("action", "./func/new-request.php");
-
-  for (let i = 0; i < subjectArray.length; i++) {
-    for (let j = 0; j < inputName.length; j++) {
-      const newInput = document.createElement("input");
-      newInput.setAttribute("name", `${inputName[j]}${i + 1}`);
-      newInput.setAttribute("value", subjectArray[i][j]);
-      newForm.appendChild(newInput);
-    }
+  if (requestArray.length != 0) {
+    const newForm = createForm();
+    document.body.appendChild(newForm);
+    newForm.submit();
+  } else {
+      console.log("Empty form");
   }
-  document.body.appendChild(newForm);
-  newForm.submit();
 };
 
-const checkRepeatedSubjects = (arr) => {
+const checkRepeatedValues = (arr) => {
   let valuesSoFar = [];
   for (let i = 0; i < arr.length; ++i) {
     let value = arr[i];
@@ -54,4 +46,22 @@ const checkRepeatedSubjects = (arr) => {
     valuesSoFar[value] = true;
   }
   return false;
+};
+
+const createForm = () => {
+  const inputName = ["prog", "sess", "sub"];
+  const newForm = document.createElement("form");
+
+  newForm.setAttribute("method", "post");
+  newForm.setAttribute("action", "./func/new-request.php");
+
+  for (let i = 0; i < requestArray.length; i++) {
+    for (let j = 0; j < inputName.length; j++) {
+      const newInput = document.createElement("input");
+      newInput.setAttribute("name", `${inputName[j]}${i + 1}`);
+      newInput.setAttribute("value", requestArray[i][j]);
+      newForm.appendChild(newInput);
+    }
+  }
+  return newForm;
 };
