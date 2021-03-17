@@ -2,7 +2,9 @@ const toast = document.querySelector(".toast-container");
 const toastMessage = document.querySelector(".toast-message");
 const fabActions = document.querySelector(".fab-actions");
 const fab = document.querySelector(".fab");
-const fabActionButtons = [...document.querySelectorAll('.fab-action-btn')].reverse()
+const fabActionButtons = [
+  ...document.querySelectorAll(".fab-action-btn"),
+].reverse();
 const scrollButton = document.querySelector(".scroll-btn");
 
 var fabOpened = 0;
@@ -30,26 +32,27 @@ goBack = () => {
   }
 };
 
-showToast = () => {
-  setTimeout(() => {
-    toast.className = "toast-container active";
+showToast = (message) => {
+  if (toast.className != "toast-container active") {
+    document.querySelector(".toast-message").textContent = message;
     setTimeout(() => {
-      clearToast();
-    }, 3000);
-  }, 500);
+      toast.className = "toast-container active";
+      setTimeout(() => {
+        clearToast();
+      }, 3000);
+    }, 50);
+  }
 };
 
 clearToast = () => {
-  // toast.className = "toast-container";
+  toast.className = "toast-container";
 };
 
-// showToast()
-
-document.addEventListener('click', function (event) {
+document.addEventListener("click", function (event) {
   var isClickInside = fab.contains(event.target);
 
   if (!isClickInside && fabOpened == true) {
-    toggleFab()
+    toggleFab();
     fabOpened = false;
   }
 });
@@ -73,12 +76,12 @@ toggleFab = () => {
   }
   fabActions.classList.toggle("shown");
   fab.classList.toggle("expanded");
-}
+};
 
-window.addEventListener('scroll', function () {
+window.addEventListener("scroll", function () {
   if (window.pageYOffset > 71) {
-    scrollButton.classList = 'scroll-btn shown';
+    scrollButton.classList = "scroll-btn shown";
   } else {
-    scrollButton.classList = 'scroll-btn';
+    scrollButton.classList = "scroll-btn";
   }
 });

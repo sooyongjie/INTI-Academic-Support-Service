@@ -15,13 +15,13 @@ window
 checkPrefferedTheme = () => {
   if (
     !localStorage.getItem("theme") &&
-    (window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
   ) {
     localStorage.setItem("theme", "dark");
   } else localStorage.setItem("theme", "light");
   setTheme(localStorage.getItem("theme"));
-  showToast();
+  showToast("Welcome 👋🏻");
 };
 
 document.getElementById("theme-btn").addEventListener("click", () => {
@@ -32,7 +32,7 @@ document.getElementById("theme-btn").addEventListener("click", () => {
     localStorage.setItem("theme", "light");
     setTheme("light");
   }
-  document.body.classList.toggle('dark')
+  document.body.classList.toggle("dark");
 });
 
 setTheme = (theme) => {
@@ -60,8 +60,8 @@ if (!localStorage.getItem("theme")) {
   checkPrefferedTheme();
 } else {
   setTheme(localStorage.getItem("theme"));
-  if (localStorage.getItem("theme") == 'dark') {
-    document.body.classList.toggle('dark')
+  if (localStorage.getItem("theme") == "dark") {
+    document.body.classList.toggle("dark");
   }
 }
 // console.log(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);

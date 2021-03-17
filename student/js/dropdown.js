@@ -3,8 +3,6 @@ const dropdownInit = (input, dropdown, dropdownArray, valueArray) => {
     valueArray.push(item.textContent);
   });
 
-  console.log('valueArray: ', valueArray);
-
   input.addEventListener("input", () => {
     dropdown.classList.add("open");
     let inputValue = input.value.toLowerCase();
