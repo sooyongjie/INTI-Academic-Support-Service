@@ -717,14 +717,8 @@ nav img {
   }
 }
 
-.chosen-value,
-.value-list {
-  z-index: 1;
-}
-
 .value-list {
   position: absolute;
-  top: 420px;
 }
 
 .chosen-value::-webkit-input-placeholder {
@@ -745,7 +739,7 @@ nav img {
 
 .value-list {
   max-height: 0;
-  width: 250px;
+  width: inherit;
   display: flex;
   flex-direction: column;
   background: white;
@@ -775,6 +769,21 @@ nav img {
   max-height: 0;
   overflow: hidden;
   padding: 0;
+}
+
+.value-list.prog-list {
+  top: 260px;
+  z-index: 3;
+}
+
+.value-list.sess-list {
+  top: 340px;
+  z-index: 2;
+}
+
+.value-list.sub-list {
+  top: 424px;
+  z-index: 1;
 }
 
 body,

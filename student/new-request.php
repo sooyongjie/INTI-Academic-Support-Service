@@ -14,11 +14,26 @@
         <h2>Request Form</h2>
       </div>
       <label for="programme">Programme</label>
-      <input type="text" id="programme" value="University of Wollongong" />
+      <input class="chosen-value prog-input" type="text" value="" placeholder="Search programme">
+      <ul class="value-list prog-list">
+        <a class="value prog-value">Swinburne University of Technology</a>
+        <a class="value prog-value">University of Wollongong</a>
+        <a class="value prog-value">University Coventry</a>
+      </ul>
       <label for="session">Session</label>
-      <input type="text" id="session" value="July 2020" />
-      <label for="course-code">Course Code</label>
-      <input type="text" id="course-code" value="CSIT321" />
+      <input class="chosen-value sess-input" type="text" value="" placeholder="Search session">
+      <ul class="value-list sess-list">
+        <a class="value sess-value">July 2019</a>
+        <a class="value sess-value">February 2020</a>
+        <a class="value sess-value">July 2020</a>
+        <a class="value sess-value">February 2021</a>
+      </ul>
+      <label for="course-code">Course</label>
+      <input class="chosen-value sub-input" type="text" value="" placeholder="Search course">
+      <ul class="value-list sub-list">
+        <a class="value sub-value">CSIT321 Project</a>
+        <a class="value sub-value">ISIT315 Web Modelling</a>
+      </ul>
     </form>
     <div class="button-row section">
       <button>
@@ -38,5 +53,6 @@
 
 <script src="js/script.js"></script>
 <script src="js/theme.js"></script>
+<script src="js/dropdown.js"></script>
 
 </html>
