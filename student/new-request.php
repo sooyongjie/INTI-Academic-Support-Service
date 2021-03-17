@@ -9,6 +9,7 @@
   <?php include_once('./components/nav.php') ?>
   <?php include_once('./components/spinner.php') ?>
   <div class="container row request-form">
+
     <div class="card form section">
       <div class="heading">
         <h2>Request Form</h2>

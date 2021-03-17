@@ -26,7 +26,25 @@ const getSubject = () => {
   }
 };
 
-checkRepeatedSubjects = (arr) => {
+const submitForm = () => {
+  const inputName = ["prog", "sess", "sub"];
+  const newForm = document.createElement("form");
+  newForm.setAttribute("method", "post");
+  newForm.setAttribute("action", "./func/new-request.php");
+
+  for (let i = 0; i < subjectArray.length; i++) {
+    for (let j = 0; j < inputName.length; j++) {
+      const newInput = document.createElement("input");
+      newInput.setAttribute("name", `${inputName[j]}${i + 1}`);
+      newInput.setAttribute("value", subjectArray[i][j]);
+      newForm.appendChild(newInput);
+    }
+  }
+  document.body.appendChild(newForm);
+  newForm.submit();
+};
+
+const checkRepeatedSubjects = (arr) => {
   let valuesSoFar = [];
   for (let i = 0; i < arr.length; ++i) {
     let value = arr[i];
