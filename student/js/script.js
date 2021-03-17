@@ -33,15 +33,17 @@ goBack = () => {
 };
 
 showToast = (message) => {
-  if (toast.className != "toast-container active") {
-    document.querySelector(".toast-message").textContent = message;
-    setTimeout(() => {
-      toast.className = "toast-container active";
-      setTimeout(() => {
-        clearToast();
-      }, 3000);
-    }, 50);
+  if (toast.className == "toast-container active") {
+    clearToast();
+    clearTimeout(timeout)
   }
+  document.querySelector(".toast-message").textContent = message;
+  setTimeout(() => {
+    toast.className = "toast-container active";
+    timeout = setTimeout(() => {
+      clearToast();
+    }, 3000);
+  }, 100);
 };
 
 clearToast = () => {

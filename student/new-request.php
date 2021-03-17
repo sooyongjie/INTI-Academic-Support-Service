@@ -3,7 +3,6 @@
 
 <head>
   <?php include_once('./components/head.php') ?>
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 </head>
 
 <body>
@@ -41,7 +40,7 @@
         <i class="fas fa-plus"></i>
         <span>Add</span>
       </button>
-      <button>
+      <button onclick="submitForm()">
         <i class="fas fa-check"></i>
         <span>Done</span>
       </button>
