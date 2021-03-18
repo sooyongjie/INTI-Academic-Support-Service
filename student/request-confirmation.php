@@ -9,7 +9,7 @@
     <?php include_once('./components/nav.php') ?>
     <?php include_once('./components/spinner.php') ?>
 
-    <div class="container ">
+    <div class="container row">
         <?php
         $request = [];
 
