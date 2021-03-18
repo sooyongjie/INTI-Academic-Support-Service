@@ -9,28 +9,38 @@
     <?php include_once('./components/nav.php') ?>
     <?php include_once('./components/spinner.php') ?>
 
-    <div class="container row">
-        <?php
-        $request = [];
-
-        foreach ($_POST as $key => $value) {
-            $request[] = $value;
-        }
-        $length = count($request) / 3;
-
-        for ($i = 0; $i < $length; $i++) {
-        ?>
-            <div class="section card subject">
-                <label for="">Programme</label>
-                <p><?php echo $request[$i] . "<br>"; ?></p>
-                <label for="">Session</label>
-                <p><?php echo $request[$i + 1] . "<br>"; ?></p>
-                <label for="">Course</label>
-                <p><?php echo $request[$i + 2] . "<br>"; ?></p>
+    <div class="container col-2">
+        <div class="subjects">
+            <div class="heading">
+                <h2>Subjects</h2>
             </div>
-        <?php
-        }
-        ?>
+            <?php
+            $request = [];
+
+            foreach ($_POST as $key => $value) {
+                $request[] = $value;
+            }
+            $length = count($request) / 3;
+
+            for ($i = 0; $i < $length; $i++) {
+            ?>
+                <div class="section card subject">
+                    <label for="">Programme</label>
+                    <p><?php echo $request[$i] . "<br>"; ?></p>
+                    <label for="">Session</label>
+                    <p><?php echo $request[$i + 1] . "<br>"; ?></p>
+                    <label for="">Course</label>
+                    <p><?php echo $request[$i + 2] . "<br>"; ?></p>
+                </div>
+            <?php
+            }
+            ?>
+        </div>
+        <div class="summary">
+            <div class="heading">
+                <h2>Summary</h2>
+            </div>
+        </div>
     </div>
 
     <?php include_once('./components/toast.php') ?>
