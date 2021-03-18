@@ -32,7 +32,7 @@ const submitForm = () => {
     document.body.appendChild(newForm);
     newForm.submit();
   } else {
-      console.log("Empty form");
+    showToast("Please fill in the form");
   }
 };
 
