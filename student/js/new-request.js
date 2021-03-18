@@ -53,7 +53,7 @@ const createForm = () => {
   const newForm = document.createElement("form");
 
   newForm.setAttribute("method", "post");
-  newForm.setAttribute("action", "./new-request.php");
+  newForm.setAttribute("action", "./request-confirmation.php");
 
   for (let i = 0; i < requestArray.length; i++) {
     for (let j = 0; j < inputName.length; j++) {
