@@ -9,6 +9,22 @@ else if(!isset($_SESSION['limit'])) {
     $_SESSION['limit'] = 5;
 }
 
+function select($column,$table,$condition){
+	global $conn;
+	$query="SELECT $column FROM $table $condition";
+	//echo $query."<br>\n";
+	$result = mysqli_query($conn, $query);
+	if($result && mysqli_num_rows($result)>0){
+		for ($i=0;$i<mysqli_num_rows($result);$i++){
+			$row[$i] = mysqli_fetch_assoc($result);
+		}
+		return $row;
+	}
+	else{
+		return false;
+	}
+}
+
 function selectQuery($query)
 {
     $db = db_connect();
