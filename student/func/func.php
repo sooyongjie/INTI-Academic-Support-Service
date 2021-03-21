@@ -1,6 +1,6 @@
 <?php
 
-require("../db_connect.php");
+// require("../db_connect.php");
 
 if (isset($_POST['limit'])) {
     $_SESSION['limit'] = $_POST['limit'];
