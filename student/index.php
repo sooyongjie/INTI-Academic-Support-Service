@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+if(isset($_SESSION['user'])) {
+    header("Location: ./home.php");
+  }
+?>
 <head>
     <!-- Primary Meta Tags -->
     <meta charset="UTF-8" />
