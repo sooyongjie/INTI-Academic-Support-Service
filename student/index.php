@@ -79,8 +79,8 @@
                     <div class="row-container">
                         <!-- <button type="button" onclick="window.location.href='./home.php'">Login</button> -->
                         <button type="submit"">Login</button>
-                        <!-- <input type="submit" name="Login" onclick="check(this.form)" value="Login"> -->
-                        <a id="register-btn">Sign up here</a>
+                        <!-- <input type=" submit" name="Login" onclick="check(this.form)" value="Login"> -->
+                            <a id="register-btn">Sign up here</a>
                     </div>
                 </form>
             </div>
@@ -209,24 +209,8 @@
         });
     }
 
-    //login validation 
-    function validate() {
-        var $valid = true;
-        document.getElementById("checkEmail").innerHTML = "";
-        document.getElementById("checkPassword").innerHTML = "";
-
-        var userName = document.getElementByName("getEmail").value;
-        var password = document.getElementByName("getPass").value;
-        if (userName == "") {
-            document.getElementById("checkEmail").innerHTML = "required";
-            $valid = false;
-        }
-        if (password == "") {
-            document.getElementById("checkPassword").innerHTML = "required";
-            $valid = false;
-        }
-        return $valid;
-    }
+    //I will write the validation one day
+    
 </script>
 
 </html>
