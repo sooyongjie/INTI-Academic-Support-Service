@@ -70,14 +70,14 @@
                     <div class="row-container">
                         <label for="">Username</label>
                     </div>
-                    <input type="text" name="email" value="sooyongjie@gmail.com" autocomplete="off">
+                    <input type="text" name="email" value="admin@gmail.com" autocomplete="off">
                     <div class="row-container">
                         <label for="">Password</label>
                         <a href="">Forgot Password</a>
                     </div>
-                    <input type="password" name="password" value="poopandpee" autocomplete="off">
+                    <input type="password" name="password" value="admin" autocomplete="off">
                     <div class="row-container">
-                        <button type="submit"">Login</button>
+                        <button type="submit">Login</button>
                     </div>
                 </form>
             </div>

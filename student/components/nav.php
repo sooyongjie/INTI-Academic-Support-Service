@@ -22,7 +22,7 @@
                 <i class="fad fa-sun" id="theme-icon" id="theme-icon"></i></button>
             <hr />
             <a href="./profile.php">Account Details</a>
-            <a href="./">Sign out</a>
+            <a href="./func/logout.php">Sign out</a>
         </div>
     </div>
 </nav>
