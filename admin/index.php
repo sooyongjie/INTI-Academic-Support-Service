@@ -47,7 +47,7 @@
             <img src="../img/inti-logo-full.svg" alt="">
             <h2 class="welcome">Welcome</h3>
                 <p>Enter login details here or create an account.</p>
-                <form action="" autocomplete="off">
+                <form method="POST" action="login_process.php" autocomplete="off">
                     <div class="row-container">
                         <label for="">Username</label>
                     </div>
