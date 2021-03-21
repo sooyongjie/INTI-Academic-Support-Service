@@ -1,5 +1,7 @@
 <?php
 
+require("../db_connect.php");
+
 $GLOBALS['payment'] = 0;
 
 function status($val)

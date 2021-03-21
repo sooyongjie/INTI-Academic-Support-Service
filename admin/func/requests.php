@@ -1,5 +1,7 @@
 <?php
 
+require("../db_connect.php");
+
 function requests($result)
 {
 ?>

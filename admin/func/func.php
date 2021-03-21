@@ -1,28 +1,9 @@
 <?php
 
-require("../db_connect.php");
-
-if(isset($_POST['limit'])) {
+if (isset($_POST['limit'])) {
     $_SESSION['limit'] = $_POST['limit'];
-}
-else if(!isset($_SESSION['limit'])) {
+} else if (!isset($_SESSION['limit'])) {
     $_SESSION['limit'] = 5;
-}
-
-function select($column,$table,$condition){
-	global $conn;
-	$query="SELECT $column FROM $table $condition";
-	//echo $query."<br>\n";
-	$result = mysqli_query($conn, $query);
-	if($result && mysqli_num_rows($result)>0){
-		for ($i=0;$i<mysqli_num_rows($result);$i++){
-			$row[$i] = mysqli_fetch_assoc($result);
-		}
-		return $row;
-	}
-	else{
-		return false;
-	}
 }
 
 function selectQuery($query)
