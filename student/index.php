@@ -66,18 +66,20 @@
                     <h2 class="heading-txt">Welcome</h2>
                     <p class="subheading">Enter login details here or create an account.</p>
                 </div>
-                <form method="POST" action="login_process.php" autocomplete="off" onSubmit="return validate();">
+                <form method="POST" action="./func/auth.php">
                     <div class="row-container">
                         <label for="">Username</label>
                     </div>
-                    <input type="text" name="getEmail" value="sooyongjie@gmail.com" autocomplete="off">
+                    <input type="text" name="email" value="sooyongjie@gmail.com" autocomplete="off">
                     <div class="row-container">
                         <label for="">Password</label>
                         <a href="">Forgot Password</a>
                     </div>
-                    <input type="password" name="getPass" value="poopandpee" autocomplete="off">
+                    <input type="password" name="password" value="poopandpee" autocomplete="off">
                     <div class="row-container">
-                        <input type="submit" name="Login" onclick="check(this.form)" value="Login">
+                        <!-- <button type="button" onclick="window.location.href='./home.php'">Login</button> -->
+                        <button type="submit"">Login</button>
+                        <!-- <input type="submit" name="Login" onclick="check(this.form)" value="Login"> -->
                         <a id="register-btn">Sign up here</a>
                     </div>
                 </form>
@@ -212,17 +214,15 @@
         var $valid = true;
         document.getElementById("checkEmail").innerHTML = "";
         document.getElementById("checkPassword").innerHTML = "";
-        
+
         var userName = document.getElementByName("getEmail").value;
         var password = document.getElementByName("getPass").value;
-        if(userName == "") 
-        {
+        if (userName == "") {
             document.getElementById("checkEmail").innerHTML = "required";
-        	$valid = false;
+            $valid = false;
         }
-        if(password == "") 
-        {
-        	document.getElementById("checkPassword").innerHTML = "required";
+        if (password == "") {
+            document.getElementById("checkPassword").innerHTML = "required";
             $valid = false;
         }
         return $valid;
