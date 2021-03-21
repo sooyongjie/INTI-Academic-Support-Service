@@ -1,3 +1,4 @@
+const doneBtn = document.querySelector(".done-btn");
 const subjectForm = document.querySelector(".form");
 const inputField = subjectForm.querySelectorAll("input");
 let requestArray = [];
@@ -18,6 +19,8 @@ const getSubject = () => {
       showToast("The subject is already added");
       requestArray.pop();
     } else {
+      doneBtn.classList = "done-btn active";
+      doneBtn.style.pointerEvents = "visible";
       showToast("Subject added");
       console.log("requestArray: ", requestArray);
     }

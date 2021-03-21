@@ -483,6 +483,16 @@ nav img {
   justify-content: space-between;
 }
 
+.button-row button.active i,
+.button-row button.active span {
+  color: #222;
+}
+
+.button-row button i,
+.button-row button span {
+  color: #aaa;
+}
+
 .button-row button i {
   font-size: 14px;
   font-weight: 400;
@@ -490,6 +500,10 @@ nav img {
 
 .button-row button span {
   font-size: 15px;
+}
+
+.button-row .done-btn {
+  pointer-events: none;
 }
 
 .request-confirmation {

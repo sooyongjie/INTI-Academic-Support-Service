@@ -9,7 +9,7 @@
     <?php include_once('./components/nav.php') ?>
     <?php include_once('./components/spinner.php') ?>
 
-    <div class="container request-confirmation">
+    <div class="container row request-confirmation">
         <div class="card request summary section">
             <div class="heading">
                 <h2>Courses</h2>

@@ -37,11 +37,11 @@
       </ul>
     </div>
     <div class="button-row section">
-      <button onclick="getSubject()">
+      <button class="add-btn active" onclick="getSubject()">
         <i class="fas fa-plus"></i>
         <span>Add</span>
       </button>
-      <button onclick="submitForm()">
+      <button class="done-btn" onclick="submitForm()">
         <i class="fas fa-check"></i>
         <span>Done</span>
       </button>

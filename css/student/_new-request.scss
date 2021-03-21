@@ -21,6 +21,14 @@
   display: flex;
   justify-content: space-between;
   button {
+    &.active i,
+    &.active span {
+      color: #222;
+    }
+    i,
+    span {
+      color: #aaa;
+    }
     i {
       font-size: 14px;
       font-weight: 400;
@@ -28,5 +36,8 @@
     span {
       font-size: 15px;
     }
+  }
+  .done-btn {
+    pointer-events: none;
   }
 }
