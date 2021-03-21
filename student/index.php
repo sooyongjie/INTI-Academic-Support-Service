@@ -66,7 +66,7 @@
                     <h2 class="heading-txt">Welcome</h2>
                     <p class="subheading">Enter login details here or create an account.</p>
                 </div>
-                <form method="POST" action="./func/auth.php">
+                <form method="POST" action="./func/login.php">
                     <div class="row-container">
                         <label for="">Username</label>
                     </div>

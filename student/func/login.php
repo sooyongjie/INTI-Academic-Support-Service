@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require("../../db_connect.php");
 
 function getUser($email, $hash)
@@ -16,9 +18,6 @@ function getUser($email, $hash)
         return 0;
     }
 }
-
-
-session_start();
 
 $email = $_POST["email"];
 $hash = md5($_POST["password"]);
