@@ -11,7 +11,9 @@
     <div class="nav-user">
         <div class="nav-item nav-username">
             <i class="fas fa-user-circle"></i>
-            <span class="username">sooyongjie</span>
+            <span class="username">
+                <?php echo $_SESSION['user']['username'] ?>
+            </span>
         </div>
         <i class="fas fa-caret-down"></i>
         <!-- Dropdown -->
