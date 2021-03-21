@@ -39,5 +39,22 @@
   }
   .done-btn {
     pointer-events: none;
+    transition: 0.1s ease-out;
+    .count-div {
+      width: 16px;
+      height: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #eee;
+      border-radius: 50%;
+      opacity: 0;
+      transition: 0.20s ease-out;
+      span {
+        font-size: 10px;
+        font-weight: 500;
+        @include roboto;
+      }
+    }
   }
 }

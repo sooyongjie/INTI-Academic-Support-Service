@@ -42,8 +42,10 @@
         <span>Add</span>
       </button>
       <button class="done-btn" onclick="submitForm()">
-        <i class="fas fa-check"></i>
-        <span>Done</span>
+      <div class="count-div">
+        <span class="count-text"></span>
+      </div>
+        <span>Next</span>
       </button>
     </div>
   </div>

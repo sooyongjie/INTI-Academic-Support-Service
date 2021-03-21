@@ -1,4 +1,8 @@
 const doneBtn = document.querySelector(".done-btn");
+const countDiv = document.querySelector(".count-div");
+const countText = document.querySelector(".count-text");
+let count = 0;
+
 const subjectForm = document.querySelector(".form");
 const inputField = subjectForm.querySelectorAll("input");
 let requestArray = [];
@@ -21,8 +25,8 @@ const getSubject = () => {
     } else {
       doneBtn.classList = "done-btn active";
       doneBtn.style.pointerEvents = "visible";
+      incrementCount();
       showToast("Subject added");
-      console.log("requestArray: ", requestArray);
     }
   } else {
     showToast("Please fill in the form");
@@ -67,4 +71,9 @@ const createForm = () => {
     }
   }
   return newForm;
+};
+
+const incrementCount = () => {
+  countDiv.style.opacity = 1;
+  countText.textContent = ++count;
 };
