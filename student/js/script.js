@@ -87,3 +87,7 @@ window.addEventListener("scroll", function () {
     scrollButton.classList = "scroll-btn";
   }
 });
+
+if (window.history.replaceState) {
+  window.history.replaceState(null, null, window.location.href);
+}
