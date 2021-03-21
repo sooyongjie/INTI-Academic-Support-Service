@@ -32,3 +32,10 @@
 <link rel="stylesheet" href="../css/student/student-dark.css" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+
+<?php
+session_start();
+if(!isset($_SESSION['user'])) {
+    header("Location: ./index.php");
+  }
+?>

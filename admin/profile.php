@@ -12,7 +12,7 @@
     <div class="content-container profile">
       <div class="heading">
         <h2>Profile</h2>
-        <a href="./index.html" class="show">
+        <a href="./func/logout.php" class="show">
           <i class="fas fa-sign-out-alt"></i>
           <span>Logout</span>
         </a>
