@@ -30,7 +30,23 @@
     <!-- <script src="./js/theme.js"></script> -->
 </head>
 
-<body class="login">
+<body class="index">
+    <div class="modal-container">
+        <div class="modal registration">
+            <div class="heading">
+                <h3></h3>
+                <i class="fas fa-times"></i>
+            </div>
+            <img src="../img/mailbox.png" alt="">
+            <div class="modal-body">
+                <h3>Check your email</h3>
+                <p>We emailed a confirmation link to your email.</p>
+                <button>
+                    <span>Resend</span>
+                </button>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="img-container">
             <div class="content-container">
@@ -43,25 +59,28 @@
                 </div>
             </div>
         </div>
-        <div class="login-container">
-            <img src="../img/inti-logo-full.svg" alt="">
-            <h2 class="welcome">Welcome</h3>
-                <p>Enter login details here or create an account.</p>
-                <form method="POST" action="login_process.php" autocomplete="off">
+        <div class="container-container">
+            <div id="login-form" class="form">
+                <img src="../img/inti-logo-full.svg" alt="">
+                <div class="heading">
+                    <h2 class="heading-txt">Welcome</h2>
+                    <p class="subheading">Enter login details here or create an account.</p>
+                </div>
+                <form method="POST" action="./func/login.php">
                     <div class="row-container">
                         <label for="">Username</label>
                     </div>
-                    <input type="text" value="sooyongjie" autocomplete="off">
+                    <input type="text" name="email" value="sooyongjie@gmail.com" autocomplete="off">
                     <div class="row-container">
                         <label for="">Password</label>
                         <a href="">Forgot Password</a>
                     </div>
-                    <input type="password" value="poopandpee" autocomplete="off">
+                    <input type="password" name="password" value="poopandpee" autocomplete="off">
                     <div class="row-container">
-                        <button type="button" onclick="window.location.href='./requests.php'">Login</button>
-                        <a href="">Sign up here</a>
+                        <button type="submit"">Login</button>
                     </div>
                 </form>
+            </div>
         </div>
     </div>
 </body>
@@ -72,7 +91,6 @@
     // } else {
     //     var api = `https://api.quotable.io/random?tags=inspirational`
     // }
-
     var api = `https://api.quotable.io/random?tags=inspirational`
     const quote = document.querySelector('#quote')
     const author = document.querySelector('#author')
@@ -80,7 +98,7 @@
     fetch(api)
         .then(response => {
             if (!response.ok) {
-                alert("What happened.")
+                alert("Error 69")
             }
             return response.json();
         })
@@ -89,16 +107,19 @@
             author.textContent = `- ${data.author}`
             gsap.to(["#quote", "#author"], {
                 opacity: "1",
-                stagger: "1.2",
             });
         })
 
+
     window.addEventListener("load", function() {
-        gsap.to(".login-container", {
+        gsap.to("#login-form", {
             delay: "0.3",
             opacity: "1",
+            duration: "0.4"
         });
     });
+
+    //I will write the validation one day
 </script>
 
 </html>
