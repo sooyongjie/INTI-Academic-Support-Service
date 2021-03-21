@@ -28,13 +28,6 @@
             </div>
             <div class="order-info">
                 <div>
-                    <p>Receive by</p>
-                    <div class="select">
-                        <span>Self-collect</span>
-                        <i class="fas fa-caret-down"></i>
-                    </div>
-                </div>
-                <div>
                     <p>Total</p>
                     <h3 class="total-price">RM2.00</h3>
                 </div>
