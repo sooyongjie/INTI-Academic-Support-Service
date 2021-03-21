@@ -10,7 +10,7 @@
     <?php include_once('./components/spinner.php') ?>
     <?php include_once('./func/func.php') ?>
     <?php include_once('./func/requests.php') ?>
-    <div class="container row">
+    <div class="container row request-view">
         <div class="top-section">
             <?php requestView() ?>
             <div class="payment-section section">

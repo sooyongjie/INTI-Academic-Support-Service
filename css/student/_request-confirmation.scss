@@ -1,3 +1,51 @@
-.container.col-2 {
+@import "../colors";
+
+.request-confirmation {
+  display: grid !important;
+  grid-template-columns: repeat(2, max-content);
+  .request {
+    padding: 24px 28px 24px 28px;
+    .subject {
+      margin-bottom: 20px;
+      p {
+        margin-bottom: 4px;
+      }
+      span {
+        font-size: 15px;
+        color: #888;
+      }
+    }
+  }
+  button {
+    width: 100%;
+    margin: 4px 0 0 0;
+    justify-content: center;
+  }
+}
+
+.sub-heading {
+  margin: 8px 0 20px 0;
+}
+
+.order-info {
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  p {
+    margin: unset;
+  }
+  .select {
     display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: unset;
+    i {
+      color: #222;
+      font-size: 14px;
+    }
+  }
 }

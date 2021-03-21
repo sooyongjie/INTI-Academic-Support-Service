@@ -362,23 +362,23 @@ nav img {
   padding-right: 28px;
 }
 
-.top-section {
+.container.request-view .top-section {
   width: max-content;
   display: grid;
   grid-template-columns: repeat(2, max-content);
   column-gap: 100px;
 }
 
-.payment-section {
+.container.request-view .payment-section {
   display: flex;
   flex-direction: column;
 }
 
-.payment-section .heading {
+.container.request-view .payment-section .heading {
   margin-bottom: 10px;
 }
 
-.payment-section .card {
+.container.request-view .payment-section .card {
   display: grid;
   grid-template-rows: 1fr 1fr;
   margin-top: 20px;
@@ -387,7 +387,7 @@ nav img {
   row-gap: 20px;
 }
 
-.payment-section .card .payment-info {
+.container.request-view .payment-section .card .payment-info {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-items: center;
@@ -395,27 +395,27 @@ nav img {
   column-gap: 20px;
 }
 
-.payment-section .card .payment-info img {
+.container.request-view .payment-section .card .payment-info img {
   width: 50px !important;
 }
 
-.payment-section .card .payment-info p {
+.container.request-view .payment-section .card .payment-info p {
   font-family: "Poppins", sans-serif;
   cursor: text;
 }
 
-.payment-section .card .payment-info a i:hover,
-.payment-section .card .payment-info a:focus-within i {
+.container.request-view .payment-section .card .payment-info a i:hover,
+.container.request-view .payment-section .card .payment-info a:focus-within i {
   color: #e20c18;
 }
 
-.payment-section .card .payment-info a i {
+.container.request-view .payment-section .card .payment-info a i {
   color: #888;
   font-weight: 400;
   margin: 0 8px;
 }
 
-.payment-section .receipt-input {
+.container.request-view .payment-section .receipt-input {
   padding: 8px 12px;
   border-radius: 8px;
   border: 2px dashed #dadada;
@@ -428,29 +428,29 @@ nav img {
   cursor: pointer;
 }
 
-.payment-section .receipt-input:hover, .payment-section .receipt-input:focus-within {
+.container.request-view .payment-section .receipt-input:hover, .container.request-view .payment-section .receipt-input:focus-within {
   border: 2px dashed #e20c18;
   background: #fdf0f0;
 }
 
-.payment-section .receipt-input span {
+.container.request-view .payment-section .receipt-input span {
   font-family: "Poppins", sans-serif;
 }
 
-.payment-section input[type="file"] {
+.container.request-view .payment-section input[type="file"] {
   position: absolute;
   height: 0px;
   width: 0px;
   pointer-events: none;
 }
 
-.subjects {
+.container.request-view .subjects {
   width: 605.41px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.subjects .card.subject {
+.container.request-view .subjects .card.subject {
   width: max-content;
   padding: 20px 20px 8px 20px;
   align-items: unset;
@@ -492,8 +492,60 @@ nav img {
   font-size: 15px;
 }
 
-.container.col-2 {
+.request-confirmation {
+  display: grid !important;
+  grid-template-columns: repeat(2, max-content);
+}
+
+.request-confirmation .request {
+  padding: 24px 28px 24px 28px;
+}
+
+.request-confirmation .request .subject {
+  margin-bottom: 20px;
+}
+
+.request-confirmation .request .subject p {
+  margin-bottom: 4px;
+}
+
+.request-confirmation .request .subject span {
+  font-size: 15px;
+  color: #888;
+}
+
+.request-confirmation button {
+  width: 100%;
+  margin: 4px 0 0 0;
+  justify-content: center;
+}
+
+.sub-heading {
+  margin: 8px 0 20px 0;
+}
+
+.order-info div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.order-info p {
+  margin: unset;
+}
+
+.order-info .select {
   display: grid;
+  grid-template-columns: repeat(2, max-content);
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: unset;
+}
+
+.order-info .select i {
+  color: #222;
+  font-size: 14px;
 }
 
 @media only screen and (max-width: 768px) {

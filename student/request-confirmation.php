@@ -9,38 +9,41 @@
     <?php include_once('./components/nav.php') ?>
     <?php include_once('./components/spinner.php') ?>
 
-    <div class="container col-2">
-        <div class="subjects">
+    <div class="container request-confirmation">
+        <div class="card request summary section">
             <div class="heading">
-                <h2>Subjects</h2>
+                <h2>Courses</h2>
             </div>
-            <?php
-            $request = [];
+            <div class="subject">
+                <p>CSIT321 Project (July 2019)</p>
+                <span>RM1</span>
+            </div>
+            <div class="subject">
+                <p>CSIT321 Project (July 2019)</p>
+                <span>RM1</span>
+            </div>
 
-            foreach ($_POST as $key => $value) {
-                $request[] = $value;
-            }
-            $length = count($request) / 3;
-
-            for ($i = 0; $i < $length; $i++) {
-            ?>
-                <div class="section card subject">
-                    <label for="">Programme</label>
-                    <p><?php echo $request[$i] . "<br>"; ?></p>
-                    <label for="">Session</label>
-                    <p><?php echo $request[$i + 1] . "<br>"; ?></p>
-                    <label for="">Course</label>
-                    <p><?php echo $request[$i + 2] . "<br>"; ?></p>
+            <div class="sub-heading">
+                <h3>Order Info</h3>
+            </div>
+            <div class="order-info">
+                <div>
+                    <p>Receive by</p>
+                    <div class="select">
+                        <span>Self-collect</span>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
                 </div>
-            <?php
-            }
-            ?>
-        </div>
-        <div class="summary">
-            <div class="heading">
-                <h2>Summary</h2>
+                <div>
+                    <p>Total</p>
+                    <h3 class="total-price">RM2.00</h3>
+                </div>
             </div>
+            <button>
+                <span>Confirm</span>
+            </button>
         </div>
+
     </div>
 
     <?php include_once('./components/toast.php') ?>
@@ -53,3 +56,30 @@
 <script src="js/theme.js"></script>
 
 </html>
+
+<?php
+/*
+<?php
+    $request = [];
+
+    foreach ($_POST as $key => $value) {
+        $request[] = $value;
+    }
+    $length = count($request) / 3;
+
+    for ($i = 0; $i < $length; $i++) {
+    ?>
+        <div class="section card subject">
+            <label for="">Programme</label>
+            <p><?php echo $request[$i] . "<br>"; ?></p>
+            <label for="">Session</label>
+            <p><?php echo $request[$i + 1] . "<br>"; ?></p>
+            <label for="">Course</label>
+            <p><?php echo $request[$i + 2] . "<br>"; ?></p>
+        </div>
+    <?php
+    }
+    ?>
+*/
+
+?>

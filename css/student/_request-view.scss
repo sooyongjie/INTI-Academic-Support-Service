@@ -1,94 +1,96 @@
-.top-section {
-  width: max-content;
-  display: grid;
-  grid-template-columns: repeat(2, max-content);
-  column-gap: 100px;
-}
-
-.payment-section {
-  display: flex;
-  flex-direction: column;
-  .heading {
-    margin-bottom: 10px;
-  }
-
-  .card {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 20px 24px;
-    row-gap: 20px;
-
-    .payment-info {
-      display: grid;
-      grid-template-columns: auto auto auto;
-      justify-items: center;
-      align-items: center;
-      column-gap: 20px;
-      img {
-        width: 50px !important;
-      }
-      p {
-        @include poppins;
-        cursor: text;
-      }
-
-      a {
-        i:hover,
-        &:focus-within i {
-          color: $red;
-        }
-
-        i {
-          color: #888;
-          font-weight: 400;
-          margin: 0 8px;
-        }
-      }
-    }
-  }
-
-  .receipt-input {
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: 2px dashed #dadada;
+.container.request-view {
+  .top-section {
+    width: max-content;
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    justify-content: center;
-    align-items: center;
-    column-gap: 10px;
-    transition: 0.1s ease-out;
-    cursor: pointer;
+    column-gap: 100px;
+  }
 
-    &:hover,
-    &:focus-within {
-      border: 2px dashed $red;
-      background: $lightRed;
+  .payment-section {
+    display: flex;
+    flex-direction: column;
+    .heading {
+      margin-bottom: 10px;
     }
 
-    span {
-      @include poppins;
+    .card {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 20px 24px;
+      row-gap: 20px;
+
+      .payment-info {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-items: center;
+        align-items: center;
+        column-gap: 20px;
+        img {
+          width: 50px !important;
+        }
+        p {
+          @include poppins;
+          cursor: text;
+        }
+
+        a {
+          i:hover,
+          &:focus-within i {
+            color: $red;
+          }
+
+          i {
+            color: #888;
+            font-weight: 400;
+            margin: 0 8px;
+          }
+        }
+      }
+    }
+
+    .receipt-input {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 2px dashed #dadada;
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      justify-content: center;
+      align-items: center;
+      column-gap: 10px;
+      transition: 0.1s ease-out;
+      cursor: pointer;
+
+      &:hover,
+      &:focus-within {
+        border: 2px dashed $red;
+        background: $lightRed;
+      }
+
+      span {
+        @include poppins;
+      }
+    }
+
+    input[type="file"] {
+      position: absolute;
+      height: 0px;
+      width: 0px;
+      pointer-events: none;
     }
   }
 
-  input[type="file"] {
-    position: absolute;
-    height: 0px;
-    width: 0px;
-    pointer-events: none;
-  }
-}
+  .subjects {
+    width: 605.41px;
+    display: flex;
+    flex-wrap: wrap;
 
-.subjects {
-  width: 605.41px;
-  display: flex;
-  flex-wrap: wrap;
-
-  .card.subject {
-    width: max-content;
-    padding: 20px 20px 8px 20px;
-    align-items: unset;
-    margin: 0 30px 30px 0;
+    .card.subject {
+      width: max-content;
+      padding: 20px 20px 8px 20px;
+      align-items: unset;
+      margin: 0 30px 30px 0;
+    }
   }
 }
