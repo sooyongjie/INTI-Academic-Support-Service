@@ -80,6 +80,19 @@ function allRequests()
     }
 }
 
+
+function status($val)
+{
+    switch ($val) {
+        case '0':
+            return "Cancelled";
+        case '1':
+            return "Pending";
+        case '2':
+            return "Completed";
+    }
+}
+
 function requestDetails($id)
 {
     $id = $_GET['id'];
@@ -96,7 +109,7 @@ function requestDetails($id)
         foreach ($result as $row) { ?>
             <span><?php echo $row['fullname'] ?></span>
             <span><?php echo date("d/m/Y g:ia", strtotime($row['datetime'])) ?></span>
-            <span><?php echo $row['status'] ?></span>
+            <span><?php echo status($row['status']) ?></span>
             <span>
                 <?php
                 if ($row['payID'])

@@ -52,8 +52,6 @@
           <div class="card request-details">
             <?php $result = requestDetails($_GET['id']) ?>
           </div>
-
-
           <?php
           if ($result) { ?>
             <div class="section">
