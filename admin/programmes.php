@@ -29,13 +29,11 @@
         <table>
           <tr>
             <th>Subject</th>
-            <th>Code</th>
             <th>Price</th>
             <th>File</th>
           </tr>
           <tr>
-            <td>System Design</td>
-            <td>CSCI334</td>
+            <td>CSCI334 System Design</td>
             <td>RM1</td>
             <td class="status">
               <span class="file">csci334.pdf</span>
@@ -58,7 +56,7 @@
           <label for="">Name</label>
           <input type="text" name="progName" placeholder="University">
           <div class="buttons">
-            <button class="cancel-btn">
+            <button class="cancel-btn" type="button" onclick="hideModal('prog')">
               <span>Cancel</span>
             </button>
             <button>
@@ -76,10 +74,14 @@
       </div>
       <div class="modal-body">
         <form action="" class="new-form">
-          <label for="">Name</label>
-          <input type="text" name="progName" placeholder="Subject name">
+          <label for="">Subject ID</label>
+          <input type="text" name="progName" placeholder="ID">
+          <label for="">Subject Name</label>
+          <input type="text" name="progName" placeholder="Name">
+          <label for="">Course Structure</label>
+          <input type="file" name="progName" placeholder="file">
           <div class="buttons">
-            <button class="cancel-btn">
+            <button class="cancel-btn" type="button" onclick="hideModal('sub')">
               <span>Cancel</span>
             </button>
             <button>

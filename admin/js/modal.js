@@ -5,15 +5,35 @@ console.log("progForm: ", progForm);
 const showModal = (option) => {
   switch (option) {
     case "prog":
-        showElement(progForm)
+      showElement(progForm);
       break;
     case "sub":
-        showElement(subForm)
+      showElement(subForm);
+      break;
+  }
+};
+
+const hideModal = (option) => {
+  switch (option) {
+    case "prog":
+      hideElement(progForm);
+      break;
+    case "sub":
+      hideElement(subForm);
       break;
   }
 };
 
 const showElement = (el) => {
   el.style.display = "flex";
-  el.style.opacity = 1;
+  setTimeout(() => {
+    el.style.opacity = 1;
+  }, 100);
+};
+
+const hideElement = (el) => {
+  el.style.opacity = 0;
+  setTimeout(() => {
+    el.style.display = "none";
+  }, 100);
 };
