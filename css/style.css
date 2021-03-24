@@ -222,7 +222,7 @@ body.index .form button {
 }
 
 .modal-container .modal h3 {
-  line-height: 1;
+  line-height: 1.5;
 }
 
 .modal-container .modal img {
@@ -230,7 +230,6 @@ body.index .form button {
 }
 
 .modal-container .modal .heading {
-  width: inherit;
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -260,9 +259,55 @@ body.index .form button {
   background: #e20c18;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 500;
   color: white;
   text-align: center;
+}
+
+.modal-container .modal.form .heading {
+  margin: 20px;
+  padding: 0;
+  position: relative;
+}
+
+.modal-container .modal.form .heading h3 {
+  padding: 0;
+}
+
+.modal-container .modal.form .modal-body {
+  padding: 0 24px 24px 24px;
+}
+
+.modal-container .modal.form .modal-body form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-container .modal.form .modal-body form input {
+  height: 30px;
+  margin: 8px 0 16px 0;
+  padding: 0 8px;
+  font-size: 15px;
+}
+
+.modal-container .modal.form .modal-body form .buttons {
+  align-self: flex-end;
+}
+
+.modal-container .modal.form .modal-body form .buttons button {
+  width: max-content !important;
+  padding: 6px 12px !important;
+}
+
+.modal-container .modal.form .modal-body form .buttons button span {
+  font-size: 14px !important;
+}
+
+.modal-container .modal.form .modal-body form .buttons .cancel-btn {
+  background: none !important;
+}
+
+.modal-container .modal.form .modal-body form .buttons .cancel-btn span {
+  color: #444 !important;
 }
 
 * {

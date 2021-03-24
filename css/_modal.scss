@@ -20,13 +20,12 @@
     background-color: white;
     overflow: hidden;
     h3 {
-      line-height: 1;
+      line-height: 1.5;
     }
     img {
       width: 100%;
     }
     .heading {
-      width: inherit;
       display: flex;
       justify-content: space-between;
       position: absolute;
@@ -51,12 +50,48 @@
         background: $red;
         border-radius: 8px;
         font-size: 14px;
-        font-weight: 500;
         color: white;
         text-align: center;
       }
     }
-  }
-  .modal.registration {
+    &.form {
+      .heading {
+        margin: 20px;
+        padding: 0;
+        position: relative;
+        h3 {
+          padding: 0;
+        }
+      }
+      .modal-body {
+        padding: 0 24px 24px 24px;
+        form {
+          display: flex;
+          flex-direction: column;
+          input {
+            height: 30px;
+            margin: 8px 0 16px 0;
+            padding: 0 8px;
+            font-size: 15px;
+          }
+          .buttons {
+            align-self: flex-end;
+            button {
+              width: max-content !important;
+              padding: 6px 12px !important;
+              span {
+                font-size: 14px !important;
+              }
+            }
+            .cancel-btn {
+              background: none !important;
+              span {
+                color: #444 !important;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

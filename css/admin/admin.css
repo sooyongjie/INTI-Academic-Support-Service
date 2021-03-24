@@ -592,7 +592,8 @@ button span {
 
 form.profile-card input,
 .offset-form input,
-.search input {
+.search input,
+.new-form input {
   background: #f3f3f3;
   border-radius: 8px;
   border-bottom: 1px solid #f3f3f3;
@@ -600,13 +601,15 @@ form.profile-card input,
 
 form.profile-card input:hover,
 .offset-form input:hover,
-.search input:hover {
+.search input:hover,
+.new-form input:hover {
   background: #eee;
 }
 
 form.profile-card input:focus,
 .offset-form input:focus,
-.search input:focus {
+.search input:focus,
+.new-form input:focus {
   background: #eee;
   border-bottom: 1px solid #888;
   transition: 0.2s ease-out;
