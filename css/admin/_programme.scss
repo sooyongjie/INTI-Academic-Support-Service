@@ -1,0 +1,40 @@
+.upload-btn {
+  width: max-content;
+  margin-top: 8px;
+  padding: 4px 12px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  column-gap: 8px;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #dadada;
+  border-radius: 8px;
+  transition: 0.1s ease-in;
+  i {
+    font-size: 12px;
+  }
+  &:hover,
+  &:focus-within {
+    border: 2px dashed $red;
+    background: $lightRed;
+  }
+}
+
+.upload-btn,
+.upload-btn span {
+  cursor: pointer;
+  font-size: 15px;
+}
+
+label, input, span {
+    @include poppins;
+}
+
+input[type="file"] {
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  pointer-events: none;
+  z-index: -99;
+  opacity: 0;
+}

@@ -79,7 +79,11 @@
           <label for="">Subject Name</label>
           <input type="text" name="progName" placeholder="Name">
           <label for="">Course Structure</label>
-          <input type="file" name="progName" placeholder="file">
+          <label for="upload-input" class="upload-btn">
+            <i class="fas fa-upload"></i>
+            <span>Upload file</span>
+            <input type="file" name="progName" id="upload-input">
+          </label>
           <div class="buttons">
             <button class="cancel-btn" type="button" onclick="hideModal('sub')">
               <span>Cancel</span>

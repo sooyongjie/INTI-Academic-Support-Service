@@ -293,6 +293,48 @@ nav .nav-profile {
   margin-bottom: 8px;
 }
 
+.upload-btn {
+  width: max-content;
+  margin-top: 8px;
+  padding: 4px 12px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  column-gap: 8px;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #dadada;
+  border-radius: 8px;
+  transition: 0.1s ease-in;
+}
+
+.upload-btn i {
+  font-size: 12px;
+}
+
+.upload-btn:hover, .upload-btn:focus-within {
+  border: 2px dashed #e20c18;
+  background: #fdf0f0;
+}
+
+.upload-btn,
+.upload-btn span {
+  cursor: pointer;
+  font-size: 15px;
+}
+
+label, input, span {
+  font-family: "Poppins", sans-serif;
+}
+
+input[type="file"] {
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  pointer-events: none;
+  z-index: -99;
+  opacity: 0;
+}
+
 .button i {
   font-size: 16px !important;
 }
