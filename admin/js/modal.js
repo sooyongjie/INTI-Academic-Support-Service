@@ -29,7 +29,12 @@ const showElement = (el) => {
   document.onkeydown = function (evt) {
     onEscKeydown(evt, el);
   };
-
+  setTimeout(() => {
+    window.onclick = function (evt) {
+      if (!document.querySelector(".sub-modal").contains(evt.target)) {
+        hideElement(el);
+    };
+  }, 1);
   setTimeout(() => {
     el.style.opacity = 1;
   }, 100);
@@ -41,6 +46,7 @@ const hideElement = (el) => {
     el.style.display = "none";
   }, 100);
   document.onkeydown = null;
+  window.onclick = null;
 };
 
 const onEscKeydown = (evt, el) => {
