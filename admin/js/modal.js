@@ -33,6 +33,7 @@ const showElement = (el) => {
     window.onclick = function (evt) {
       if (!document.querySelector(".sub-modal").contains(evt.target)) {
         hideElement(el);
+      }
     };
   }, 1);
   setTimeout(() => {

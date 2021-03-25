@@ -68,7 +68,7 @@
     </div>
   </div>
   <div class="modal-container sub-form">
-    <div class="modal form">
+    <div class="modal form sub-modal">
       <div class="heading">
         <h3>New subject</h3>
       </div>

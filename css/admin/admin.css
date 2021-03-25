@@ -293,9 +293,13 @@ nav .nav-profile {
   margin-bottom: 8px;
 }
 
-.sub-form label,
-.sub-form input,
-.sub-form span {
+.modal.form {
+  z-index: 2;
+}
+
+.modal.form label,
+.modal.form input,
+.modal.form span {
   font-family: "Poppins", sans-serif;
 }
 
