@@ -26,6 +26,10 @@ const hideModal = (option) => {
 
 const showElement = (el) => {
   el.style.display = "flex";
+  document.onkeydown = function (evt) {
+    onEscKeydown(evt, el);
+  };
+
   setTimeout(() => {
     el.style.opacity = 1;
   }, 100);
@@ -36,4 +40,12 @@ const hideElement = (el) => {
   setTimeout(() => {
     el.style.display = "none";
   }, 100);
+  document.onkeydown = null;
+};
+
+const onEscKeydown = (evt, el) => {
+  evt = evt || window.event;
+  if (evt.key == "Escape") {
+    hideElement(el);
+  }
 };
