@@ -1,3 +1,11 @@
+.sub-form {
+  label,
+  input,
+  span {
+    @include poppins;
+  }
+}
+
 .upload-btn {
   width: max-content;
   margin-top: 8px;
@@ -24,10 +32,6 @@
 .upload-btn span {
   cursor: pointer;
   font-size: 15px;
-}
-
-label, input, span {
-    @include poppins;
 }
 
 input[type="file"] {

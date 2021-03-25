@@ -293,6 +293,12 @@ nav .nav-profile {
   margin-bottom: 8px;
 }
 
+.sub-form label,
+.sub-form input,
+.sub-form span {
+  font-family: "Poppins", sans-serif;
+}
+
 .upload-btn {
   width: max-content;
   margin-top: 8px;
@@ -320,10 +326,6 @@ nav .nav-profile {
 .upload-btn span {
   cursor: pointer;
   font-size: 15px;
-}
-
-label, input, span {
-  font-family: "Poppins", sans-serif;
 }
 
 input[type="file"] {
