@@ -17,15 +17,15 @@
           <span>Logout</span>
         </a>
       </div>
-      <form class="card borderless profile-card">
-        <label for="">Username</label>
-        <input type="text" name="inti-username" placeholder="Username" value="Soo Yong Jie" required />
-        <label for="">Current Password</label>
-        <input type="password" name="inti-password" required />
-        <label for="">New Password</label>
-        <input type="password" autocomplete="off" />
-        <label for="">Confirm Password</label>
-        <input type="password" autocomplete="off" />
+      <form method="POST" action="./func/update-profile.php" class="card borderless profile-card">
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="Username" value="admin" required />
+        <label for="curpass">Current Password</label>
+        <input type="password" name="curpass" required />
+        <label for="newpass">New Password</label>
+        <input type="password" name="newpass" autocomplete="off" />
+        <label for="conpass">Confirm Password</label>
+        <input type="password" name="conpass" autocomplete="off" />
         <button>Save Changes</button>
       </form>
     </div>

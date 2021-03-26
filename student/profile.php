@@ -9,21 +9,21 @@
   <?php include_once('./components/nav.php') ?>
   <?php include_once('./components/spinner.php') ?>
   <div class="container row">
-    <form class="card form profile section">
+    <form method="POST" action="./func/update-profile.php" class="card form profile section">
       <div class="heading">
         <h2>Profile</h2>
       </div>
-      <label for="programme">Username</label>
-      <input type="text" id="programme" value="sooyongjie" />
-      <label for="programme">Full name</label>
-      <input type="text" id="programme" value="Soo Yong Jie" />
-      <label for="session">Email</label>
-      <input type="text" id="session" value="j17025666@student.newinti.edu.my" />
-      <label for="">Current Password</label>
-      <input type="password" value="">
-      <label for="">New Password</label>
-      <input type="password" value="">
-      <button>
+      <label for="username">Username</label>
+      <input type="text" id="username" value="sooyongjie" />
+      <label for="fullname">Full name</label>
+      <input type="text" id="fullname" value="Soo Yong Jie" />
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" value="sooyongjie@gmail.com" />
+      <label for="curpass">Current Password</label>
+      <input type="password" name="curpass" id="curpass" value="">
+      <label for="newpass">New Password</label>
+      <input type="password" name="newpass" id="newpass" value="">
+      <button type = "submit">
         <span>Submit</span>
       </button>
     </form>
