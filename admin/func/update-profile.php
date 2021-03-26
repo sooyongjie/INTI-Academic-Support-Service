@@ -30,6 +30,4 @@ else{
     header("Location: ../profile.php");
 }
 
-
-
 exit();
