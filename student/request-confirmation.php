@@ -14,14 +14,32 @@
             <div class="heading">
                 <h2>Courses</h2>
             </div>
-            <div class="subject">
-                <p>CSIT321 Project (July 2019)</p>
-                <span>RM1</span>
-            </div>
-            <div class="subject">
-                <p>CSIT321 Project (July 2019)</p>
-                <span>RM1</span>
-            </div>
+            <?php
+            $keys = array_keys($_GET);
+            $size = sizeof($_GET);
+
+            /*
+            print_r($keys);
+            for ($i = 0; $i < $size; $i++) {
+                echo "  value: "
+                    . $_GET[$keys[$i]] . "\n";
+            }
+            */
+
+            $numOfSubs = $size / 6;
+            $subIndex = 5;
+            $sessIndex = 3;
+            // echo $numOfSubs;
+            for ($i = 0; $i < $numOfSubs; $i++) {
+            ?>
+                <div class="subject">
+                    <p><?php echo $_GET[$keys[$subIndex]] ?> (<?php echo $_GET[$keys[$sessIndex]] ?>)</p>
+                    <span>RM1</span>
+                </div>
+            <?php
+                $subIndex = $subIndex + 3;
+                $sessIndex = $sessIndex + 3;
+            } ?>
 
             <div class="sub-heading">
                 <h3>Order Info</h3>
@@ -55,7 +73,7 @@
 <?php
     $request = [];
 
-    foreach ($_POST as $key => $value) {
+    foreach ($_GET as $key => $value) {
         $request[] = $value;
     }
     $length = count($request) / 3;

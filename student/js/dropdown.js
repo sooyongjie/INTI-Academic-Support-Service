@@ -1,6 +1,6 @@
-const dropdownInit = (input, dropdown, dropdownArray, valueArray) => {
+const dropdownInit = (input, inputID, dropdown, dropdownArray, valueArray) => {
   dropdownArray.forEach((item) => {
-    valueArray.push(item.textContent);
+    valueArray.push(item.value);
   });
 
   input.addEventListener("input", () => {
@@ -28,7 +28,8 @@ const dropdownInit = (input, dropdown, dropdownArray, valueArray) => {
 
   dropdownArray.forEach((item) => {
     item.addEventListener("click", (evt) => {
-      input.value = item.textContent;
+      input.value = item.value;
+      inputID.value = item.id;
     });
   });
 
@@ -57,6 +58,13 @@ const inputs = [
   document.querySelector(".sess-input"),
   document.querySelector(".sub-input"),
 ];
+
+const inputIDs = [
+  document.querySelector(".prog-id"),
+  document.querySelector(".sess-id"),
+  document.querySelector(".sub-id"),
+];
+
 const dropdowns = [
   document.querySelector(".prog-list"),
   document.querySelector(".sess-list"),
@@ -68,8 +76,14 @@ const dropdownArrays = [
   [...document.querySelectorAll(".sub-value")],
 ];
 
-let valueArrays = [[],[],[]];
+let valueArrays = [[], [], []];
 
 for (i = 0; i < dropdowns.length; i++) {
-  dropdownInit(inputs[i], dropdowns[i], dropdownArrays[i], valueArrays[i]);
+  dropdownInit(
+    inputs[i],
+    inputIDs[i],
+    dropdowns[i],
+    dropdownArrays[i],
+    valueArrays[i]
+  );
 }

@@ -4,7 +4,7 @@ const countText = document.querySelector(".count-text");
 let count = 0;
 
 const subjectForm = document.querySelector(".form");
-const inputField = subjectForm.querySelectorAll("input");
+const inputField = subjectForm.querySelectorAll("input.chosen-value");
 let requestArray = [];
 
 const getSubject = () => {
@@ -16,8 +16,8 @@ const getSubject = () => {
       tempArr.push(inputField[i].value);
     }
   }
-
-  if (tempArr.length == 3) {
+  console.log("tempArr: ", tempArr);
+  if (tempArr.length == 6) {
     requestArray.push(tempArr);
     if (checkRepeatedValues(requestArray)) {
       showToast("The subject is already added");
@@ -56,10 +56,10 @@ const checkRepeatedValues = (arr) => {
 };
 
 const createForm = () => {
-  const inputName = ["prog", "sess", "sub"];
+  const inputName = ["prog", "progID", "sess", "sessID", "sub", "subID"];
   const newForm = document.createElement("form");
 
-  newForm.setAttribute("method", "post");
+  newForm.setAttribute("method", "get");
   newForm.setAttribute("action", "./request-confirmation.php");
 
   for (let i = 0; i < requestArray.length; i++) {
