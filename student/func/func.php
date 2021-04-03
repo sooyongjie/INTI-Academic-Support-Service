@@ -2,12 +2,6 @@
 
 // require("../db_connect.php");
 
-if (isset($_POST['limit'])) {
-    $_SESSION['limit'] = $_POST['limit'];
-} else if (!isset($_SESSION['limit'])) {
-    $_SESSION['limit'] = 5;
-}
-
 function selectQuery($query)
 {
     $db = db_connect();
@@ -29,9 +23,10 @@ function updateQuery($query)
     $db = db_connect();
     // $result = mysqli_query($db, $query);
     if ($db->query($query) === TRUE) {
-        header("Location: site.php");
+        return 1;
     } else {
         echo "Error updating record: " . $db->error;
+        exit();
     }
 }
 
@@ -39,8 +34,20 @@ function deleteQuery($query)
 {
     $db = db_connect();
     if ($db->query($query) === TRUE) {
-        header("Location: site.php");
+        return 1;
     } else {
-        echo "Error: " . $query . "<br>" . $db->error;
+        echo "Error updating record: " . $db->error;
+    }
+}
+
+function insertQuery($query, $getLastID)
+{
+    $db = db_connect();
+    if ($db->query($query) === TRUE) {
+        if ($getLastID) {
+            return $db->insert_id;
+        } else return 1;
+    } else {
+        echo "Error updating record: " . $db->error;
     }
 }

@@ -17,7 +17,6 @@
             <?php
             $keys = array_keys($_GET);
             $size = sizeof($_GET);
-
             /*
             print_r($keys);
             for ($i = 0; $i < $size; $i++) {
@@ -25,7 +24,6 @@
                     . $_GET[$keys[$i]] . "\n";
             }
             */
-
             $numOfSubs = $size / 6;
             $subIndex = 5;
             $sessIndex = 3;
@@ -37,8 +35,8 @@
                     <span>RM1</span>
                 </div>
             <?php
-                $subIndex = $subIndex + 3;
-                $sessIndex = $sessIndex + 3;
+                $subIndex = $subIndex + 6;
+                $sessIndex = $sessIndex + 6;
             } ?>
 
             <div class="sub-heading">
@@ -50,12 +48,20 @@
                     <h3 class="total-price">RM2.00</h3>
                 </div>
             </div>
-            <button>
+            <button onclick="window.location.href='new-request.php?<?php echo GETvalues() ?>'">
                 <span>Confirm</span>
             </button>
         </div>
-
     </div>
+
+    <?php
+    function GETvalues()
+    {
+        $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+        return substr($link, strpos($link, "?") + 1);
+    }
+    ?>
 
     <?php include_once('./components/toast.php') ?>
     <?php include_once('./components/fab.php') ?>
@@ -65,6 +71,7 @@
 
 <script src="js/script.js"></script>
 <script src="js/theme.js"></script>
+<script src="js/submit-request.js"></script>
 
 </html>
 
