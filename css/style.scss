@@ -205,23 +205,3 @@ footer {
   z-index: -1;
 }
 
-// Scrollbar
-/* width */
-::-webkit-scrollbar {
-  width: 15px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f5f5f5;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #ddd;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #ccc;
-}

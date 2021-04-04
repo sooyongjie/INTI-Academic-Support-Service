@@ -457,6 +457,77 @@ nav img {
   margin: 0 30px 30px 0;
 }
 
+.value-list {
+  position: absolute;
+}
+
+.chosen-value::-webkit-input-placeholder {
+  color: #333;
+}
+
+.chosen-value:hover {
+  cursor: pointer;
+}
+
+.chosen-value:hover::-webkit-input-placeholder {
+  color: #333;
+}
+
+.chosen-value:focus::-webkit-input-placeholder, .chosen-value.open::-webkit-input-placeholder {
+  color: #000;
+}
+
+.value-list {
+  max-height: 0;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.1s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+}
+
+.value-list.open {
+  max-height: 80%;
+  overflow: auto;
+}
+
+.value-list .value {
+  margin: 0 !important;
+  border-bottom: 1px solid #ddd;
+  padding: 12px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: unset;
+}
+
+.value-list .value:hover {
+  background: #f3f3f3;
+}
+
+.value-list .value.closed {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.value-list.prog-list {
+  top: 260px;
+  z-index: 3;
+}
+
+.value-list.sess-list {
+  top: 340px;
+  z-index: 2;
+}
+
+.value-list.sub-list {
+  top: 424px;
+  z-index: 1;
+}
+
 .container.request-form {
   row-gap: 20px;
 }
@@ -804,75 +875,6 @@ nav img {
   100% {
     transform: scale(0);
   }
-}
-
-.value-list {
-  position: absolute;
-}
-
-.chosen-value::-webkit-input-placeholder {
-  color: #333;
-}
-
-.chosen-value:hover {
-  cursor: pointer;
-}
-
-.chosen-value:hover::-webkit-input-placeholder {
-  color: #333;
-}
-
-.chosen-value:focus::-webkit-input-placeholder, .chosen-value.open::-webkit-input-placeholder {
-  color: #000;
-}
-
-.value-list {
-  max-height: 0;
-  width: inherit;
-  display: flex;
-  flex-direction: column;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: 0.3s ease-out;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
-}
-
-.value-list.open {
-  max-height: 320px;
-  overflow: none;
-}
-
-.value-list .value {
-  padding: 12px 10px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: unset;
-}
-
-.value-list .value:hover {
-  background: #f3f3f3;
-}
-
-.value-list .value.closed {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0;
-}
-
-.value-list.prog-list {
-  top: 260px;
-  z-index: 3;
-}
-
-.value-list.sess-list {
-  top: 340px;
-  z-index: 2;
-}
-
-.value-list.sub-list {
-  top: 424px;
-  z-index: 1;
 }
 
 body,
