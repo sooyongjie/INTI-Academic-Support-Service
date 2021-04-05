@@ -45,7 +45,9 @@
             <div class="order-info">
                 <div>
                     <p>Total</p>
-                    <h3 class="total-price">RM2.00</h3>
+                    <h3 class="total-price">
+                    <?php echo "RM".$numOfSubs.".00" ?>
+                    </h3>
                 </div>
             </div>
             <button onclick="window.location.href='new-request.php?<?php echo GETvalues() ?>'">
