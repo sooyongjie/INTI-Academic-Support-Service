@@ -10,9 +10,10 @@
     <?php include_once('./components/spinner.php') ?>
     <?php include_once('./func/func.php') ?>
     <?php include_once('./func/requests.php') ?>
-    <div class="container row">
-        <?php requests() ?>
-    </div>
+    <?php
+    if (isset($_GET['id'])) requestView();
+    else requests();
+    ?>
     <?php include_once('./components/fab.php') ?>
     <?php include_once('./components/scroll-to-top.php') ?>
 </body>
