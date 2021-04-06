@@ -13,7 +13,6 @@ function selectQuery($query)
         return $arr;
     } else {
         echo "Error: " . $query . "<br>" . $db->error;
-        echo "<br>Note: this error message should only display during development, and should be removed";
         return 0;
     }
 }
