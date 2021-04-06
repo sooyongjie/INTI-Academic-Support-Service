@@ -2,10 +2,11 @@
 <html lang="en">
 <?php
 session_start();
-if(isset($_SESSION['user'])) {
+if (isset($_SESSION['user'])) {
     header("Location: ./home.php");
-  }
+}
 ?>
+
 <head>
     <!-- Primary Meta Tags -->
     <meta charset="UTF-8" />
@@ -32,10 +33,21 @@ if(isset($_SESSION['user'])) {
     <link href="https://fonts.googleapis.com/css2?&family=Roboto:wght@300;400;500;700&family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <!-- Email -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- Cookie js -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <!-- <script src="./js/theme.js"></script> -->
 </head>
 
 <body class="index">
+    <?php
+    if (isset($_GET['verification']) && $_GET['verification'] != "") {
+        include_once('./func/verification.php');
+        checkVerification($_GET['verification']);
+        exit();
+    }
+    ?>
     <div class="modal-container">
         <div class="modal registration">
             <div class="heading">
@@ -95,19 +107,19 @@ if(isset($_SESSION['user'])) {
                     <h2 class="heading-txt">Register</h2>
                     <p class="subheading">Please enter the correct information.</p>
                 </div>
-                <form action="" autocomplete="off">
+                <form action="./func/sign-up.php" method="POST" autocomplete="off">
                     <div class="input-row">
                         <div>
                             <div class="row-container">
                                 <label for="">Full name</label>
                             </div>
-                            <input type="text" value="Soo Yong Jie" autocomplete="off">
+                            <input type="text" name="fullname" value="Soo Yong Jie" autocomplete="off">
                         </div>
                         <div>
                             <div class="row-container">
                                 <label for="">Username</label>
                             </div>
-                            <input type="text" value="sooyongjie" autocomplete="off">
+                            <input type="text" name="username" value="sooyongjie" autocomplete="off">
                         </div>
                     </div>
                     <div class="row-container">
@@ -117,16 +129,17 @@ if(isset($_SESSION['user'])) {
                     <div class="row-container">
                         <label for="">Password</label>
                     </div>
-                    <input type="password" value="poopandpee" autocomplete="off">
+                    <input type="password" name="password" value="poopandpee" autocomplete="off">
                     <div class="row-container">
                         <a id="login-btn">Have an account? Login here</a>
-                        <button type="submit">Sign up</button>
+                        <button onclick="checkSignUpForm()">Sign up</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </body>
+
 <script>
     // if (window.location.protocol != "https:") {
     //     var proxy = "https://cors-anywhere.herokuapp.com/"
@@ -142,6 +155,56 @@ if(isset($_SESSION['user'])) {
     const registerForm = document.getElementById('register-form');
     const loginFormBtn = document.getElementById('login-btn');
     const loginForm = document.getElementById('login-form');
+
+    getQuotes = () => {
+        fetch(api)
+            .then(response => {
+                if (!response.ok) {
+                    alert("Error 69")
+                }
+                return response.json();
+            })
+            .then(data => {
+                quote.textContent = `"${data.content} "`
+                author.textContent = `- ${data.author}`
+                gsap.to(["#quote", "#author"], {
+                    opacity: "1",
+                });
+            })
+    }
+
+    sendVerificationEmail = (url) => {
+        Email.send({
+            SecureToken: "cc7be992-4742-43dc-a110-b3d3f3754ac1",
+            To: 'sooyongjie@gmail.com',
+            From: "j17025666@student.newinti.edu.my",
+            Subject: "INTI Academic Services Verification",
+            Body: `Click on the following link to verify your account: <br><br> ${url}`
+        }).then(
+            // message => alert(message)
+            modal()
+        );
+    }
+
+    modal = () => {
+        document.querySelector('.modal-container').style.display = "flex"
+        gsap.to(".modal-container", {
+            opacity: "1",
+            duration: "0."
+        });
+    }
+
+    hideElement = (el) => {
+        el.style.opacity = '0'
+        el.style.zIndex = '-1'
+    }
+
+    showElement = (el) => {
+        setTimeout(() => {
+            el.style.opacity = '1'
+            el.style.zIndex = '1'
+        }, 500);
+    }
 
     registerFormBtn.addEventListener('click', () => {
         hideElement(loginForm)
@@ -168,53 +231,24 @@ if(isset($_SESSION['user'])) {
         });
     });
 
-    hideElement = (el) => {
-        el.style.opacity = '0'
-        el.style.zIndex = '-1'
-
-    }
-
-    showElement = (el) => {
-        setTimeout(() => {
-            el.style.opacity = '1'
-            el.style.zIndex = '1'
-        }, 500);
-    }
-
-    fetch(api)
-        .then(response => {
-            if (!response.ok) {
-                alert("Error 69")
-            }
-            return response.json();
-        })
-        .then(data => {
-            quote.textContent = `"${data.content} "`
-            author.textContent = `- ${data.author}`
-            gsap.to(["#quote", "#author"], {
-                opacity: "1",
-            });
-        })
-
-
     window.addEventListener("load", function() {
         gsap.to("#login-form", {
             delay: "0.3",
             opacity: "1",
             duration: "0.4"
         });
+        getQuotes()
     });
-
-    modal = () => {
-        document.querySelector('.modal-container').style.display = "flex"
-        gsap.to(".modal-container", {
-            opacity: "1",
-            duration: "0."
-        });
-    }
-
-    //I will write the validation one day
-    
 </script>
+
+<?php
+if (isset($_SESSION['verification'])) { ?>
+    <script>
+        sendVerificationEmail("<?php echo $_SESSION['verification'] ?>");
+    </script>
+<?php
+    unset($_SESSION['verification']);
+} ?>
+
 
 </html>
