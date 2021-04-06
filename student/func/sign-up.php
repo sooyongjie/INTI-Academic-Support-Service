@@ -12,7 +12,7 @@
 <?php
 session_start();
 
-include_once('./func/func.php');
+include_once('./func.php');
 include_once('../../db_connect.php');
 
 // echo $_POST['username'] . $_POST['password'];

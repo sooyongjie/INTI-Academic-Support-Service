@@ -42,7 +42,7 @@
     .modal-body {
       display: grid;
       row-gap: 10px;
-      padding: 28px 32px 28px 32px;
+      padding: 20px 32px 28px 32px;
       button {
         width: 100%;
         padding: 8px 0;
@@ -53,6 +53,15 @@
         text-align: center;
       }
     }
+    &.verification {
+      .heading {
+        width: inherit;
+      }
+      button {
+        margin-top: 10px;
+      }
+    }
+    // new programme & new subject popup
     &.form {
       .heading {
         margin: 28px 28px;

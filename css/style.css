@@ -249,7 +249,7 @@ body.index .form button {
 .modal-container .modal .modal-body {
   display: grid;
   row-gap: 10px;
-  padding: 28px 32px 28px 32px;
+  padding: 20px 32px 28px 32px;
 }
 
 .modal-container .modal .modal-body button {
@@ -260,6 +260,14 @@ body.index .form button {
   font-size: 14px;
   color: white;
   text-align: center;
+}
+
+.modal-container .modal.verification .heading {
+  width: inherit;
+}
+
+.modal-container .modal.verification button {
+  margin-top: 10px;
 }
 
 .modal-container .modal.form .heading {

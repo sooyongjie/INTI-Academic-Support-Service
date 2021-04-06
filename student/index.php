@@ -49,10 +49,10 @@ if (isset($_SESSION['user'])) {
     }
     ?>
     <div class="modal-container">
-        <div class="modal registration">
+        <div class="modal verification">
             <div class="heading">
                 <h3></h3>
-                <i class="fas fa-times"></i>
+                <i class="fas fa-times" onclick="closeModal()"></i>
             </div>
             <img src="../img/mailbox.png" alt="">
             <div class="modal-body">
@@ -182,16 +182,23 @@ if (isset($_SESSION['user'])) {
             Body: `Click on the following link to verify your account: <br><br> ${url}`
         }).then(
             // message => alert(message)
-            modal()
+            showModal()
         );
     }
 
-    modal = () => {
+    showModal = () => {
         document.querySelector('.modal-container').style.display = "flex"
         gsap.to(".modal-container", {
             opacity: "1",
             duration: "0."
         });
+    }
+    closeModal = () => {
+        gsap.to(".modal-container", {
+            opacity: "0",
+            duration: "0."
+        });
+        document.querySelector('.modal-container').style.display = "none"
     }
 
     hideElement = (el) => {
