@@ -27,7 +27,7 @@ function requestForm()
             <input class="value sess-value" value="July 2021" id="10001" readonly />
         </ul>
         <label for="course-code">Course</label>
-        <input class="chosen-value sub-id" type="hidden" value="10001">
+        <input class="chosen-value sub-id" type="hidden" value="CSIT321">
         <input class="chosen-value sub-input" type="text" value="CSIT321 Project" placeholder="Search course">
         <ul class="value-list sub-list">
             <input class="value sub-value" value="CSIT321 Project" id="CSIT321" readonly />
@@ -65,7 +65,7 @@ function submitRequest()
 
     // for submitting parent request
     $query = "INSERT INTO requests (subCount, `uid`)
-    VALUES ($subCount, 10001)";
+    VALUES ($subCount, '" . $_SESSION['user']['uid'] . "')";
     $reqID = insertQuery($query, 1);
 
     for ($i = 0; $i < $subCount; $i++) {

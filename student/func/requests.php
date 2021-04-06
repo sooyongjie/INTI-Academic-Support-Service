@@ -42,7 +42,7 @@ function requests()
     } else { ?>
         <div class="card request section">
             <div class="heading">
-            <h2>:)</h2>
+                <h2>:)</h2>
             </div>
         </div>
     <?php } ?>
@@ -88,11 +88,11 @@ function requestView()
 
 function subjects()
 {
-    $query = "SELECT prog.progName, sub.subID, sub.subName, sess.sessName FROM request_subjects rs
+    $query = "SELECT prog.progName, rs.subID, sub.subName, sess.sessName FROM request_subjects rs
     INNER JOIN programme prog ON rs.progID = prog.progID 
     INNER JOIN `subject` sub ON rs.subID = sub.subID 
     INNER JOIN `session` sess ON rs.sessID = sess.sessID 
-    WHERE rs.reqID = '" . $_SESSION['reqID'] . "'";
+    WHERE rs.reqID = " . $_SESSION['reqID'] . "";
 
     $result = selectQuery($query);
     if ($result) {
