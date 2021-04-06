@@ -3,6 +3,7 @@
 
 <head>
   <?php include_once('./components/head.php') ?>
+  <?php include_once('./func/programmes.php') ?>
   <title>Programmes</title>
 </head>
 
@@ -18,32 +19,7 @@
           <span>New Programme</span>
         </button>
       </div>
-      <div class="heading">
-        <h3>University of Wollongong</h3>
-        <button onclick="showModal('sub')">
-          <i class="fas fa-plus"></i>
-          <span>New Subject</span>
-        </button>
-      </div>
-      <div class="card request-list">
-        <table>
-          <tr>
-            <th>Subject</th>
-            <th>Price</th>
-            <th>File</th>
-          </tr>
-          <tr>
-            <td>CSCI334 System Design</td>
-            <td>RM1</td>
-            <td class="status">
-              <span class="file">csci334.pdf</span>
-              <a href="" class="arrow">
-                <i class="fas fa-file-upload"></i>
-              </a>
-            </td>
-          </tr>
-        </table>
-      </div>
+      <?php showProgrammes() ?>
     </div>
   </div>
   <div class="modal-container prog-form">
