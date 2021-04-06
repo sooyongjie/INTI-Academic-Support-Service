@@ -16,7 +16,8 @@ function selectQuery($query)
         }
         return $arr;
     } else {
-        echo "Error: " . $query . "<br>" . $db->error;
+        echo "No records found.<br>";   
+        echo "Query: " . $query . "<br>" . $db->error;
         return 0;
     }
 }
