@@ -12,14 +12,7 @@
     <div class="container">
         <div class="content-container">
             <?php include_once('./components/options.php') ?>
-            <div class="heading">
-                <h2>Subjects</h2>
-                <button onclick="showModal('sub')">
-                    <i class="fas fa-plus"></i>
-                    <span>New Subject</span>
-                </button>
-            </div>
-            <?php showSubjects($_SESSION['progID'],$_GET['id']) ?>
+            <?php showSubjects($_SESSION['progID'], $_GET['id']) ?>
         </div>
     </div>
     <div class="modal-container sub-form">
@@ -40,7 +33,7 @@
                         <input type="file" name="progName" id="upload-input">
                     </label>
                     <div class="buttons">
-                        <button class="cancel-btn" type="button" onclick="hideModal('sub')">
+                        <button class="cancel-btn" type="button" onclick="hideModal()">
                             <span>Cancel</span>
                         </button>
                         <button>

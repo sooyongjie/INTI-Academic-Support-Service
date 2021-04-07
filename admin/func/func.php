@@ -27,9 +27,11 @@ function updateQuery($query)
     $db = db_connect();
     // $result = mysqli_query($db, $query);
     if ($db->query($query) === TRUE) {
-        header("Location: site.php");
+        return 1;
+        // header("Location: site.php");
     } else {
         echo "Error updating record: " . $db->error;
+        return 0;
     }
 }
 
@@ -37,8 +39,18 @@ function deleteQuery($query)
 {
     $db = db_connect();
     if ($db->query($query) === TRUE) {
-        header("Location: site.php");
     } else {
         echo "Error: " . $query . "<br>" . $db->error;
+    }
+}
+
+function insertQuery($query)
+{
+    $db = db_connect();
+    if ($db->query($query) === TRUE) {
+        return 1;
+    } else {
+        echo "Error: " . $query . "<br>" . $db->error;
+        return 0;
     }
 }

@@ -551,8 +551,7 @@ button span {
 }
 
 .heading .show {
-  color: black;
-  background: #f8f8f8;
+  color: #222;
 }
 
 .heading .show i {

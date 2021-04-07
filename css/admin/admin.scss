@@ -112,8 +112,7 @@ button {
     }
   }
   & .show {
-    color: black;
-    background: #f8f8f8;
+    color: #222;
     i {
       color: black;
     }
@@ -212,9 +211,6 @@ form.profile-card,
       transition: 0.2s ease-out;
     }
   }
-}
-
-form.pagination {
 }
 
 table {

@@ -1,7 +1,15 @@
 <?php
 
-require_once('./func/func.php');
-require("../db_connect.php");
+if (isset($_GET['progName'])) {
+    // create new programme
+    require_once('./func.php');
+    require_once("../../db_connect.php");
+    newProgramme($_GET['progName']);
+} else {
+    // display all programme
+    require_once('./func/func.php');
+    require_once("../db_connect.php");
+}
 
 unset($_SESSION['progID']);
 
@@ -11,12 +19,12 @@ function showProgrammes()
     $result = selectQuery($query);
     if ($result) {
         foreach ($result as $prog) {
-            showProgram($prog);
+            showProgramme($prog);
         }
     }
 }
 
-function showProgram($prog)
+function showProgramme($prog)
 { ?>
     <div class="heading">
         <h3><?php echo $prog['progName'] ?></h3>
@@ -25,5 +33,14 @@ function showProgram($prog)
             <span>All subjects</span>
         </a>
     </div>
-    
 <?php }
+
+function newProgramme($progName)
+{
+    $query = "INSERT INTO `programme`(`progName`) VALUES ('$progName')";
+    $result = insertQuery($query, 0);
+
+    if ($result) {
+        header("Location: ../programmes.php");
+    } else die("<br>New session error");
+}

@@ -17,7 +17,7 @@ function db_connect()
 
     // Check connection
     if ($db->connect_error) {
-        die("Connection failed: " . $db->connect_error);
+        return 0;
     } else {
         return $db;
     }

@@ -14,7 +14,7 @@
       <?php include_once('./components/options.php') ?>
       <div class="heading">
         <h2>Programmes</h2>
-        <button onclick="showModal('prog')">
+        <button onclick="showModal()">
           <i class="fas fa-plus"></i>
           <span>New Programme</span>
         </button>
@@ -28,11 +28,11 @@
         <h3>New programme</h3>
       </div>
       <div class="modal-body">
-        <form action="" class="new-form">
+        <form action="./func/programmes.php" method="GET" class="new-form">
           <label for="">Name</label>
           <input type="text" name="progName" placeholder="University">
           <div class="buttons">
-            <button class="cancel-btn" type="button" onclick="hideModal('prog')">
+            <button class="cancel-btn" type="button" onclick="hideModal()">
               <span>Cancel</span>
             </button>
             <button>
