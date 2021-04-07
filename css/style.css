@@ -482,7 +482,7 @@ button span {
   cursor: pointer;
 }
 
-a {
+a, a span {
   cursor: pointer;
 }
 
