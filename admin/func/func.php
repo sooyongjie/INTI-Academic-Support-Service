@@ -44,13 +44,14 @@ function deleteQuery($query)
     }
 }
 
-function insertQuery($query)
+function insertQuery($query, $getLastID)
 {
     $db = db_connect();
     if ($db->query($query) === TRUE) {
-        return 1;
+        if ($getLastID) {
+            return $db->insert_id;
+        } else return 1;
     } else {
-        echo "Error: " . $query . "<br>" . $db->error;
-        return 0;
+        echo "Error updating record: " . $db->error;
     }
 }

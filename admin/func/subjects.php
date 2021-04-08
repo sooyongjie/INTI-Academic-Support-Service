@@ -3,20 +3,16 @@
 require_once('./func/func.php');
 require("../db_connect.php");
 
-function showSubjects($prog, $sess)
+function showSubjects($progID, $sessID)
 { ?>
     <div class="heading">
         <h2>
-            <?php $sessName = selectQuery("SELECT sessName FROM `session` WHERE sessID = '$sess'");
+            <?php $sessName = selectQuery("SELECT sessName FROM `session` WHERE sessID = '$sessID'");
             echo $sessName[0]['sessName'] ?>
         </h2>
-        <button onclick="showModal()">
-            <i class="fas fa-plus"></i>
-            <span>New Subject</span>
-        </button>
     </div>
     <?php $query = "SELECT sub.subID, sub.subName, ss.firebaseToken FROM `session_subjects` ss 
-    INNER JOIN `subject` sub ON ss.subID = sub.subID WHERE ss.sessID = '$sess'";
+    INNER JOIN `subject` sub ON ss.subID = sub.subID WHERE ss.sessID = '$sessID'";
     $result = selectQuery($query);
     if ($result) { ?>
         <div class="card request-list">

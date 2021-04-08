@@ -11,8 +11,6 @@ if (isset($_GET['progName'])) {
     require_once("../db_connect.php");
 }
 
-unset($_SESSION['progID']);
-
 function showProgrammes()
 {
     $query = "SELECT * FROM `programme`";
@@ -28,7 +26,7 @@ function showProgramme($prog)
 { ?>
     <div class="heading">
         <h3><?php echo $prog['progName'] ?></h3>
-        <a href="./sessions.php?id=<?php echo $prog['progID'] ?>">
+        <a href="./sessions.php?progID=<?php echo $prog['progID'] ?>">
             <i class="fas fa-arrow-right"></i>
             <span>All subjects</span>
         </a>

@@ -14,7 +14,7 @@
       <?php include_once('./components/options.php') ?>
       <div class="heading">
         <h2>Programmes</h2>
-        <button onclick="showModal()">
+        <button onclick="showModal(1)">
           <i class="fas fa-plus"></i>
           <span>New Programme</span>
         </button>
@@ -32,7 +32,7 @@
           <label for="">Name</label>
           <input type="text" name="progName" placeholder="University">
           <div class="buttons">
-            <button class="cancel-btn" type="button" onclick="hideModal()">
+            <button class="cancel-btn" type="button" onclick="hideModal(1)">
               <span>Cancel</span>
             </button>
             <button>

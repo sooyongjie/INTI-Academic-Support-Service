@@ -2,15 +2,15 @@
 
 function db_connect()
 {
-    $servername = "remotemysql.com";
-    $username = "RdAxHqzJBi";
-    $password = "xoDHLmGBaU";
-    $dbname = "RdAxHqzJBi";
+    // $servername = "remotemysql.com";
+    // $username = "RdAxHqzJBi";
+    // $password = "xoDHLmGBaU";
+    // $dbname = "RdAxHqzJBi";
 
-    // $servername = "localhost";
-    // $username = "root";
-    // $password = "";
-    // $dbname = "inti-academic-support-services";
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "inti-academic-support-services";
 
     // Create connection
     $db = new mysqli($servername, $username, $password, $dbname);
