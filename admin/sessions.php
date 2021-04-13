@@ -47,6 +47,7 @@
             </div>
         </div>
     </div>
+    <!-- New subject form -->
     <div class="modal-container sub-form">
         <div class="modal form sub-modal">
             <div class="heading">
@@ -58,12 +59,12 @@
                     <input type="text" name="progName" placeholder="ID">
                     <label for="">Subject Name</label>
                     <input type="text" name="progName" placeholder="Name">
-                    <label for="">Course Structure</label>
-                    <label for="upload-input" class="upload-btn">
+                    <!-- <label for="">Course Structure</label> -->
+                    <!-- <label for="upload-input" class="upload-btn">
                         <i class="fas fa-upload"></i>
                         <span>Upload file</span>
                         <input type="file" name="progName" id="upload-input">
-                    </label>
+                    </label> -->
                     <div class="buttons">
                         <button class="cancel-btn" type="button" onclick="hideModal(2)">
                             <span>Cancel</span>

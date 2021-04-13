@@ -23,22 +23,22 @@ const hideModal = (option) => {
   }
 };
 
-const showElement = (el) => {
-  el.style.display = "flex";
-  document.onkeydown = function (evt) {
-    onEscKeydown(evt, el);
-  };
-  setTimeout(() => {
-    window.onclick = function (evt) {
-      if (!document.querySelector(".modal form").contains(evt.target)) {
-        hideElement(el);
-      }
-    };
-  }, 1);
-  setTimeout(() => {
-    el.style.opacity = 1;
-  }, 100);
-};
+// const showElement = (el) => {
+//   el.style.display = "flex";
+//   document.onkeydown = function (evt) {
+//     onEscKeydown(evt, el);
+//   };
+//   setTimeout(() => {
+//     window.onclick = function (evt) {
+//       if (document.querySelectorAll(".modal-container").contains(evt.target)) {
+//         hideElement(el);
+//       }
+//     };
+//   }, 1);
+//   setTimeout(() => {
+//     el.style.opacity = 1;
+//   }, 100);
+// };
 
 const hideElement = (el) => {
   el.style.opacity = 0;
