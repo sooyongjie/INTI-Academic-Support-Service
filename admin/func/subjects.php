@@ -43,13 +43,13 @@ function showSubject($sub)
                 }
                 ?>
             </a>
-            <a href="" class="arrow">
+            <a onclick="showModal(2)" class="arrow">
                 <i class="fas fa-file-upload"></i>
             </a>
         </td>
     </tr>
 <?php }
 
-function addSubject() {
-    
+function addSubject()
+{
 }

@@ -304,9 +304,8 @@ nav .nav-profile {
 }
 
 .upload-btn {
-  width: max-content;
-  margin-top: 8px;
-  padding: 4px 12px;
+  margin-top: 12px;
+  padding: 8px 12px;
   display: grid;
   grid-template-columns: repeat(2, max-content);
   column-gap: 8px;
