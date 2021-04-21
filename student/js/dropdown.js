@@ -1,7 +1,10 @@
 const dropdownInit = (input, inputID, dropdown, dropdownArray, valueArray) => {
-  dropdownArray.forEach((item) => {
-    valueArray.push(item.value);
-  });
+  for (let j = 0; j < dropdownArray.length; j++) {
+    let values = [dropdownArray[j].value, dropdownArray[j].id];
+    valueArray.push(values);
+  }
+  console.log('dropdownArray: ', dropdownArray);
+  console.log("valueArray: ", valueArray);
 
   input.addEventListener("input", () => {
     dropdown.classList.add("open");
@@ -11,7 +14,7 @@ const dropdownInit = (input, inputID, dropdown, dropdownArray, valueArray) => {
         if (
           !(
             inputValue.substring(0, inputValue.length) ===
-            valueArray[j].substring(0, inputValue.length).toLowerCase()
+            valueArray[j][0].substring(0, inputValue.length).toLowerCase()
           )
         ) {
           dropdownArray[j].classList.add("closed");
@@ -26,6 +29,7 @@ const dropdownInit = (input, inputID, dropdown, dropdownArray, valueArray) => {
     }
   });
 
+  // prog, sess, sub HTML element
   dropdownArray.forEach((item) => {
     item.addEventListener("click", (evt) => {
       input.value = item.value;

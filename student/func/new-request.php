@@ -1,5 +1,35 @@
 <?php
 
+require_once('./func/func.php');
+require_once("../db_connect.php");
+
+function getProgrammes()
+{
+    $query = "SELECT * FROM `programme`";
+    $result = selectQuery($query);
+    if ($result) {
+        return $result;
+    }
+}
+
+function getSessions()
+{
+    $query = "SELECT * FROM `session`";
+    $result = selectQuery($query);
+    if ($result) {
+        return $result;
+    }
+}
+
+function getSubjects()
+{
+    $query = "SELECT * FROM `subject`";
+    $result = selectQuery($query);
+    if ($result) {
+        return $result;
+    }
+}
+
 function requestForm()
 {
 ?>
@@ -12,26 +42,41 @@ function requestForm()
         <input class="chosen-value prog-id" type="hidden" value="10001">
         <input class="chosen-value prog-input" type="text" value="University of Wollongong" placeholder="Search programme">
         <ul class="value-list prog-list">
-            <input class="value prog-value" value="Swinburne University" id="10002" readonly />
-            <input class="value prog-value" value="University Coventry" id="10003" readonly />
-            <input class="value prog-value" value="University of Wollongong" id="10001" readonly />
+            <?php
+            $progs = getProgrammes();
+            foreach ($progs as $prog) {
+            ?>
+                <input class="value prog-value" value="<?php echo $prog['progName'] ?>" id="<?php echo $prog['progID'] ?>" readonly />
+            <?php
+            }
+            ?>
+
         </ul>
         <label for="session">Session</label>
         <input class="chosen-value sess-id" type="hidden" value="10001">
         <input class="chosen-value sess-input" type="text" value="July 2019" placeholder="Search session">
         <ul class="value-list sess-list">
-            <input class="value sess-value" value="July 2019" id="10001" readonly />
-            <input class="value sess-value" value="Feb 2020" id="10001" readonly />
-            <input class="value sess-value" value="July 2020" id="10001" readonly />
-            <input class="value sess-value" value="Feb 2021" id="10001" readonly />
-            <input class="value sess-value" value="July 2021" id="10001" readonly />
+            <?php
+            $sessions = getSessions();
+            foreach ($sessions as $sess) {
+            ?>
+                <input class="value sess-value" value="<?php echo $sess['sessName'] ?>" id="<?php echo $sess['sessID'] ?>" readonly />
+            <?php
+            }
+            ?>
         </ul>
         <label for="course-code">Course</label>
         <input class="chosen-value sub-id" type="hidden" value="CSIT321">
         <input class="chosen-value sub-input" type="text" value="CSIT321 Project" placeholder="Search course">
         <ul class="value-list sub-list">
-            <input class="value sub-value" value="CSIT321 Project" id="CSIT321" readonly />
-            <input class="value sub-value" value="ISIT315 Semantic Web" id="ISIT315" readonly />
+            <?php
+            $subjects = getSubjects();
+            foreach ($subjects as $sub) {
+            ?>
+                <input class="value sub-value" value="<?php echo $sub['subID'] . " " . $sub['subName'] ?>" id="<?php echo $sub['subID'] ?>" readonly />
+            <?php
+            }
+            ?>
         </ul>
     </div>
 
