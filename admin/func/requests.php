@@ -8,7 +8,7 @@ function requests($result)
     <table>
         <tr>
             <th class="id">ID</th>
-            <th>Name</th>
+            <th>Username</th>
             <th>Date</th>
             <th>Time</th>
             <th>Status</th>
@@ -18,7 +18,7 @@ function requests($result)
         ?>
             <tr>
                 <td><?php echo $row['reqID'] ?></td>
-                <td><?php echo $row['fullname'] ?></td>
+                <td><?php echo $row['username'] ?></td>
                 <td><?php echo date("d M Y", strtotime($row['datetime'])) ?></td>
                 <td><?php echo date("g:ia", strtotime($row['datetime'])) ?></td>
                 <td class="status">
@@ -55,13 +55,13 @@ function pendingRequests()
 {
     if (isset($_GET['sort'])) {
         $sort = $_GET['sort'];
-        $query = "SELECT reqID, fullname, `datetime`, `status` FROM requests r
+        $query = "SELECT reqID, username, `datetime`, `status` FROM requests r
         INNER JOIN user u on r.uid = u.uid 
-        WHERE `status` = '1' ORDER BY $sort desc LIMIT " . $_SESSION['limit'] . " ";
+        WHERE `status` = '1' ORDER BY $sort desc LIMIT " . $_SESSION['offset'] . ", " . $_SESSION['limit'] . " ";
     } else {
-        $query = "SELECT reqID, fullname, `datetime`, `status` FROM requests r
+        $query = "SELECT reqID, username, `datetime`, `status` FROM requests r
         INNER JOIN user u on r.uid = u.uid 
-        WHERE `status` = '1' LIMIT " . $_SESSION['limit'] . " ";
+        WHERE `status` = '1' ORDER BY `datetime` desc LIMIT " . $_SESSION['offset'] . ", " . $_SESSION['limit'] . " ";
     }
 
     $result = selectQuery($query);
@@ -72,8 +72,8 @@ function pendingRequests()
 
 function allRequests()
 {
-    $query = "SELECT reqID, fullname, `datetime`, `status` FROM requests r
-    INNER JOIN user u on r.uid = u.uid ";
+    $query = "SELECT reqID, username, `datetime`, `status` FROM requests r
+    INNER JOIN user u on r.uid = u.uid ORDER BY `datetime` desc LIMIT " . $_SESSION['limit'] . " ";
     $result = selectQuery($query);
     if ($result) {
         requests($result);
@@ -107,7 +107,7 @@ function requestDetails($id)
         <label>Payment</label>
         <?php
         foreach ($result as $row) { ?>
-            <span><?php echo $row['fullname'] ?></span>
+            <span><?php echo $row['username'] ?></span>
             <span><?php echo date("d/m/Y g:ia", strtotime($row['datetime'])) ?></span>
             <span><?php echo status($row['status']) ?></span>
             <span>

@@ -1,9 +1,15 @@
 <?php
 
-if (isset($_POST['limit'])) {
-    $_SESSION['limit'] = $_POST['limit'];
-} else if (!isset($_SESSION['limit'])) {
-    $_SESSION['limit'] = 5;
+// check requests to show all at once
+if (!isset($_SESSION['limit'])) $_SESSION['limit'] = 5;
+else if (isset($_GET['entries'])) {
+    $_SESSION['limit'] = $_GET['entries'];
+}
+
+// check requests to show all at once
+if (!isset($_SESSION['offset'])) $_SESSION['offset'] = 0;
+else if (isset($_GET['offset'])) {
+    $_SESSION['offset'] = $_GET['offset'];
 }
 
 function selectQuery($query)
@@ -16,7 +22,7 @@ function selectQuery($query)
         }
         return $arr;
     } else {
-        echo "No records found.<br>";   
+        echo "No records found.<br>";
         echo "Query: " . $query . "<br>" . $db->error;
         return 0;
     }

@@ -23,12 +23,20 @@
           <div class="card request-list">
             <?php pendingRequests() ?>
           </div>
+          <!-- Pagination -->
+          <input type="hidden" value="<?php echo $_SESSION['offset'] ?>" name="offset" id="offset">
+          <input type="hidden" value="<?php echo $_SESSION['limit'] ?>" name="limit" id="limit">
           <form class="pagination">
+            <?php
+            if ($_SESSION['offset'] != 0 && $_SESSION['offset'] % $_SESSION['limit'] == 0) {
+            } else {
+            }
+            ?>
             <button class="pagination-disabled">
               <i class="fas fa-angle-left"></i>
             </button>
-            <input type="number" value="1">
-            <button>
+            <input type="number" value="1" name="offset" id="offset-input">
+            <button type="button" onclick="addOffset()">
               <i class="fas fa-angle-right pagination-enabled"></i>
             </button>
           </form>
@@ -36,10 +44,7 @@
         <!-- All Requests  -->
         <div class="section">
           <div class="heading">
-            <h2>All Requests</h2>
-          </div>
-          <div class="card request-list">
-            <?php allRequests() ?>
+            <!-- <h2>All Requests</h2> -->
           </div>
         </div>
       <?php
@@ -73,6 +78,6 @@
   </div>
   <?php if (isset($_SESSION['toast'])) include_once('./components/toast.php') ?>
 </body>
-
+<script src="./js/offset.js"></script>
 
 </html>

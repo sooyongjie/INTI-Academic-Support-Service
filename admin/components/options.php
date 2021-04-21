@@ -9,7 +9,7 @@
             <?php printSortButton("fullname", "Name") ?>
             <?php printSortButton("datetime", "Date") ?>
         </div>
-        <form method="post" class="offset-form">
+        <form method="get" class="offset-form">
             <label for="entries">Show</label>
             <input type="number" name="entries" value="5" id="entries" />
             <span>entries</span>
