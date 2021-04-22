@@ -114,13 +114,12 @@ function requestDetails($id)
     ?>
         <label>Name</label>
         <label>Date</label>
-        <label>Status</label>
         <label>Payment</label>
+        <label>Status</label>
         <?php
         foreach ($result as $row) { ?>
             <span><?php echo $row['username'] ?></span>
             <span><?php echo date("d/m/Y g:ia", strtotime($row['datetime'])) ?></span>
-            <span><?php echo status($row['status']) ?></span>
             <span>
                 <?php
                 if ($row['payID'])
@@ -128,6 +127,7 @@ function requestDetails($id)
                 else echo "Pending";
                 ?>
             </span>
+            <span><?php echo status($row['status']) ?></span>
         <?php   }
         return 1;
     } else {
