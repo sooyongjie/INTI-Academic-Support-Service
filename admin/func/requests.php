@@ -50,9 +50,20 @@ function requests($result)
     <?php
 }
 
+function getNumOfRequests()
+{
+    $query = "SELECT COUNT(reqID) AS numOfReqs FROM requests WHERE `status` = '1'";
+    $result = selectQuery($query);
+    if ($result) {
+        return $result;
+    }
+}
 
 function pendingRequests()
 {
+    $temp = getNumOfRequests();
+    $count = $temp[0]["numOfReqs"];
+    $_SESSION['totalPages'] = ceil($_SESSION['count'] / $_SESSION['limit']);
     if (isset($_GET['sort'])) {
         $sort = $_GET['sort'];
         $query = "SELECT reqID, username, `datetime`, `status` FROM requests r

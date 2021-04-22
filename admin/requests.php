@@ -32,7 +32,7 @@
             } else {
             } ?>
             <?php
-            if ($_SESSION['page'] == 0) { ?>
+            if ($_SESSION['page'] == 1) { ?>
               <button class="pagination-disabled">
                 <i class="fas fa-angle-left"></i>
               </button>
@@ -42,9 +42,16 @@
               </button>
             <?php } ?>
             <input type="number" value="<?php echo $_SESSION['page'] ?>" name="page" id="page-input">
-            <button type="button" onclick="addOffset()">
-              <i class="fas fa-angle-right pagination-enabled"></i>
-            </button>
+            <?php
+            if ($_SESSION['page'] >= $_SESSION['totalPages']) { ?>
+              <button type="button" class="pagination-disabled">
+                <i class="fas fa-angle-right"></i>
+              </button>
+            <?php } else { ?>
+              <button type="button" onclick="addOffset()">
+                <i class="fas fa-angle-right pagination-enabled"></i>
+              </button>
+            <?php } ?>
           </form>
         </div>
         <!-- All Requests  -->
