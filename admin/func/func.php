@@ -7,9 +7,13 @@ else if (isset($_GET['entries'])) {
 }
 
 // check requests to show all at once
-if (!isset($_SESSION['offset'])) $_SESSION['offset'] = 0;
-else if (isset($_GET['offset'])) {
-    $_SESSION['offset'] = $_GET['offset'];
+if (!isset($_SESSION['page'])) {
+    $_SESSION['page'] = 1;
+    $_SESSION['offset'] = 0;
+} else if (isset($_GET['page'])) {
+    $_SESSION['page'] = $_GET['page'];
+    $_SESSION['offset'] = ($_SESSION['page'] - 1) * $_SESSION['limit'];
+    echo $_SESSION['offset'];
 }
 
 function selectQuery($query)

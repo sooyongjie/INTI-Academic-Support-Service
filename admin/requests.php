@@ -30,12 +30,18 @@
             <?php
             if ($_SESSION['offset'] != 0 && $_SESSION['offset'] % $_SESSION['limit'] == 0) {
             } else {
-            }
-            ?>
-            <button class="pagination-disabled">
-              <i class="fas fa-angle-left"></i>
-            </button>
-            <input type="number" value="1" name="offset" id="offset-input">
+            } ?>
+            <?php
+            if ($_SESSION['page'] == 0) { ?>
+              <button class="pagination-disabled">
+                <i class="fas fa-angle-left"></i>
+              </button>
+            <?php } else { ?>
+              <button type="button" onclick="minusOffset()">
+                <i class="fas fa-angle-left pagination-enabled"></i>
+              </button>
+            <?php } ?>
+            <input type="number" value="<?php echo $_SESSION['page'] ?>" name="page" id="page-input">
             <button type="button" onclick="addOffset()">
               <i class="fas fa-angle-right pagination-enabled"></i>
             </button>
