@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/browser-image-compression@1.0.13/dist/browser-image-compression.js"></script>
+
+</head>
+
+<body>
+    <input type="file" accept="image/*" onchange="handleImageUpload(event);">
+</body>
+<script>
+    function handleImageUpload(event) {
+        var imageFile = event.target.files[0];
+        console.log('originalFile instanceof Blob', imageFile instanceof Blob); // true
+        console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
+
+        var options = {
+            maxSizeMB: 1,
+            maxWidthOrHeight: 1920,
+            useWebWorker: true,
+            // fileType: "jpg",
+        }
+        imageCompression(imageFile, options)
+            .then(function (compressedFile) {
+                console.log('compressedFile: ', compressedFile);
+                console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+                console.log(
+                    `compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+                let newImage = URL.createObjectURL(compressedFile);
+                console.log('newImage: ', newImage);
+                // return uploadToServer(compressedFile); // write your own logic
+            })
+            .catch(function (error) {
+                console.log(error.message);
+            });
+    }
+</script>
+
+</html>

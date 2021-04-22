@@ -3,6 +3,10 @@
 
 <head>
     <?php include_once('./components/head.php') ?>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@1.0.13/dist/browser-image-compression.js"></script>
+    <script src="./js/firebase.js"></script>
 </head>
 
 <body>
@@ -43,6 +47,6 @@
 
 <script src="js/script.js"></script>
 <script src="js/theme.js"></script>
-<script src="js/upload-files.js"></script>
+<script src="./js/file.js"></script>
 
 </html>

@@ -61,7 +61,8 @@ function requestView()
             $_SESSION['reqID'] = $row['reqID']; ?>
             <div class="card request section">
                 <div class="heading">
-                    <h2>Request #<?php echo $row['reqID'] ?></h3>
+                    <h2>Request #<?php echo $row['reqID'] ?></h2>
+                    <input type="hidden" id="request-id" value="<?php echo $_SESSION['reqID'] ?>" />
                 </div>
                 <label for="">Date</label>
                 <p><?php echo date("jS F Y", strtotime($row['datetime'])) ?></p>
@@ -154,10 +155,13 @@ function payment()
     <?php
     }
     ?>
-    <label for="receipt-input" class="receipt-input">
-        <i class="fas fa-upload"></i>
-        <span>Upload Receipt</span>
-        <input type="file" name="" id="receipt-input">
-    </label>
+    <form action="" id="receipt-form">
+        <label for="receipt-input" class="receipt-input">
+            <i class="input-icon fas fa-upload"></i>
+            <span class="input-name">Upload Receipt</span>
+            <input type="hidden" name="token" id="token">
+            <input type="file" name="" id="receipt-input" onchange="onInsertFile()">
+        </label>
+    </form>
 <?php
 }
