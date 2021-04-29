@@ -20,6 +20,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    // requests list
+    p {
+      margin-bottom: 0px !important;
+    }
     a.view-request {
       height: 35px;
       width: 35px;
@@ -109,7 +113,7 @@
 .card.request {
   min-height: 200px;
   width: 250px;
-  padding: 24px 0px 16px 32px;
+  padding: 24px 0px 24px 32px;
   justify-content: unset;
   align-items: unset;
 
@@ -129,10 +133,6 @@
   label {
     margin-bottom: 8px;
   }
-}
-
-.subject {
-  
 }
 
 .card.profile {

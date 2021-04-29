@@ -234,6 +234,10 @@ nav img {
   justify-content: space-between;
 }
 
+.card .col p {
+  margin-bottom: 0px !important;
+}
+
 .card .col a.view-request {
   height: 35px;
   width: 35px;
@@ -339,7 +343,7 @@ nav img {
 .card.request {
   min-height: 200px;
   width: 250px;
-  padding: 24px 0px 16px 32px;
+  padding: 24px 0px 24px 32px;
   justify-content: unset;
   align-items: unset;
 }
