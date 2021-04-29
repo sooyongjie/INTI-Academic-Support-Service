@@ -76,8 +76,12 @@ function requestView()
                     echo "<p>Pending</p>";
                 } else {
                     $GLOBALS['payment'] = 1;
-                    $url = "https://firebasestorage.googleapis.com/v0/b/inti-academic-support.appspot.com/o/req%23" . $_SESSION['reqID'] . "?alt=media&token=" . $row['token'];
-                    echo "<a href='" . $url . "'>Yo</a>";
+                    $url = "https://firebasestorage.googleapis.com/v0/b/inti-academic-support.appspot.com/o/req%23" . $_SESSION['reqID'] . "?alt=media&token=" . $row['token'];  ?>
+                    <a href="<?php echo $url ?>" class="receipt-link">
+                        <i class="far fa-file-image"></i>
+                        <span>Receipt</span>
+                    </a>
+                <?php
                 }
                 ?>
 
@@ -145,16 +149,6 @@ function payment()
     <div class="heading">
         <h2>Payment</h3>
     </div>
-    <?php
-    if ($GLOBALS['payment'] == 1) {
-    ?>
-        <p class="payment-receipt">
-            <i class="far fa-file-image"></i>
-            <span>Hello am file</span>
-        </p>
-    <?php
-    }
-    ?>
     <form action="./func/payment.php" method="POST" id="receipt-form">
         <label for="receipt-input" class="receipt-input">
             <i class="input-icon fas fa-upload"></i>
