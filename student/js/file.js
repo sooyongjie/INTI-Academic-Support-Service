@@ -15,8 +15,9 @@ const onInsertFile = () => {
   inputName.textContent = fileName;
   console.log("fileType: ", fileType);
 
-  if (fileType == "jpeg" || fileType == "png") {
+  if (fileType == "jpeg" || fileType == "png" || fileType == "jpg") {
     inputIcon.className = "fas fa-file-image";
+    showToast("Uploading...")
     uploadFile(input.files[0]);
   } else {
     alert("Not jpeg or png");
@@ -44,7 +45,7 @@ const uploadToDB = (name) => {
       let token = url.split("=").pop();
       console.log("token: ", token);
       tokenInput.value = token;
-      //   document.getElementById("receipt-form").submit();
+      document.getElementById("receipt-form").submit();
     })
     .catch((error) => {
       console.log("error: ", error);

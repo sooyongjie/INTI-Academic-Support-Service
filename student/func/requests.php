@@ -51,7 +51,7 @@ function requests()
 
 function requestView()
 {
-    $query = "SELECT r.reqID, `datetime`, p.amount , `status`, p.url FROM requests r 
+    $query = "SELECT r.reqID, `datetime`, p.amount , `status`, p.token FROM requests r 
     INNER JOIN payment p ON r.reqID = p.reqID 
     WHERE r.reqID = '" . $_GET['id'] . "'";
 
@@ -71,16 +71,16 @@ function requestView()
                 <label for="">Status</label>
                 <p><?php echo status($row['status']) ?></p>
                 <label for="">Payment</label>
-                <p>
-                    <?php
-                    if ($row['url'] == "") {
-                        echo "Pending";
-                    } else {
-                        $GLOBALS['payment'] = 1;
-                        echo $row['url'];
-                    }
-                    ?>
-                </p>
+                <?php
+                if ($row['token'] == "") {
+                    echo "<p>Pending</p>";
+                } else {
+                    $GLOBALS['payment'] = 1;
+                    $url = "https://firebasestorage.googleapis.com/v0/b/inti-academic-support.appspot.com/o/req%23" . $_SESSION['reqID'] . "?alt=media&token=" . $row['token'];
+                    echo "<a href='" . $url . "'>Yo</a>";
+                }
+                ?>
+
             </div>
         <?php
         }
@@ -155,11 +155,12 @@ function payment()
     <?php
     }
     ?>
-    <form action="" id="receipt-form">
+    <form action="./func/payment.php" method="POST" id="receipt-form">
         <label for="receipt-input" class="receipt-input">
             <i class="input-icon fas fa-upload"></i>
             <span class="input-name">Upload Receipt</span>
             <input type="hidden" name="token" id="token">
+            <input type="hidden" name="reqID" value="<?php echo $_GET['id'] ?>">
             <input type="file" name="" id="receipt-input" onchange="onInsertFile()">
         </label>
     </form>
