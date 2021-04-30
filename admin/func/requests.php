@@ -63,7 +63,7 @@ function pendingRequests()
 {
     $temp = getNumOfRequests();
     $count = $temp[0]["numOfReqs"];
-    $_SESSION['totalPages'] = ceil($_SESSION['count'] / $_SESSION['limit']);
+    $_SESSION['totalPages'] = ceil($count / $_SESSION['limit']);
     if (isset($_GET['sort'])) {
         $sort = $_GET['sort'];
         $query = "SELECT reqID, username, `datetime`, `status` FROM requests r

@@ -3,7 +3,7 @@ const dropdownInit = (input, inputID, dropdown, dropdownArray, valueArray) => {
     let values = [dropdownArray[j].value, dropdownArray[j].id];
     valueArray.push(values);
   }
-  console.log('dropdownArray: ', dropdownArray);
+  console.log("dropdownArray: ", dropdownArray);
   console.log("valueArray: ", valueArray);
 
   input.addEventListener("input", () => {
@@ -34,6 +34,9 @@ const dropdownInit = (input, inputID, dropdown, dropdownArray, valueArray) => {
     item.addEventListener("click", (evt) => {
       input.value = item.value;
       inputID.value = item.id;
+      dropdownArray.forEach((dropdown) => {
+        dropdown.classList.add("closed");
+      });
     });
   });
 
