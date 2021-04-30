@@ -30,6 +30,10 @@
         <div class="section">
           <div class="heading">
             <h2>All Requests</h2>
+            <a href="./requests.php?all">
+              <i class="fas fa-arrow-right"></i>
+              <span>All subjects</span>
+            </a>
           </div>
         </div>
       <?php
