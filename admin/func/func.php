@@ -13,7 +13,6 @@ if (!isset($_SESSION['page'])) {
 } else if (isset($_GET['page'])) {
     $_SESSION['page'] = $_GET['page'];
     $_SESSION['offset'] = ($_SESSION['page'] - 1) * $_SESSION['limit'];
-    echo $_SESSION['offset'];
 }
 
 function selectQuery($query)
