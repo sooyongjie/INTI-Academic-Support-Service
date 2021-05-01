@@ -54,11 +54,12 @@
                 <h3>New subject</h3>
             </div>
             <div class="modal-body">
-                <form action="" class="new-form">
+                <form action="./func/sessions.php" method="GET" class="new-form">
                     <label for="">Subject ID</label>
-                    <input type="text" name="progName" placeholder="ID">
+                    <input type="text" name="subID" placeholder="ID">
                     <label for="">Subject Name</label>
-                    <input type="text" name="progName" placeholder="Name">
+                    <input type="text" name="subName" placeholder="Name">
+                    <input type="hidden" name="progID" value="<?php echo $_GET['progID'] ?>">
                     <!-- <label for="">Course Structure</label> -->
                     <!-- <label for="upload-input" class="upload-btn">
                         <i class="fas fa-upload"></i>
