@@ -25,6 +25,7 @@
             <?php showSubjects($_GET['progID']) ?>
         </div>
     </div>
+    <!-- New session form -->
     <div class="modal-container prog-form">
         <div class="modal form">
             <div class="heading">
@@ -68,6 +69,30 @@
                     </label> -->
                     <div class="buttons">
                         <button class="cancel-btn" type="button" onclick="hideModal(2)">
+                            <span>Cancel</span>
+                        </button>
+                        <button>
+                            <span>Confirm</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Edit subject form -->
+    <div class="modal-container edit-form">
+        <div class="modal form">
+            <div class="heading">
+                <h3>Edit Subject</h3>
+            </div>
+            <div class="modal-body">
+                <form action="./func/sessions.php" method="GET" class="new-form">
+                    <label for="">Subject ID</label>
+                    <input type="text" name="subID" id="input-subID">
+                    <label for="">Subject Name</label>
+                    <input type="text" name="subName" id="input-subName">
+                    <div class="buttons">
+                        <button class="cancel-btn" type="button" onclick="hideModal(3)">
                             <span>Cancel</span>
                         </button>
                         <button>

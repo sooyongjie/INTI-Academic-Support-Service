@@ -1,5 +1,6 @@
 const progForm = document.querySelector(".prog-form");
 const subForm = document.querySelector(".sub-form");
+const editForm = document.querySelector(".edit-form");
 
 const showModal = (option) => {
   switch (option) {
@@ -8,6 +9,9 @@ const showModal = (option) => {
       break;
     case 2:
       showElement(subForm);
+      break;
+    case 3:
+      showElement(editForm);
       break;
   }
 };
@@ -19,6 +23,9 @@ const hideModal = (option) => {
       break;
     case 2:
       hideElement(subForm);
+      break;
+    case 3:
+      hideElement(editForm);
       break;
   }
 };
@@ -56,4 +63,7 @@ const onEscKeydown = (evt, el) => {
   }
 };
 
-
+const editSubjectForm = (subID, subName) => {
+  document.querySelector('#input-subID').value = subID
+  document.querySelector('#input-subName').value = subName
+}

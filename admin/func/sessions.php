@@ -55,7 +55,16 @@ function showSubjects($progID)
                 </tr>
                 <?php foreach ($result as $sub) { ?>
                     <tr>
-                        <td><?php echo $sub['subID'] . " " . $sub['subName'] ?></td>
+                        <td class="status"><?php echo $sub['subID'] . " " . $sub['subName'] ?>
+                            <div class="row-actions">
+                                <a class="arrow" onclick="showModal(3); editSubjectForm('<?php echo $sub['subID'] ?>','<?php echo $sub['subName'] ?>')">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                <a href="" class="arrow">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </div>
+                        </td>
                     </tr>
                 <?php } ?>
             </table>
