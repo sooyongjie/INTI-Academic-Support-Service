@@ -50,18 +50,26 @@ function requests($result)
     <?php
 }
 
-function getNumOfRequests()
+function getNumOfRequests($status)
 {
-    $query = "SELECT COUNT(reqID) AS numOfReqs FROM requests WHERE `status` = '1'";
-    $result = selectQuery($query);
-    if ($result) {
-        return $result;
+    if ($status == 1) {
+        $query = "SELECT COUNT(reqID) AS numOfReqs FROM requests WHERE `status` = $status";
+        $result = selectQuery($query);
+        if ($result) {
+            return $result;
+        }
+    } else {
+        $query = "SELECT COUNT(reqID) AS numOfReqs FROM requests";
+        $result = selectQuery($query);
+        if ($result) {
+            return $result;
+        }
     }
 }
 
 function pendingRequests()
 {
-    $temp = getNumOfRequests();
+    $temp = getNumOfRequests(1);
     $count = $temp[0]["numOfReqs"];
     $_SESSION['totalPages'] = ceil($count / $_SESSION['limit']);
     if (isset($_GET['sort'])) {
@@ -83,8 +91,20 @@ function pendingRequests()
 
 function allRequests()
 {
-    $query = "SELECT reqID, username, `datetime`, `status` FROM requests r
-    INNER JOIN user u on r.uid = u.uid ORDER BY `datetime` desc LIMIT " . $_SESSION['limit'] . " ";
+    $temp = getNumOfRequests(-1);
+    $count = $temp[0]["numOfReqs"];
+    $_SESSION['totalPages'] = ceil($count / $_SESSION['limit']);
+    if (isset($_GET['sort'])) {
+        $sort = $_GET['sort'];
+        $query = "SELECT reqID, username, `datetime`, `status` FROM requests r
+        INNER JOIN user u on r.uid = u.uid 
+        ORDER BY $sort desc LIMIT " . $_SESSION['offset'] . ", " . $_SESSION['limit'] . " ";
+    } else {
+        $query = "SELECT reqID, username, `datetime`, `status` FROM requests r
+        INNER JOIN user u on r.uid = u.uid 
+        ORDER BY `datetime` desc LIMIT " . $_SESSION['offset'] . ", " . $_SESSION['limit'] . " ";
+    }
+
     $result = selectQuery($query);
     if ($result) {
         requests($result);
