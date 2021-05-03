@@ -12,7 +12,7 @@ function uploadPayment($reqID, $token)
     $query = "UPDATE `payment` SET `token`= '$token' WHERE `reqID` = $reqID";
     $result = updateQuery($query);
     // update payment ID in request record
-    $query = "UPDATE `request` SET `payID`= '$reqID' WHERE `reqID` = $reqID";
+    $query = "UPDATE `requests` SET `payID`= '$reqID' WHERE `reqID` = $reqID";
     $result = updateQuery($query);
     $header = "Location: ../request-view.php?id=" . $reqID;
     if ($result) header($header);
