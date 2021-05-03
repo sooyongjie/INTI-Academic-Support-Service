@@ -520,6 +520,10 @@ a:active {
   transition: 0.05 ease-out;
 }
 
+.link {
+  text-decoration: underline;
+}
+
 footer {
   height: 5vh;
   width: 100%;

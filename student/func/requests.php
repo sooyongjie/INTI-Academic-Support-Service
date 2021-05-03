@@ -79,7 +79,7 @@ function requestView()
                     $url = "https://firebasestorage.googleapis.com/v0/b/inti-academic-support.appspot.com/o/req%23" . $_SESSION['reqID'] . "?alt=media&token=" . $row['token'];  ?>
                     <a href="<?php echo $url ?>" class="receipt-link">
                         <i class="far fa-file-image"></i>
-                        <span>Receipt</span>
+                        <span class="link">Receipt</span>
                     </a>
                 <?php
                 }
