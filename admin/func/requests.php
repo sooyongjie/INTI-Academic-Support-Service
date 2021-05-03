@@ -142,8 +142,9 @@ function requestDetails($id)
             <span><?php echo date("d/m/Y g:ia", strtotime($row['datetime'])) ?></span>
             <span>
                 <?php
+
                 if ($row['payID'])
-                    echo $row['payID'];
+                    echo "<a class='link' href='" . getPayment($row['payID']) . "'>Paid</a>";
                 else echo "Pending";
                 ?>
             </span>
@@ -154,6 +155,14 @@ function requestDetails($id)
         $_SESSION['toast'] = "No results were returned";
         return 0;
     };
+}
+
+function getPayment($id)
+{
+    $query = "SELECT token FROM payment WHERE payID = $id ";
+    $result = selectQuery($query);
+    $url = "https://firebasestorage.googleapis.com/v0/b/inti-academic-support.appspot.com/o/req%23" . $id . "?alt=media&token=" . $result[0]['token'];
+    return $url;
 }
 
 function requestSubjects($id)
