@@ -255,8 +255,8 @@ nav .nav-profile {
   padding-bottom: 16px !important;
   display: grid !important;
   grid-template-columns: repeat(4, max-content);
-  grid-template-rows: repeat(2, max-content);
-  column-gap: 60px;
+  grid-template-rows: repeat(2);
+  justify-content: space-between;
   row-gap: 12px !important;
 }
 
@@ -271,8 +271,63 @@ nav .nav-profile {
   padding: 0;
 }
 
+.request-tag {
+  padding: 4px 10px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 6px;
+  transition: 0.1s ease-out;
+}
+
+.request-tag.approve-tag {
+  background: #e3f2fd;
+  color: #1e88e5;
+  cursor: pointer;
+}
+
+.request-tag.approve-tag .fas {
+  color: #2196f3;
+}
+
+.request-tag.approve-tag:hover, .request-tag.approve-tag:focus {
+  background: #bbdefb;
+  color: #1565c0;
+}
+
+.request-tag.approve-tag:hover .fas, .request-tag.approve-tag:focus .fas {
+  color: #1976d2;
+}
+
+.request-tag.completed-tag {
+  background: #e8f5e9;
+  color: #388e3c;
+}
+
+.request-tag.cancelled-tag {
+  background: #FFEBEE;
+  color: #E53935;
+}
+
+.request-tag .fa-circle {
+  margin-top: 2px;
+  font-size: 5px;
+}
+
+.request-tag .fa-check {
+  font-size: 8px;
+}
+
+.request-tag .fa-times {
+  font-size: 9px;
+}
+
 .subjects {
   max-width: 650px;
+  margin: unset !important;
   display: flex;
   column-gap: 30px;
   row-gap: 30px;
@@ -700,7 +755,6 @@ table td {
 }
 
 table .status {
-  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -708,6 +762,7 @@ table .status {
 }
 
 table .status .arrow {
+  margin-left: -28px;
   height: 12px;
   width: 12px;
   padding: 6px;
@@ -715,7 +770,7 @@ table .status .arrow {
   justify-content: center;
   align-items: center;
   position: relative;
-  right: 40px;
+  right: 20px;
   cursor: pointer;
 }
 

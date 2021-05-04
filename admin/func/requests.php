@@ -10,7 +10,6 @@ function requests($result)
             <th class="id">ID</th>
             <th>Username</th>
             <th>Date</th>
-            <th>Time</th>
             <th>Status</th>
         </tr>
         <?php
@@ -20,23 +19,9 @@ function requests($result)
                 <td><?php echo $row['reqID'] ?></td>
                 <td><?php echo $row['username'] ?></td>
                 <td><?php echo date("d M Y", strtotime($row['datetime'])) ?></td>
-                <td><?php echo date("g:ia", strtotime($row['datetime'])) ?></td>
                 <td class="status">
                     <span>
-                        <?php switch ($row['status']) {
-                            case 0:
-                                echo "Cancelled";
-                                break;
-                            case 1:
-                                echo "Pending";
-                                break;
-                            case 2:
-                                echo "Paid";
-                                break;
-                            case 3:
-                                echo "Delivered";
-                                break;
-                        } ?>
+                        <?php echo status($row['status'], 0) ?>
                     </span>
                     <a href="?id=<?php echo $row['reqID'] ?>" class="arrow">
                         <i class="fas fa-arrow-right"></i>
@@ -111,18 +96,9 @@ function allRequests()
     }
 }
 
-
-function status($val)
-{
-    switch ($val) {
-        case '0':
-            return "Cancelled";
-        case '1':
-            return "Pending";
-        case '2':
-            return "Completed";
-    }
-}
+/*
+ * Request details
+*/
 
 function requestDetails($id)
 {
@@ -135,7 +111,7 @@ function requestDetails($id)
         <label>Name</label>
         <label>Date</label>
         <label>Payment</label>
-        <label>Status</label>
+        <label></label>
         <?php
         foreach ($result as $row) { ?>
             <span><?php echo $row['username'] ?></span>
@@ -148,7 +124,7 @@ function requestDetails($id)
                 else echo "Pending";
                 ?>
             </span>
-            <span><?php echo status($row['status']) ?></span>
+            <span><?php echo status($row['status'], 1) ?></span>
         <?php   }
         return 1;
     } else {
@@ -187,6 +163,38 @@ function requestSubjects($id)
 <?php
         }
     }
+}
+
+/*
+ * Status function
+*/
+
+function status($val, $type)
+{
+    if ($type == 0)
+        switch ($val) {
+            case '0':
+                return "Cancelled";
+            case '1':
+                return "Pending";
+            case '2':
+                return "Completed";
+        }
+    else
+        switch ($val) {
+            case '0':
+                return "<span class='request-tag cancelled-tag'>
+                            <i class='fas fa-times'></i>Cancelled
+                        </span>";
+            case '1':
+                return "<span class='request-tag approve-tag'>
+                            <i class='fas fa-check'></i>Approve
+                        </span>";
+            case '2':
+                return "<span class='request-tag completed-tag'>
+                            <i class='fas fa-circle'></i>Completed
+                        </span>";
+        }
 }
 
 ?>
