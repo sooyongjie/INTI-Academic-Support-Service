@@ -17,8 +17,10 @@
 }
 
 .subjects {
+  max-width: 650px;
   display: flex;
   column-gap: 30px;
+  row-gap: 30px;
   flex-wrap: wrap;
   .request-subject {
     width: max-content !important;
