@@ -255,7 +255,7 @@ nav .nav-profile {
   padding-bottom: 16px !important;
   display: grid !important;
   grid-template-columns: repeat(4, max-content);
-  grid-template-rows: repeat(2);
+  grid-template-rows: repeat(2, 17.27px);
   justify-content: space-between;
   row-gap: 12px !important;
 }
@@ -271,6 +271,16 @@ nav .nav-profile {
   padding: 0;
 }
 
+.tag-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tag-container:hover .hide-tag {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
 .request-tag {
   padding: 4px 10px;
   border-radius: 24px;
@@ -281,6 +291,20 @@ nav .nav-profile {
   align-items: center;
   column-gap: 6px;
   transition: 0.1s ease-out;
+  z-index: 2;
+}
+
+.request-tag.hide-tag {
+  margin: 8px 0px;
+  transform: translateY(-30px);
+  z-index: 1 !important;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.request-tag.hide-tag.cancel-tag:hover {
+  background: #ffcdd2;
+  color: #d32f2f;
 }
 
 .request-tag.approve-tag {
@@ -307,9 +331,9 @@ nav .nav-profile {
   color: #388e3c;
 }
 
-.request-tag.cancelled-tag {
-  background: #FFEBEE;
-  color: #E53935;
+.request-tag.cancel-tag {
+  background: #ffebee;
+  color: #e53935;
 }
 
 .request-tag .fa-circle {
@@ -322,7 +346,7 @@ nav .nav-profile {
 }
 
 .request-tag .fa-times {
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .subjects {

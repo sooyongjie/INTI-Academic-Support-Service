@@ -43,9 +43,7 @@
           <div class="heading">
             <h3>Request <?php echo $_GET['id'] ?></h3>
           </div>
-          <div class="card request-details">
-            <?php $result = requestDetails($_GET['id']) ?>
-          </div>
+          <?php $result = requestDetails($_GET['id']) ?>
           <?php
           if ($result) { ?>
             <div class="section">
