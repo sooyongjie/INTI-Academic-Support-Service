@@ -258,7 +258,6 @@ body.index .form button {
   background: #e20c18;
   border-radius: 8px;
   display: grid;
-  grid-template-columns: max-content 15px;
   column-gap: 8px;
   justify-content: center;
   align-items: center;
@@ -279,6 +278,7 @@ body.index .form button {
 
 .modal-container .modal.verification button {
   margin-top: 10px;
+  grid-template-columns: max-content 15px;
 }
 
 .modal-container .modal.form .heading {
@@ -309,6 +309,7 @@ body.index .form button {
 
 .modal-container .modal.form .modal-body form .buttons {
   margin-top: 16px;
+  display: flex;
   align-self: flex-end;
 }
 
