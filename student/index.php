@@ -2,9 +2,11 @@
 <html lang="en">
 <?php
 session_start();
+
 if (isset($_SESSION['user'])) {
     header("Location: ./home.php");
 }
+
 ?>
 
 <head>
@@ -58,8 +60,9 @@ if (isset($_SESSION['user'])) {
             <div class="modal-body">
                 <h3>Check your email</h3>
                 <p>We emailed a confirmation link to your email.</p>
-                <button>
+                <button class="modal-btn" onclick="sendVerificationEmail('<?php echo $_SESSION['verification'] ?>', 1)">
                     <span>Resend</span>
+                    <i class="fas fa-paper-plane modal-icon"></i>
                 </button>
             </div>
         </div>
@@ -138,6 +141,7 @@ if (isset($_SESSION['user'])) {
             </div>
         </div>
     </div>
+    <?php include_once('./components/toast.php') ?>
 </body>
 
 <script>
@@ -155,6 +159,26 @@ if (isset($_SESSION['user'])) {
     const registerForm = document.getElementById('register-form');
     const loginFormBtn = document.getElementById('login-btn');
     const loginForm = document.getElementById('login-form');
+    const modalBtn = document.querySelector('.modal-btn');
+
+    const toast = document.querySelector(".toast-container");
+    const toastMessage = document.querySelector(".toast-message");
+    showToast = (message) => {
+        if (toast.className == "toast-container active") {
+            clearToast();
+            clearTimeout(timeout)
+        }
+        document.querySelector(".toast-message").textContent = message;
+        setTimeout(() => {
+            toast.className = "toast-container active";
+            timeout = setTimeout(() => {
+                clearToast();
+            }, 3000);
+        }, 100);
+    };
+    clearToast = () => {
+        toast.className = "toast-container";
+    };
 
     getQuotes = () => {
         fetch(api)
@@ -173,25 +197,49 @@ if (isset($_SESSION['user'])) {
             })
     }
 
-    sendVerificationEmail = (url) => {
+    sendVerificationEmail = (url, option) => {
         Email.send({
-            SecureToken: "cc7be992-4742-43dc-a110-b3d3f3754ac1",
+            SecureToken: "43710afa-0af3-4189-98ed-b6bd6f8b6258",
             To: 'sooyongjie@gmail.com',
             From: "j17025666@student.newinti.edu.my",
             Subject: "INTI Academic Services Verification",
             Body: `Click on the following link to verify your account: <br><br> ${url}`
         }).then(
-            // message => alert(message)
-            showModal()
+            // message => alert(message);
         );
+        if (!option) showModal()
+        else showModal(1)
     }
 
-    showModal = () => {
+    showModal = (option) => {
         document.querySelector('.modal-container').style.display = "flex"
         gsap.to(".modal-container", {
             opacity: "1",
             duration: "0."
         });
+        if (option) {
+            modalBtn.style.pointerEvents = "none";
+            var modalIcon = document.querySelector('.modal-icon')
+            modalIcon.style.transform = "translate(8px, -8px)"
+            modalIcon.style.opacity = "0"
+            setTimeout(() => {
+                modalIcon.style.transform = "translate(0px, 0px)"
+                setTimeout(() => {
+                    modalIcon.className = "fas fa-check-circle modal-icon"
+                    modalIcon.style.opacity = "1"
+                }, 250);
+            }, 150);
+            setTimeout(() => {
+                modalIcon.style.fontSize = "7px"
+                modalIcon.style.opacity = "0"
+                setTimeout(() => {
+                    modalIcon.className = "fas fa-paper-plane modal-icon"
+                    modalIcon.style.fontSize = "14px"
+                    modalIcon.style.opacity = "1"
+                    modalBtn.style.pointerEvents = "unset"
+                }, 300);
+            }, 1850);
+        }
     }
     closeModal = () => {
         gsap.to(".modal-container", {
@@ -249,13 +297,23 @@ if (isset($_SESSION['user'])) {
 </script>
 
 <?php
-if (isset($_SESSION['verification'])) { ?>
+if (isset($_SESSION['verification'])) {
+?>
     <script>
-        sendVerificationEmail("<?php echo $_SESSION['verification'] ?>");
+        sendVerificationEmail("<?php echo $_SESSION['verification'] ?>", 0);
     </script>
 <?php
     unset($_SESSION['verification']);
-} ?>
+}
+if (isset($_SESSION['msg'])) {
+?>
+    <script>
+        showToast("<?php echo $_SESSION['msg'] ?>")
+    </script>
+<?php
+    unset($_SESSION['msg']);
+}
+?>
 
 
 </html>

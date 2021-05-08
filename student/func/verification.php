@@ -19,12 +19,7 @@ function checkVerification($code)
 function completeRegistration($code)
 {
     $query = "UPDATE `user` SET `code`= '' WHERE `code` = '$code'";
-    $result = updateQuery($query);
-    if ($result) {
-        $_SESSION['msg'] = "Success";
-        header("Location: index.php");
-    } else {
-        echo "WHAT";
-        exit();
-    }
+    updateQuery($query);
+    $_SESSION['msg'] = "Your account has been verified.";
+    header("Location: index.php");
 }
