@@ -50,7 +50,7 @@ function showSubject($sub)
                 $baseURL = "https://firebasestorage.googleapis.com/v0/b/inti-academic-support.appspot.com/o/CSIT321%20July%202020?alt=media&token=";
             ?>
                 <a href="<?php echo $baseURL . $sub['token'] ?>">
-                    <i class="far fa-file"></i>
+                    <i class="far fa-file-pdf"></i>
                 </a>
                 <a onclick="showModal(2); updateSelectedSubject('<?php echo $sub['ssID'] ?>','<?php echo $sub['subID'] ?>');" class="arrow">
                     <i class="fas fa-file-upload"></i>
