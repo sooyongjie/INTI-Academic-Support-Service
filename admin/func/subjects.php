@@ -52,13 +52,13 @@ function showSubject($sub)
                 <a href="<?php echo $baseURL . $sub['token'] ?>">
                     <i class="far fa-file-pdf"></i>
                 </a>
-                <a onclick="showModal(2); updateSelectedSubject('<?php echo $sub['ssID'] ?>','<?php echo $sub['subID'] ?>');" class="arrow">
+                <a onclick="triggerInput(); updateSelectedSubject('<?php echo $sub['ssID'] ?>','<?php echo $sub['subID'] ?>');" class="arrow">
                     <i class="fas fa-file-upload"></i>
                 </a>
             <?php
             } else {
             ?>
-                <a onclick="showModal(2); updateSelectedSubject('<?php echo $sub['ssID'] ?>','<?php echo $sub['subID'] ?>');">
+                <a onclick="triggerInput(); updateSelectedSubject('<?php echo $sub['ssID'] ?>','<?php echo $sub['subID'] ?>');">
                     <i class="fas fa-file-upload single"></i>
                 </a>
             <?php

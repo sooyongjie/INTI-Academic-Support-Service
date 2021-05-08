@@ -3,6 +3,10 @@ const ssIDInput = document.querySelector("#ssID");
 const subIDInput = document.querySelector("#subID");
 const tokenInput = document.querySelector("#token");
 
+const triggerInput = () => {
+  input.click();
+};
+
 const updateSelectedSubject = (ssID, subID) => {
   ssIDInput.value = ssID;
   subIDInput.value = subID;
