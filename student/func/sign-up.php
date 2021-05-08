@@ -21,9 +21,9 @@ $password = md5($_POST['password']);
 $fullname = $_POST['fullname'];
 $email = $_POST['email'];
 
-$result = checkExistingUser($username);
+$result = checkExistingUser($email, $username);
 
-if (!$result) {
+if ($result) {
     $code = generateVerficationLink();
     $result = insertUser(
         $username,
@@ -36,20 +36,31 @@ if (!$result) {
         echo "WHAT";
         exit();
     }
-} else {
-    $_SESSION['error'] = "Username";
 }
 
 header("Location: ../index.php");
 
-function checkExistingUser($username)
+function checkExistingUser($email, $username)
 {
-    $query = "SELECT * FROM user WHERE `username` = '$username'";
+    $query = "SELECT uid FROM user WHERE `username` = '$username'";
 
     $result = selectQuery($query);
+    if (!$result) {
+        echo "ok1";
+        $query = "SELECT uid FROM user WHERE `email` = '$email'";
 
-    if (!$result) return 0;
-    else return 1;
+        $result = selectQuery($query);
+        if (!$result) {
+            echo "ok1";
+            return 1;
+        } else {
+            $_SESSION['msg'] = "The email has been used";
+            return 0;
+        }
+    } else {
+        $_SESSION['msg'] = "The username has been taken";
+        return 0;
+    }
 }
 
 function insertUser(
