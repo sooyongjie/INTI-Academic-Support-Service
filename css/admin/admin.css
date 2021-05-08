@@ -817,12 +817,17 @@ table .status:hover i, table .status:focus i {
 }
 
 table .row-actions {
+  width: 40px;
   display: flex;
   justify-content: space-between;
 }
 
 table .row-actions a {
   margin-left: 12px;
+}
+
+table .row-actions i {
+  position: unset !important;
 }
 
 @media screen and (min-height: 600px) and (max-height: 700px) {

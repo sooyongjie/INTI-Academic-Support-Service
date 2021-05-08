@@ -273,10 +273,14 @@ table {
     }
   }
   .row-actions {
+    width: 40px;
     display: flex;
     justify-content: space-between;
     a {
       margin-left: 12px;
+    }
+    i {
+      position: unset !important;
     }
   }
 }
