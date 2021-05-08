@@ -42,7 +42,7 @@ function requests()
     } else { ?>
         <div class="card request section">
             <div class="heading">
-                <h2>:)</h2>
+                <h2>It's lonely here.</h2>
             </div>
         </div>
     <?php } ?>

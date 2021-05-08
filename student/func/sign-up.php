@@ -42,12 +42,12 @@ header("Location: ../index.php");
 
 function checkExistingUser($email, $username)
 {
-    $query = "SELECT uid FROM user WHERE `username` = '$username'";
+    $query = "SELECT uid FROM user WHERE `username` = '$username' AND `type` = 1";
 
     $result = selectQuery($query);
     if (!$result) {
         echo "ok1";
-        $query = "SELECT uid FROM user WHERE `email` = '$email'";
+        $query = "SELECT uid FROM user WHERE `email` = '$email' AND `type` = 1";
 
         $result = selectQuery($query);
         if (!$result) {
