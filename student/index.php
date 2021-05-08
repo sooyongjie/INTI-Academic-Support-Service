@@ -282,7 +282,6 @@ if (isset($_SESSION['user'])) {
         gsap.to(["#quote", "#author"], {
             delay: "0.6",
             opacity: "1",
-            duration: "0.2"
         });
     });
 
@@ -290,7 +289,7 @@ if (isset($_SESSION['user'])) {
         gsap.to("#login-form", {
             delay: "0.3",
             opacity: "1",
-            duration: "0.4"
+            duration: "0.2"
         });
         getQuotes()
     });

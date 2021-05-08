@@ -14,7 +14,7 @@ body .img-container {
 
 body .container-container .form {
   position: absolute;
-  transition: 0.2s ease-out;
+  transition: 0.15s ease-out;
 }
 
 body.register .img-container {
