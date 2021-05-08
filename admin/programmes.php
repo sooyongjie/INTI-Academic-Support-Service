@@ -19,8 +19,17 @@
           <span>New Programme</span>
         </button>
       </div>
-      <?php showProgrammes() ?>
+      <div class="card request-list">
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Programme</th>
+          </tr>
+          <?php showProgrammes() ?>
+        </table>
+      </div>
     </div>
+  </div>
   </div>
   <div class="modal-container prog-form">
     <div class="modal form">

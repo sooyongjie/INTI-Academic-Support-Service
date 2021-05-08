@@ -25,13 +25,15 @@ function showSessions($progID)
     $result = selectQuery($query);
     if ($result) {
         foreach ($result as $sess) { ?>
-            <div class="heading">
-                <h3><?php echo $sess['sessName'] ?></h3>
-                <a href="./subjects.php?progID=<?php echo $progID ?>&sessID=<?php echo $sess['sessID'] ?>">
-                    <i class="fas fa-arrow-right"></i>
-                    <span>All subjects</span>
-                </a>
-            </div>
+            <tr>
+                <td><?php echo $sess['sessID'] ?></td>
+                <td class="status">
+                    <span><?php echo $sess['sessName'] ?></span>
+                    <a href="./subjects.php?progID=<?php echo $progID ?>&sessID=<?php echo $sess['sessID'] ?>" class="arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </td>
+            </tr>
     <?php }
     }
 }

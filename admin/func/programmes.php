@@ -22,15 +22,27 @@ function showProgrammes()
     }
 }
 
-function showProgramme($prog)
-{ ?>
-    <div class="heading">
+?>
+<!-- <div class="heading">
         <h3><?php echo $prog['progName'] ?></h3>
         <a href="./sessions.php?progID=<?php echo $prog['progID'] ?>">
             <i class="fas fa-arrow-right"></i>
             <span>All subjects</span>
         </a>
-    </div>
+    </div> -->
+<?php
+
+function showProgramme($prog)
+{ ?>
+    <tr>
+        <td><?php echo $prog['progID'] ?></td>
+        <td class="status">
+            <span><?php echo $prog['progName'] ?></span>
+            <a href="./sessions.php?progID=<?php echo $prog['progID'] ?>" class="arrow">
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </td>
+    </tr>
 <?php }
 
 function newProgramme($progName)

@@ -16,12 +16,20 @@
             <div class="heading">
                 <!-- <i class="fas fa-arrow-left"></i> -->
                 <h2>Sessions</h2>
-                <button onclick="showModal(1)" class="show">
+                <button onclick="showModal(1)">
                     <i class="fas fa-plus"></i>
                     <span>New Session</span>
                 </button>
             </div>
-            <?php showSessions($_GET['progID']) ?>
+            <div class="card request-list">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Session</th>
+                    </tr>
+                    <?php showSessions($_GET['progID']) ?>
+                </table>
+            </div>
             <?php showSubjects($_GET['progID']) ?>
         </div>
     </div>
