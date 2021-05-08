@@ -14,6 +14,7 @@ if (isset($_GET['sessName'])) {
 }
 // create new subject
 else if (isset($_GET['progID'])) {
+    $_SESSION['progID'] = $_GET['progID'];
     // view sessions
     include_once('./func/func.php');
     include_once("../db_connect.php");
@@ -87,8 +88,8 @@ function newSession($sessName, $progID)
 
     if ($id) {
         getAllSubjects($progID, $id);
-        $header = "Location: ../sessions.php?id=" . $_SESSION['progID'];
-        // header($header);
+        $header = "Location: ../sessions.php?progID=" . $_SESSION['progID'];
+        header($header);
     } else die("<br>New session error");
 }
 
@@ -101,19 +102,13 @@ function getAllSubjects($progID, $sessID) // to add new subject into each sessio
         foreach ($result as $sub) {
             createSubjectsForNewSession($sub['subID'], $sessID);
         }
-        $header = "Location: ../sessions.php?progID=" . $_GET['progID'];
-        header($header);
     } else die("<br>" . $query);
 }
 
 function createSubjectsForNewSession($subID, $sessID)
 {
     $query = "INSERT INTO `session_subjects`(`subID`, `sessID`) VALUES ('$subID', $sessID)";
-    $result = insertQuery($query, 0);
-
-    if (!$result) {
-        die("<br>" . $query);
-    }
+    insertQuery($query, 0);
 }
 
 

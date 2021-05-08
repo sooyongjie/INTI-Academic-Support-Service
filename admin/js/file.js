@@ -13,31 +13,9 @@ const updateSelectedSubject = (ssID, subID) => {
 };
 
 const onInsertFile = () => {
-  const inputName = document.querySelector(".input-name");
-  const inputIcon = document.querySelector(".input-icon");
   let fileName = input.files[0].name;
   let fileType = fileName.split(".").pop();
-
-  if (fileName.length > 25) {
-    fileName = fileName.substring(0, 25) + `... (${fileType})`;
-  }
-
-  inputName.textContent = fileName;
-
-  switch (fileType) {
-    case "pdf":
-      inputIcon.className = "fas fa-file-pdf";
-      break;
-    case "docx" || "doc":
-      inputIcon.className = "fas fa-file-word";
-      break;
-  }
-};
-
-const checkInput = () => {
-  if (input.files.length == 0) {
-    alert("No file selected");
-  } else uploadFile(input.files[0]);
+  uploadFile(input.files[0])
 };
 
 const uploadFile = (file) => {
