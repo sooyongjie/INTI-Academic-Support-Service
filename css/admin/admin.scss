@@ -223,7 +223,7 @@ table {
     &:focus-within {
       background-color: #f3f3f3;
       .status i.fa-arrow-right {
-        font-size: 16px;
+        font-size: 15px;
         opacity: 1;
       }
     }
@@ -242,6 +242,9 @@ table {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    i {
+      font-size: 15px;
+    }
     .arrow {
       margin-left: -28px;
       height: 12px;
@@ -259,9 +262,6 @@ table {
         font-size: 0px;
         opacity: 0;
         transition: 0.15s;
-        &:focus {
-          font-size: 10px;
-        }
       }
     }
     &:hover,

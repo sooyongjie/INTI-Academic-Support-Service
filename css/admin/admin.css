@@ -764,7 +764,7 @@ table tr:focus-within {
 }
 
 table tr:focus-within .status i.fa-arrow-right {
-  font-size: 16px;
+  font-size: 15px;
   opacity: 1;
 }
 
@@ -786,6 +786,10 @@ table .status {
   justify-content: space-between;
 }
 
+table .status i {
+  font-size: 15px;
+}
+
 table .status .arrow {
   margin-left: -28px;
   height: 12px;
@@ -805,10 +809,6 @@ table .status .arrow i {
   font-size: 0px;
   opacity: 0;
   transition: 0.15s;
-}
-
-table .status .arrow i:focus {
-  font-size: 10px;
 }
 
 table .status:hover i, table .status:focus i {

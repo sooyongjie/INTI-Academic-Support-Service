@@ -59,7 +59,7 @@ function showSubject($sub)
             } else {
             ?>
                 <a onclick="showModal(2); updateSelectedSubject('<?php echo $sub['ssID'] ?>','<?php echo $sub['subID'] ?>');">
-                    <i class="far fa-file-upload single"></i>
+                    <i class="fas fa-file-upload single"></i>
                 </a>
             <?php
             }
