@@ -53,7 +53,7 @@ function requestForm()
 
         </ul>
         <label for="session">Session</label>
-        <input class="chosen-value sess-id" type="hidden" value="10001">
+        <input class="chosen-value sess-id" type="hidden" value="10023">
         <input class="chosen-value sess-input" type="text" value="July 2019" placeholder="Search session">
         <ul class="value-list sess-list">
             <?php
@@ -117,8 +117,10 @@ function submitRequest()
         $progID = $_GET[$keys[0]];
         $sessID = $_GET[$keys[2]];
         $subID = $_GET[$keys[4]];
-        $query = "INSERT INTO request_subjects (reqID, progID, sessID, subID)
-        VALUES ($reqID, $progID, $sessID, '$subID')";
+
+        $ssID = getSession_SubjectID($sessID, $subID);
+        $query = "INSERT INTO request_subjects (reqID, progID, ssID)
+        VALUES ($reqID, $progID, $ssID)";
         $insert = insertQuery($query, 0);
         if ($insert) {
             $query = "INSERT INTO payment (amount, reqID) VALUES ($subCount, $reqID)";
@@ -133,6 +135,15 @@ function submitRequest()
         $uniIndex = $uniIndex + 6;
     }
     header("Location: ./requests.php");
+}
+
+function getSession_SubjectID($sessID, $subID)
+{
+    $query = "SELECT ssID FROM `session_subjects` WHERE `subID` = '$subID' AND `sessID` = $sessID";
+    $result = selectQuery($query);
+    if ($result) {
+        return $result[0]['ssID'];
+    }
 }
 
 ?>
