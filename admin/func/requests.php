@@ -23,7 +23,7 @@ function requests($result)
                     <span>
                         <?php echo status($row['status'], 0) ?>
                     </span>
-                    <a href="?id=<?php echo $row['reqID'] ?>" class="arrow">
+                    <a href="./requests.php?id=<?php echo $row['reqID'] ?>" class="arrow">
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </td>
@@ -199,7 +199,7 @@ function requestDetails($id)
                     break;
                 case 1:
                     echo
-                    "<span class='request-tag approve-tag' onclick='window.location.href = `./func/status.php?approve=" . $_GET['id'] . "`'>
+                    "<span class='request-tag approve-tag' onclick='window.location.href = `./func/status.php?approve=" . $_GET['id'] . "&id=" . $_GET['id'] . "`'>
                         <i class='fas fa-check'></i>Approve
                     </span>
                     <span class='request-tag cancel-tag hide-tag' onclick='window.location.href = `./func/status.php?cancel=" . $_GET['id'] . "`'>
