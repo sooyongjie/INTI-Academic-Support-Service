@@ -60,7 +60,8 @@ function requestView()
     $result = selectQuery($query);
     if ($result) {
         foreach ($result as $row) {
-            $_SESSION['reqID'] = $row['reqID']; ?>
+            $_SESSION['reqID'] = $row['reqID'];
+            $_SESSION['status'] = $row['status']; ?>
             <div class="card request section">
                 <div class="heading">
                     <h2>Request #<?php echo $row['reqID'] ?></h2>
@@ -97,7 +98,7 @@ function paymentDetails($token)
 
 function subjects()
 {
-    $query = "SELECT prog.progName, ss.subID, sub.subName, sess.sessName FROM request_subjects rs
+    $query = "SELECT prog.progName, ss.subID, sub.subName, sess.sessName, ss.token FROM request_subjects rs
     INNER JOIN `session_subjects` ss ON rs.ssID = ss.ssID 
     INNER JOIN programme prog ON rs.progID = prog.progID 
     INNER JOIN `subject` sub ON ss.subID = sub.subID 
@@ -111,17 +112,29 @@ function subjects()
             <div class="card subject">
                 <label for="">Programme</label>
                 <p><?php echo $row['progName'] ?></p>
-                <label for="">Course</label>
-                <p><?php echo $row['subID'] . " " . $row['subName'] ?></p>
-                <!-- <i class="fas fa-external-link-square-alt"></i> -->
+                <label for="">Subject</label>
+                <div class="subject-details">
+                    <p><?php echo $row['subID'] . " " . $row['subName'] ?></p>
+                    <?php if ($_SESSION['status'] == 2) courseStructureURL($row['token']) ?>
+                </div>
                 <label for="">Session</label>
-                <p><?php echo $row['sessName'] ?></p>
+                <p><?php echo $row['sessName']   ?></p>
             </div>
-    <?php
+        <?php
         }
     } else {
         echo "oof, am malfunction";
     }
+}
+
+function courseStructureURL($token)
+{
+    if ($token != "") {
+        $baseURL = "https://firebasestorage.googleapis.com/v0/b/inti-academic-support.appspot.com/o/CSIT321%20July%202020?alt=media&token="; ?>
+        <a href="<?php echo $baseURL . $token ?>">
+            <i class="far fa-external-link-square-alt"></i>
+        </a>
+    <?php }
 }
 
 function payment()
@@ -139,7 +152,7 @@ function payment()
                 <p>10988333</p>
             </div>
             <a href="https://www.maybank2u.com.my/">
-                <i class="fas fa-external-link-square-alt"></i>
+                <i class="far fa-external-link-square-alt"></i>
             </a>
         </div>
         <div class="payment-info">
@@ -149,7 +162,7 @@ function payment()
                 <p>10988333</p>
             </div>
             <a href="https://www2.pbebank.com/myIBK/apppbb/servlet/">
-                <i class="fas fa-external-link-square-alt"></i>
+                <i class="far fa-external-link-square-alt"></i>
             </a>
         </div>
     </div>

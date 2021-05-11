@@ -36,16 +36,6 @@
         }
 
         a {
-          i:hover,
-          &:focus-within i {
-            color: $red;
-          }
-
-          i {
-            color: #888;
-            font-weight: 400;
-            margin: 0 8px;
-          }
         }
       }
     }
@@ -85,12 +75,30 @@
     width: 605.41px;
     display: flex;
     flex-wrap: wrap;
-
     .card.subject {
       width: max-content;
       padding: 20px 20px 8px 20px;
       align-items: unset;
       margin: 0 30px 30px 0;
+      .subject-details {
+        display: flex;
+        flex-direction: row;
+        a {
+          margin-left: 8px;
+        }
+      }
     }
+  }
+}
+
+a {
+  i {
+    color: #888;
+    font-weight: 400;
+    margin: 0 8px;
+  }
+  i:hover,
+  &:focus-within i {
+    color: $red;
   }
 }

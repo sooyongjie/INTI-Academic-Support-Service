@@ -408,17 +408,6 @@ nav img {
   cursor: text;
 }
 
-.container.request-view .payment-section .card .payment-info a i:hover,
-.container.request-view .payment-section .card .payment-info a:focus-within i {
-  color: #e20c18;
-}
-
-.container.request-view .payment-section .card .payment-info a i {
-  color: #888;
-  font-weight: 400;
-  margin: 0 8px;
-}
-
 .container.request-view .payment-section .receipt-input {
   padding: 8px 12px;
   border-radius: 8px;
@@ -459,6 +448,26 @@ nav img {
   padding: 20px 20px 8px 20px;
   align-items: unset;
   margin: 0 30px 30px 0;
+}
+
+.container.request-view .subjects .card.subject .subject-details {
+  display: flex;
+  flex-direction: row;
+}
+
+.container.request-view .subjects .card.subject .subject-details a {
+  margin-left: 8px;
+}
+
+a i {
+  color: #888;
+  font-weight: 400;
+  margin: 0 8px;
+}
+
+a i:hover,
+a:focus-within i {
+  color: #e20c18;
 }
 
 .value-list {
