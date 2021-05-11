@@ -11,6 +11,8 @@ function status($val)
             return "Cancelled";
         case '1':
             return "Pending";
+        case '2':
+            return "Completed";
     }
 }
 
@@ -71,33 +73,37 @@ function requestView()
                 <label for="">Status</label>
                 <p><?php echo status($row['status']) ?></p>
                 <label for="">Payment</label>
-                <?php
-                if ($row['token'] == "") {
-                    echo "<p>Pending</p>";
-                } else {
-                    $GLOBALS['payment'] = 1;
-                    $url = "https://firebasestorage.googleapis.com/v0/b/inti-academic-support.appspot.com/o/req%23" . $_SESSION['reqID'] . "?alt=media&token=" . $row['token'];  ?>
-                    <a href="<?php echo $url ?>" class="receipt-link">
-                        <i class="far fa-file-image"></i>
-                        <span class="link">Receipt</span>
-                    </a>
-                <?php
-                }
-                ?>
-
+                <?php paymentDetails($row['token']); ?>
             </div>
         <?php
         }
     }
 }
 
+function paymentDetails($token)
+{
+    if ($token == "") {
+        echo "<p>Pending</p>";
+    } else {
+        $GLOBALS['payment'] = 1;
+        $url = "https://firebasestorage.googleapis.com/v0/b/inti-academic-support.appspot.com/o/req%23" . $_SESSION['reqID'] . "?alt=media&token=" . $token;  ?>
+        <a href="<?php echo $url ?>" class="receipt-link">
+            <i class="far fa-file-image"></i>
+            <span class="link">Receipt</span>
+        </a>
+        <?php
+    }
+}
+
 function subjects()
 {
-    $query = "SELECT prog.progName, rs.subID, sub.subName, sess.sessName FROM request_subjects rs
+    $query = "SELECT prog.progName, ss.subID, sub.subName, sess.sessName FROM request_subjects rs
+    INNER JOIN `session_subjects` ss ON rs.ssID = ss.ssID 
     INNER JOIN programme prog ON rs.progID = prog.progID 
-    INNER JOIN `subject` sub ON rs.subID = sub.subID 
-    INNER JOIN `session` sess ON rs.sessID = sess.sessID 
+    INNER JOIN `subject` sub ON ss.subID = sub.subID 
+    INNER JOIN `session` sess ON ss.sessID = sess.sessID 
     WHERE rs.reqID = " . $_SESSION['reqID'] . "";
+
 
     $result = selectQuery($query);
     if ($result) {
@@ -107,7 +113,8 @@ function subjects()
                 <p><?php echo $row['progName'] ?></p>
                 <label for="">Course</label>
                 <p><?php echo $row['subID'] . " " . $row['subName'] ?></p>
-                <label for="">Amount</label>
+                <!-- <i class="fas fa-external-link-square-alt"></i> -->
+                <label for="">Session</label>
                 <p><?php echo $row['sessName'] ?></p>
             </div>
     <?php
