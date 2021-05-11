@@ -16,7 +16,16 @@
       <div class="heading">
         <h2>Payment</h2>
       </div>
-      <?php payment() ?>
+      <div class="card request-list">
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+          <?php payment() ?>
+        </table>
+      </div>
     </div>
   </div>
 </body>
