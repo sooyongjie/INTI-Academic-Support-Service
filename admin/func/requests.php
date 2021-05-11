@@ -100,14 +100,87 @@ function allRequests()
  * Request details
 */
 
+function getPayment($id)
+{
+    $query = "SELECT token FROM payment WHERE payID = $id ";
+    $result = selectQuery($query);
+    $url = "https://firebasestorage.googleapis.com/v0/b/inti-academic-support.appspot.com/o/req%23" . $id . "?alt=media&token=" . $result[0]['token'];
+    return $url;
+}
+
+function requestSubjects($id)
+{
+    $query = "SELECT prog.progName, ss.subID, sub.subName, sess.sessName FROM request_subjects rs
+    INNER JOIN `session_subjects` ss ON rs.ssID = ss.ssID 
+    INNER JOIN programme prog ON rs.progID = prog.progID 
+    INNER JOIN `subject` sub ON ss.subID = sub.subID 
+    INNER JOIN `session` sess ON ss.sessID = sess.sessID 
+    WHERE rs.reqID = " . $_SESSION['reqID'] . "";
+
+    $result = selectQuery($query);
+    if ($result) {
+        foreach ($result as $row) {
+    ?>
+            <div class="card request-subject">
+                <label for="">Programme</label>
+                <span><?php echo $row['progName'] ?></span>
+                <label for="">Session</label>
+                <span><?php echo $row['sessName'] ?></span>
+                <label for="">Course</label>
+                <span><?php echo $row['subID'] . " " . $row['subName'] ?></span>
+            </div>
+        <?php
+        }
+    }
+}
+
+function status($val, $type)
+{
+    if ($type == 0)
+        switch ($val) {
+            case '0':
+                return "Cancelled";
+            case '1':
+                return "Pending";
+            case '2':
+                return "Completed";
+        }
+    else
+        switch ($val) {
+            case 0:
+                echo
+                "<span class='request-tag cancel-tag' onclick='window.location.href = `./func/status.php?cancel=" . $_GET['id'] . "`'>
+                        <i class='fas fa-times'></i>Cancelled
+                    </span>
+                    <span class='request-tag approve-tag hide-tag' onclick='window.location.href = `./func/status.php?approve=" . $_GET['id'] . "`'>
+                        <i class='fas fa-check'></i>Approve
+                    </span>";
+                break;
+            case 1:
+                echo
+                "<span class='request-tag approve-tag' onclick='window.location.href = `./func/status.php?approve=" . $_GET['id'] . "`'>
+                        <i class='fas fa-check'></i>Approve
+                    </span>
+                    <span class='request-tag cancel-tag hide-tag' onclick='window.location.href = `./func/status.php?cancel=" . $_GET['id'] . "`'>
+                        <i class='fas fa-times'></i>Cancel
+                    </span>";
+                break;
+            case 2:
+                echo
+                "<span class='request-tag completed-tag'>
+                        <i class='fas fa-circle'></i>Completed
+                    </span>";
+                break;
+        }
+}
+
 function requestDetails($id)
 {
     $id = $_GET['id'];
     $query = "SELECT * FROM requests r
     INNER JOIN user u on r.uid = u.uid WHERE reqID = $id ";
     $result = selectQuery($query);
-    if ($result) {
-    ?>
+    if ($result) { ?>
         <div class="card request-details">
             <label>Name</label>
             <label>Date</label>
@@ -130,89 +203,10 @@ function requestDetails($id)
                         <?php status($row['status'], 1) ?>
                     </div>
                 </div>
-        </div>
-    <?php   }
+        </div> <?php }
             return 1;
         } else {
             $_SESSION['toast'] = "No results were returned";
             return 0;
         };
     }
-
-    function getPayment($id)
-    {
-        $query = "SELECT token FROM payment WHERE payID = $id ";
-        $result = selectQuery($query);
-        $url = "https://firebasestorage.googleapis.com/v0/b/inti-academic-support.appspot.com/o/req%23" . $id . "?alt=media&token=" . $result[0]['token'];
-        return $url;
-    }
-
-    function requestSubjects($id)
-    {
-        $query = "SELECT progName, sessName, sub.subID, subName FROM request_subjects rs
-    INNER JOIN programme p on rs.progID = p.progID 
-    INNER JOIN `session` sess on rs.sessID = sess.sessID 
-    INNER JOIN `subject` sub on rs.subID = sub.subID 
-    WHERE reqID = $id ";
-        $result = selectQuery($query);
-        if ($result) {
-            foreach ($result as $row) {
-    ?>
-        <div class="card request-subject">
-            <label for="">Programme</label>
-            <span><?php echo $row['progName'] ?></span>
-            <label for="">Session</label>
-            <span><?php echo $row['sessName'] ?></span>
-            <label for="">Course</label>
-            <span><?php echo $row['subID'] . " " . $row['subName'] ?></span>
-        </div>
-<?php
-            }
-        }
-    }
-
-    /*
- * Status function
-*/
-
-    function status($val, $type)
-    {
-        if ($type == 0)
-            switch ($val) {
-                case '0':
-                    return "Cancelled";
-                case '1':
-                    return "Pending";
-                case '2':
-                    return "Completed";
-            }
-        else
-            switch ($val) {
-                case 0:
-                    echo
-                    "<span class='request-tag cancel-tag hide-tag' onclick='window.location.href = `./func/status.php?cancel=" . $_GET['id'] . "`'>
-                        <i class='fas fa-times'></i>Cancelled
-                    </span>
-                    <span class='request-tag approve-tag' onclick='window.location.href = `./func/status.php?approve=" . $_GET['id'] . "`'>
-                        <i class='fas fa-check'></i>Approve
-                    </span>";
-                    break;
-                case 1:
-                    echo
-                    "<span class='request-tag approve-tag' onclick='window.location.href = `./func/status.php?approve=" . $_GET['id'] . "&id=" . $_GET['id'] . "`'>
-                        <i class='fas fa-check'></i>Approve
-                    </span>
-                    <span class='request-tag cancel-tag hide-tag' onclick='window.location.href = `./func/status.php?cancel=" . $_GET['id'] . "`'>
-                        <i class='fas fa-times'></i>Cancel
-                    </span>";
-                    break;
-                case 2:
-                    echo
-                    "<span class='request-tag completed-tag'>
-                        <i class='fas fa-circle'></i>Completed
-                    </span>";
-                    break;
-            }
-    }
-
-?>
