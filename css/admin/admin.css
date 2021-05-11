@@ -810,7 +810,7 @@ table .status .arrow i {
   transition: 0.15s;
 }
 
-table .status:hover i, table .status:focus i {
+table .status:hover .arrow i, table .status:focus .arrow i {
   font-size: 15px;
   opacity: 1;
 }
