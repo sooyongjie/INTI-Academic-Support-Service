@@ -459,14 +459,14 @@ nav img {
   margin-left: 8px;
 }
 
-a i {
+.container.request-view a i {
   color: #888;
   font-weight: 400;
   margin: 0 8px;
 }
 
-a i:hover,
-a:focus-within i {
+.container.request-view a i:hover,
+.container.request-view a:focus-within i {
   color: #e20c18;
 }
 

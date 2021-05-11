@@ -89,16 +89,16 @@
       }
     }
   }
-}
 
-a {
-  i {
-    color: #888;
-    font-weight: 400;
-    margin: 0 8px;
-  }
-  i:hover,
-  &:focus-within i {
-    color: $red;
+  a {
+    i {
+      color: #888;
+      font-weight: 400;
+      margin: 0 8px;
+    }
+    i:hover,
+    &:focus-within i {
+      color: $red;
+    }
   }
 }
