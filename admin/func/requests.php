@@ -190,19 +190,19 @@ function requestDetails($id)
             switch ($val) {
                 case 0:
                     echo
-                    "<span class='request-tag cancel-tag hide-tag' onclick='window.location.href = `./func/status.php?cancel=".$_GET['id']."`'>
+                    "<span class='request-tag cancel-tag hide-tag' onclick='window.location.href = `./func/status.php?cancel=" . $_GET['id'] . "`'>
                         <i class='fas fa-times'></i>Cancelled
                     </span>
-                    <span class='request-tag approve-tag' onclick='window.location.href = `./func/status.php?approve=".$_GET['id']."`'>
+                    <span class='request-tag approve-tag' onclick='window.location.href = `./func/status.php?approve=" . $_GET['id'] . "`'>
                         <i class='fas fa-check'></i>Approve
                     </span>";
                     break;
                 case 1:
                     echo
-                    "<span class='request-tag approve-tag' onclick='window.location.href = `./func/status.php?approve=".$_GET['id']."`'>
+                    "<span class='request-tag approve-tag' onclick='window.location.href = `./func/status.php?approve=" . $_GET['id'] . "`'>
                         <i class='fas fa-check'></i>Approve
                     </span>
-                    <span class='request-tag cancel-tag hide-tag' onclick='window.location.href = `./func/status.php?cancel=".$_GET['id']."`'>
+                    <span class='request-tag cancel-tag hide-tag' onclick='window.location.href = `./func/status.php?cancel=" . $_GET['id'] . "`'>
                         <i class='fas fa-times'></i>Cancel
                     </span>";
                     break;
