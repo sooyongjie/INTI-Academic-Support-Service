@@ -308,14 +308,17 @@ nav .nav-profile {
   color: #d32f2f;
 }
 
-.request-tag.approve-tag {
+.request-tag.pending-tag, .request-tag.approve-tag {
   background: #e3f2fd;
   color: #1e88e5;
-  cursor: pointer;
 }
 
-.request-tag.approve-tag .fas {
+.request-tag.pending-tag .fas, .request-tag.approve-tag .fas {
   color: #2196f3;
+}
+
+.request-tag.approve-tag {
+  cursor: pointer;
 }
 
 .request-tag.approve-tag:hover, .request-tag.approve-tag:focus {

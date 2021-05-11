@@ -139,11 +139,17 @@ function status($val, $type)
     if ($type == 0)
         switch ($val) {
             case '0':
-                return "Cancelled";
+                return "<span class='request-tag cancel-tag'>
+                <i class='fas fa-times'></i>Cancelled
+            </span>";
             case '1':
-                return "Pending";
+                return "<span class='request-tag pending-tag'>
+                <i class='fas fa-circle'></i>Pending
+            </span>";
             case '2':
-                return "Completed";
+                return "<span class='request-tag completed-tag'>
+                <i class='fas fa-circle'></i>Completed
+            </span>";
         }
     else
         switch ($val) {

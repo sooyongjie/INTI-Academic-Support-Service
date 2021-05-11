@@ -51,16 +51,19 @@
       color: #d32f2f;
     }
   }
+  &.pending-tag,
   &.approve-tag {
     // background: 50
     // color: 600
     // color: 500
     background: #e3f2fd;
     color: #1e88e5;
-    cursor: pointer;
     .fas {
       color: #2196f3;
     }
+  }
+  &.approve-tag {
+    cursor: pointer;
     &:hover,
     &:focus {
       background: #bbdefb;
