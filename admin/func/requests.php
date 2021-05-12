@@ -115,7 +115,7 @@ function requestSubjects($id)
     INNER JOIN programme prog ON rs.progID = prog.progID 
     INNER JOIN `subject` sub ON ss.subID = sub.subID 
     INNER JOIN `session` sess ON ss.sessID = sess.sessID 
-    WHERE rs.reqID = " . $_SESSION['reqID'] . "";
+    WHERE rs.reqID = " . $id . "";
 
     $result = selectQuery($query);
     if ($result) {
