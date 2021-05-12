@@ -11,9 +11,11 @@ if (isset($_GET['sessName'])) {
     include_once('./func.php');
     include_once("../../db_connect.php");
     newSubject($_GET['progID'], $_GET['subID'], $_GET['subName']);
-}
-// create new subject
-else if (isset($_GET['progID'])) {
+} else if (isset($_GET['delete'])) {
+    include_once('../func/func.php');
+    include_once("../../db_connect.php");
+    deleteSubject($_GET['delete'], $_GET['progID']);
+} else if (isset($_GET['progID'])) {
     $_SESSION['progID'] = $_GET['progID'];
     // view sessions
     include_once('./func/func.php');
@@ -63,7 +65,7 @@ function showSubjects($progID)
                                 <a class="arrow" onclick="showModal(3); editSubjectForm('<?php echo $sub['subID'] ?>','<?php echo $sub['subName'] ?>')">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <a href="" class="arrow">
+                                <a class="arrow" onclick="deletePrompt('<?php echo $sub['subID'] ?>', '<?php echo $_SESSION['progID'] ?>', 'subject')">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
                             </div>
@@ -95,7 +97,7 @@ function newSession($sessName, $progID)
 
 function getAllSubjects($progID, $sessID) // to add new subject into each session
 {
-    $query = "SELECT sub.subID FROM `subject` sub WHERE progID = '$progID'";
+    $query = "SELECT sub.subID FROM `subject` sub WHERE `progID` = '$progID' AND `status` = 1";
     $result = selectQuery($query);
 
     if ($result) {
@@ -103,6 +105,8 @@ function getAllSubjects($progID, $sessID) // to add new subject into each sessio
             createSubjectsForNewSession($sub['subID'], $sessID);
         }
     } else die("<br>" . $query);
+    $header = "Location: ../sessions.php?progID=" . $_SESSION['progID'];
+    header($header);
 }
 
 function createSubjectsForNewSession($subID, $sessID)
@@ -128,18 +132,25 @@ function newSubject($progID, $subID, $subName)
 
     if ($result) {
         foreach ($result as $sess) {
-            echo implode($sess) . " ";
+            // echo implode($sess) . " ";
             createSubjectForEachSession($subID, $sess['sessID']);
         }
     }
-
-
-    // insert to all session 
 }
 
 function createSubjectForEachSession($subID, $sessID)
 {
     $query = "INSERT INTO `session_subjects` (`subID`, `sessID`) VALUES ('$subID', $sessID) ";
     insertQuery($query, 0);
-    echo "Ok?<br>";
+}
+
+function deleteSubject($subID, $progID)
+{
+    $query = "DELETE FROM `subject` WHERE subID = '$subID'";
+    deleteQuery($query);
+
+    $query = "DELETE FROM `session_subject` WHERE subID = '$subID'";
+    deleteQuery($query);
+    $header = "Location: ../sessions.php?progID=" . $progID;
+    header($header);
 }
