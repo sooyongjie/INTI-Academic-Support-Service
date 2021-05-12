@@ -1,17 +1,24 @@
 <?php
 
 // create new session
-if (isset($_GET['sessName'])) {
+if (isset($_GET['updateSubject'])) {
+    include_once('./func.php');
+    include_once("../../db_connect.php");
+    updateSubject($_GET['subID'], $_GET['subName']);
+    $header = "Location: ../sessions.php?progID=" . $_SESSION['progID'];
+    header($header);
+} else if (isset($_GET['newSession'])) {
     session_start();
     include_once('./func.php');
     include_once("../../db_connect.php");
     newSession($_GET['sessName'], $_GET['progID']);
-} else if (isset($_GET['subName'])) {
+} else if (isset($_GET['newSubject'])) {
     session_start();
     include_once('./func.php');
     include_once("../../db_connect.php");
     newSubject($_GET['progID'], $_GET['subID'], $_GET['subName']);
 } else if (isset($_GET['delete'])) {
+    session_start();
     include_once('../func/func.php');
     include_once("../../db_connect.php");
     deleteSubject($_GET['delete'], $_GET['progID']);
@@ -50,7 +57,7 @@ function showSubjects($progID)
             <span>New Subject</span>
         </button>
     </div>
-    <?php $query = "SELECT sub.subID, sub.subName FROM `subject` sub WHERE progID = '$progID'";
+    <?php $query = "SELECT sub.subID, sub.subName FROM `subject` sub WHERE `progID` = '$progID' AND `status` = 1";
     $result = selectQuery($query);
     if ($result) { ?>
         <div class="card request-list">
@@ -124,17 +131,25 @@ function createSubjectsForNewSession($subID, $sessID)
 function newSubject($progID, $subID, $subName)
 {
     $query = "INSERT INTO `subject`(`subID`, `subName`, `progID`) VALUES ('$subID','$subName', $progID)";
-    insertQuery($query, 0);
+    $result = insertQuery($query, 0);
+    if (!$result) { // previously deleted subject (status = false)
+        updateSubject($subID, $subName);
+        updateSessionSubjects($subID);
+        $header = "Location: ../sessions.php?progID=" . $_SESSION['progID'];
+        header($header);
+    } else {
+        // get all sessions
+        $query = "SELECT sessID FROM `session`";
+        $result = selectQuery($query);
 
-    // get all sessions
-    $query = "SELECT sessID FROM `session`";
-    $result = selectQuery($query);
-
-    if ($result) {
-        foreach ($result as $sess) {
-            // echo implode($sess) . " ";
-            createSubjectForEachSession($subID, $sess['sessID']);
-        }
+        if ($result) {
+            foreach ($result as $sess) {
+                // echo implode($sess) . " ";
+                createSubjectForEachSession($subID, $sess['sessID']);
+            }
+            $header = "Location: ../sessions.php?progID=" . $_SESSION['progID'];
+            header($header);
+        } else die("stop now");
     }
 }
 
@@ -144,13 +159,25 @@ function createSubjectForEachSession($subID, $sessID)
     insertQuery($query, 0);
 }
 
+
+function updateSubject($subID, $subName)
+{
+    $query = "UPDATE `subject` SET `subName` = '$subName', `status` = 1 WHERE subID = '$subID'";
+    updateQuery($query);
+}
+
+function updateSessionSubjects($subID)
+{
+    $query = "UPDATE `session_subjects` SET `status` = 1  WHERE subID = '$subID'";
+    updateQuery($query);
+}
+
 function deleteSubject($subID, $progID)
 {
-    $query = "DELETE FROM `subject` WHERE subID = '$subID'";
-    deleteQuery($query);
-
-    $query = "DELETE FROM `session_subject` WHERE subID = '$subID'";
-    deleteQuery($query);
+    $query = "UPDATE `subject` SET `status` = 0 WHERE subID = '$subID'";
+    updateQuery($query);
+    $query = "UPDATE `session_subjects` SET `status` = 0 WHERE subID = '$subID'";
+    updateQuery($query);
     $header = "Location: ../sessions.php?progID=" . $progID;
     header($header);
 }

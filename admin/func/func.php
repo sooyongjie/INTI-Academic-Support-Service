@@ -59,9 +59,9 @@ function insertQuery($query, $getLastID)
     if ($db->query($query) === TRUE) {
         if ($getLastID) {
             return $db->insert_id;
-        } else return 0;
+        } else return 1;
     } else {
         echo "Error updating record: " . $db->error;
-        die("die");
+        return 0;
     }
 }

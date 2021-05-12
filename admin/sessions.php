@@ -43,6 +43,7 @@
                 <form action="./func/sessions.php" method="GET" class="new-form">
                     <label for="">Name</label>
                     <input type="text" name="sessName" placeholder="Session" autocomplete="off">
+                    <input type="hidden" name="newSession">
                     <input type="hidden" name="progID" value="<?php echo $_GET['progID'] ?>">
                     <div class="buttons">
                         <button class="cancel-btn" type="button" onclick="hideModal(1)">
@@ -68,6 +69,7 @@
                     <input type="text" name="subID" placeholder="ID">
                     <label for="">Subject Name</label>
                     <input type="text" name="subName" placeholder="Name">
+                    <input type="hidden" name="newSubject">
                     <input type="hidden" name="progID" value="<?php echo $_GET['progID'] ?>">
                     <!-- <label for="">Course Structure</label> -->
                     <!-- <label for="upload-input" class="upload-btn">
@@ -99,6 +101,7 @@
                     <input type="text" name="subID" id="input-subID">
                     <label for="">Subject Name</label>
                     <input type="text" name="subName" id="input-subName">
+                    <input type="hidden" name="updateSubject">
                     <div class="buttons">
                         <button class="cancel-btn" type="button" onclick="hideModal(3)">
                             <span>Cancel</span>
