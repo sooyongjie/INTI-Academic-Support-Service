@@ -31,7 +31,9 @@ if (isset($_GET['updateSubject'])) {
 
 function showSessions($progID)
 {
-    $query = "SELECT sessID, sessName FROM `session` WHERE progID = '$progID' ORDER BY sessName";
+    $query = "SELECT sessID, sessName FROM `session` 
+    WHERE progID = '$progID' AND `status` = 1
+    ORDER BY sessName";
     $result = selectQuery($query);
     if ($result) {
         foreach ($result as $sess) { ?>
@@ -111,7 +113,7 @@ function getAllSubjects($progID, $sessID) // to add new subject into each sessio
         foreach ($result as $sub) {
             createSubjectsForNewSession($sub['subID'], $sessID);
         }
-    } else die("<br>" . $query);
+    }
     $header = "Location: ../sessions.php?progID=" . $_SESSION['progID'];
     header($header);
 }
@@ -123,9 +125,8 @@ function createSubjectsForNewSession($subID, $sessID)
 }
 
 
-
 /*
- * Create new subject
+ * New subject
 */
 
 function newSubject($progID, $subID, $subName)
@@ -133,6 +134,7 @@ function newSubject($progID, $subID, $subName)
     $query = "INSERT INTO `subject`(`subID`, `subName`, `progID`) VALUES ('$subID','$subName', $progID)";
     $result = insertQuery($query, 0);
     if (!$result) { // previously deleted subject (status = false)
+        exit("what");
         updateSubject($subID, $subName);
         updateSessionSubjects($subID);
         $header = "Location: ../sessions.php?progID=" . $_SESSION['progID'];
@@ -141,6 +143,7 @@ function newSubject($progID, $subID, $subName)
         // get all sessions
         $query = "SELECT sessID FROM `session`";
         $result = selectQuery($query);
+        exit("ok");
 
         if ($result) {
             foreach ($result as $sess) {

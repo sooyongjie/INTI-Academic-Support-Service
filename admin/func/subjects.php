@@ -4,7 +4,12 @@ if (isset($_POST['token'])) {
     require_once('./func.php');
     require("../../db_connect.php");
     uploadCourseStructure($_POST['ssID'], $_POST['token']);
-} else {
+} else if(isset($_GET['delete'])) {
+    require_once('./func.php');
+    require("../../db_connect.php");
+    deleteSession($_GET['delete']);
+}
+else {
     require_once('./func/func.php');
     require("../db_connect.php");
 }
@@ -19,9 +24,13 @@ function showSubjects($progID, $sessID)
             echo "<input type='hidden' id='sess-name' value='" . $sessName[0]['sessName'] . "'>";
             ?>
         </h2>
+        <button onclick="deletePrompt('<?php echo $_GET['sessID'] ?>', '<?php echo $_GET['progID'] ?>', 'session')">
+            <i class="far fa-trash-alt"></i>
+            <span>Delete</span>
+        </button>
     </div>
-    <?php $query = "SELECT sub.subID, sub.subName, ss.ssID, ss.token FROM `session_subjects` ss 
-    INNER JOIN `subject` sub ON ss.subID = sub.subID WHERE ss.sessID = '$sessID'";
+    <?php $query = "SELECT sub.subID, sub.subName, ss.ssID, ss.token, ss.status FROM `session_subjects` ss 
+    INNER JOIN `subject` sub ON ss.subID = sub.subID WHERE ss.sessID = '$sessID' AND ss.status = 1";
     $result = selectQuery($query);
     if ($result) { ?>
         <div class="card request-list">
@@ -76,4 +85,26 @@ function uploadCourseStructure($ssID, $token)
     $result = updateQuery($query);
     $header = "Location: ../subjects.php?progID=" . $_GET['progID'] . "&sessID=" . $_GET['sessID'];
     if ($result) header($header);
+}
+
+function updateSession($sessID)
+{
+    $query = "UPDATE `session` SET `status` = 1 WHERE sessID = '$sessID'";
+    updateQuery($query);
+}
+
+function updateSessionSubjects($sessID)
+{
+    $query = "UPDATE `session_subjects` SET `status` = 1  WHERE sessID = '$sessID'";
+    updateQuery($query);
+}
+
+function deleteSession($sessID)
+{
+    $query = "UPDATE `session` SET `status` = 0 WHERE sessID = '$sessID'";
+    updateQuery($query);
+    $query = "UPDATE `session_subjects` SET `status` = 0  WHERE sessID = '$sessID'";
+    updateQuery($query);
+    $header = "Location: ../sessions.php?progID=" . $_GET['progID'];
+    header($header);
 }

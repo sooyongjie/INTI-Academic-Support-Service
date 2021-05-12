@@ -38,5 +38,6 @@
 </body>
 <!-- <script src="./js/modal.js"></script> -->
 <script src="./js/file.js"></script>
+<script src="./js/prompt.js"></script>
 
 </html>
