@@ -19,6 +19,8 @@ function showProgrammes()
         foreach ($result as $prog) {
             showProgramme($prog);
         }
+    } else {
+        echo "It feels a little lonely here";
     }
 }
 

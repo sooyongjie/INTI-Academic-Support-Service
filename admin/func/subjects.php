@@ -4,12 +4,11 @@ if (isset($_POST['token'])) {
     require_once('./func.php');
     require("../../db_connect.php");
     uploadCourseStructure($_POST['ssID'], $_POST['token']);
-} else if(isset($_GET['delete'])) {
+} else if (isset($_GET['delete'])) {
     require_once('./func.php');
     require("../../db_connect.php");
     deleteSession($_GET['delete']);
-}
-else {
+} else {
     require_once('./func/func.php');
     require("../db_connect.php");
 }
@@ -45,7 +44,9 @@ function showSubjects($progID, $sessID)
                 } ?>
             </table>
         </div>
-    <?php }
+    <?php } else {
+        echo "It feels a little lonely here";
+    }
 }
 
 function showSubject($sub)

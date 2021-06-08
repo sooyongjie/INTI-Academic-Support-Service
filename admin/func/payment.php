@@ -28,5 +28,7 @@ function payment()
             </tr>
 
 <?php   }
+    } else {
+        echo "It is feeling a lil' lonely here";
     }
 }

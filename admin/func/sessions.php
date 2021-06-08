@@ -47,6 +47,8 @@ function showSessions($progID)
                 </td>
             </tr>
     <?php }
+    } else {
+        echo "It feels a little lonely here";
     }
 }
 
@@ -83,7 +85,9 @@ function showSubjects($progID)
                 <?php } ?>
             </table>
         </div>
-<?php }
+<?php } else {
+        echo "It feels a little lonely here";
+    }
 }
 
 
@@ -134,7 +138,6 @@ function newSubject($progID, $subID, $subName)
     $query = "INSERT INTO `subject`(`subID`, `subName`, `progID`) VALUES ('$subID','$subName', $progID)";
     $result = insertQuery($query, 0);
     if (!$result) { // previously deleted subject (status = false)
-        exit("what");
         updateSubject($subID, $subName);
         updateSessionSubjects($subID);
         $header = "Location: ../sessions.php?progID=" . $_SESSION['progID'];
@@ -143,7 +146,6 @@ function newSubject($progID, $subID, $subName)
         // get all sessions
         $query = "SELECT sessID FROM `session`";
         $result = selectQuery($query);
-        exit("ok");
 
         if ($result) {
             foreach ($result as $sess) {

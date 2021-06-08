@@ -71,6 +71,8 @@ function pendingRequests()
     $result = selectQuery($query);
     if ($result) {
         requests($result);
+    } else {
+        echo "Yay! You have responded to every requests 🙌🏻";
     }
 }
 
@@ -93,6 +95,8 @@ function allRequests()
     $result = selectQuery($query);
     if ($result) {
         requests($result);
+    } else {
+        echo "It feels lonely here.";
     }
 }
 
