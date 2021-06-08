@@ -19,7 +19,8 @@
       <div class="card request-list">
         <table>
           <tr>
-            <th>ID</th>
+            <th>PayID</th>
+            <th>ReqID</th>
             <th>Amount</th>
             <th>Status</th>
           </tr>

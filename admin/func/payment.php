@@ -5,7 +5,8 @@ require("../db_connect.php");
 
 function payment()
 {
-    $query = "SELECT reqID, amount, token FROM payment WHERE token IS NOT NULL ORDER BY reqID desc LIMIT " . $_SESSION['limit'] . " ";
+    $query = "SELECT payID, reqID, amount, token FROM payment 
+            WHERE token IS NOT NULL ORDER BY payID DESC, reqID desc LIMIT " . $_SESSION['limit'] . " ";
     $result = selectQuery($query);
     if ($result) {
         foreach ($result as $pay) {
@@ -13,7 +14,10 @@ function payment()
 
             <tr>
                 <td>
-                    <a href="./requests.php?id=<?php echo $pay['reqID'] ?>">
+                    <?php echo $pay['payID'] ?>
+                </td>
+                <td>
+                    <a class="link" href="./requests.php?id=<?php echo $pay['reqID'] ?>">
                         <?php echo $pay['reqID'] ?>
                     </a>
                 </td>
