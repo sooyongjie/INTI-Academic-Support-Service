@@ -60,7 +60,7 @@ if (isset($_SESSION['user'])) {
             <div class="modal-body">
                 <h3>Check your email</h3>
                 <p>We emailed a confirmation link to your email.</p>
-                <button class="modal-btn" onclick="sendVerificationEmail('<?php echo $_SESSION['verification'] ?>', 1)">
+                <button class="modal-btn" onclick="sendVerificationEmail('<?php echo $_SESSION['verification'] ?>', '<?php echo $_SESSION['email'] ?>', 1)">
                     <span>Resend</span>
                     <i class="fas fa-paper-plane modal-icon"></i>
                 </button>
@@ -302,7 +302,7 @@ if (isset($_SESSION['user'])) {
 if (isset($_SESSION['verification'])) {
 ?>
     <script>
-        sendVerificationEmail("<?php echo $_SESSION['verification'] ?>","<?php echo $_SESSION['email'] ?>" , 0);
+        sendVerificationEmail("<?php echo $_SESSION['verification'] ?>", "<?php echo $_SESSION['email'] ?>", 0);
     </script>
 <?php
     unset($_SESSION['verification']);
