@@ -22,13 +22,7 @@
                 </button>
             </div>
             <div class="card request-list">
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Session</th>
-                    </tr>
-                    <?php showSessions($_GET['progID']) ?>
-                </table>
+                <?php showSessions($_GET['progID']) ?>
             </div>
             <?php showSubjects($_GET['progID']) ?>
         </div>
