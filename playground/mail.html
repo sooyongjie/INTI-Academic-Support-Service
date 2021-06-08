@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+
+<body>
+
+</body>
+<script>
+    Email.send({
+        Host: "smtp.google.com",
+        Username: "j17025666@student.newinti.edu.my",
+        Password: "poopandpee",
+        To: `sooyongjie@gmail.com`,
+        From: "j17025666@student.newinti.edu.my",
+        Subject: "INTI Academic Services Verification",
+        Body: `Click on the following link to verify your account: <br><br>`
+    }).then(
+        message => alert(message)
+    );
+</script>
+
+</html>
