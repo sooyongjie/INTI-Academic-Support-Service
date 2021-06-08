@@ -46,7 +46,7 @@ function requestForm()
             $progs = getProgrammes();
             foreach ($progs as $prog) {
             ?>
-                <input class="value prog-value" value="<?php echo $prog['progName'] ?>" id="<?php echo $prog['progID'] ?>" readonly />
+                <input class="value prog-value closed" value="<?php echo $prog['progName'] ?>" id="<?php echo $prog['progID'] ?>" readonly />
             <?php
             }
             ?>
@@ -60,7 +60,7 @@ function requestForm()
             $sessions = getSessions();
             foreach ($sessions as $sess) {
             ?>
-                <input class="value sess-value" value="<?php echo $sess['sessName'] ?>" id="<?php echo $sess['sessID'] ?>" readonly />
+                <input class="value sess-value closed" value="<?php echo $sess['sessName'] ?>" id="<?php echo $sess['sessID'] ?>" readonly />
             <?php
             }
             ?>
@@ -73,7 +73,7 @@ function requestForm()
             $subjects = getSubjects();
             foreach ($subjects as $sub) {
             ?>
-                <input class="value sub-value" value="<?php echo $sub['subID'] . " " . $sub['subName'] ?>" id="<?php echo $sub['subID'] ?>" readonly />
+                <input class="value sub-value closed" value="<?php echo $sub['subID'] . " " . $sub['subName'] ?>" id="<?php echo $sub['subID'] ?>" readonly />
             <?php
             }
             ?>

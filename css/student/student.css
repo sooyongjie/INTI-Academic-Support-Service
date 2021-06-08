@@ -491,20 +491,20 @@ nav img {
 }
 
 .value-list {
-  max-height: 0;
   width: inherit;
   display: flex;
   flex-direction: column;
   background: white;
   border-radius: 8px;
-  overflow: hidden;
   transition: 0.1s ease-in-out;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  z-index: -99;
+  opacity: 0;
 }
 
 .value-list.open {
-  max-height: 80%;
-  overflow: auto;
+  z-index: inherit;
+  opacity: 1;
 }
 
 .value-list .value {
@@ -514,6 +514,7 @@ nav img {
   font-size: 15px;
   cursor: pointer;
   transition: unset;
+  opacity: 1;
 }
 
 .value-list .value:hover {
@@ -524,6 +525,7 @@ nav img {
   max-height: 0;
   overflow: hidden;
   padding: 0;
+  opacity: 0;
 }
 
 .value-list.prog-list {

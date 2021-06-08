@@ -40,10 +40,11 @@ const dropdownInit = (input, inputID, dropdown, dropdownArray, valueArray) => {
     });
   });
 
+  // when textbox is clicked
   input.addEventListener("focus", () => {
-    dropdown.classList.add("open");
-    dropdownArray.forEach((dropdown) => {
-      dropdown.classList.remove("closed");
+    dropdown.classList.add("open"); // textbox is expanded
+    dropdownArray.forEach((inputs) => {
+      inputs.classList.remove("closed");
     });
   });
 
@@ -55,7 +56,11 @@ const dropdownInit = (input, inputID, dropdown, dropdownArray, valueArray) => {
     const isdropdown = dropdown.contains(evt.target);
     const isInput = input.contains(evt.target);
     if (!isdropdown && !isInput) {
+      console.log("no");
       dropdown.classList.remove("open");
+      dropdownArray.forEach((dropdown) => {
+        dropdown.classList.add("closed");
+      });
     }
   });
 };
