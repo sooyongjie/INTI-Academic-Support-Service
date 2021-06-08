@@ -24,7 +24,7 @@ $email = $_POST['email'];
 $result = checkExistingUser($email, $username);
 
 if ($result) {
-    $code = generateVerficationLink();
+    $code = generateVerficationLink($email);
     $result = insertUser(
         $username,
         $password,
@@ -33,7 +33,7 @@ if ($result) {
         $code
     );
     if (!$result) {
-        echo "WHAT";
+        echo "Whoops! Something went horribly wrong.";
         exit();
     }
 }
@@ -46,12 +46,10 @@ function checkExistingUser($email, $username)
 
     $result = selectQuery($query);
     if (!$result) {
-        echo "ok1";
         $query = "SELECT uid FROM user WHERE `email` = '$email' AND `type` = 1";
 
         $result = selectQuery($query);
         if (!$result) {
-            echo "ok1";
             return 1;
         } else {
             $_SESSION['msg'] = "The email has been used";
@@ -77,10 +75,11 @@ function insertUser(
     else return 0;
 }
 
-function generateVerficationLink()
+function generateVerficationLink($email)
 {
     $code = md5($_POST['username'] . time());
     $link = "http://localhost/INTI-Academic-Support-Service/student/?verification=" . $code;
     $_SESSION['verification'] = $link;
+    $_SESSION['email'] = $email;
     return $code;
 }

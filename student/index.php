@@ -197,15 +197,18 @@ if (isset($_SESSION['user'])) {
             })
     }
 
-    sendVerificationEmail = (url, option) => {
+    sendVerificationEmail = (url, email, option) => {
+        console.log('email: ', email);
         Email.send({
-            SecureToken: "43710afa-0af3-4189-98ed-b6bd6f8b6258",
-            To: 'sooyongjie@gmail.com',
+            Host: "smtp.google.com",
+            Username: "j17025666@student.newinti.edu.my",
+            Password: "poopandpee",
+            To: `${email}`,
             From: "j17025666@student.newinti.edu.my",
             Subject: "INTI Academic Services Verification",
             Body: `Click on the following link to verify your account: <br><br> ${url}`
         }).then(
-            // message => alert(message);
+            message => alert(message)
         );
         if (!option) showModal()
         else showModal(1)
@@ -299,7 +302,7 @@ if (isset($_SESSION['user'])) {
 if (isset($_SESSION['verification'])) {
 ?>
     <script>
-        sendVerificationEmail("<?php echo $_SESSION['verification'] ?>", 0);
+        sendVerificationEmail("<?php echo $_SESSION['verification'] ?>","<?php echo $_SESSION['email'] ?>" , 0);
     </script>
 <?php
     unset($_SESSION['verification']);
