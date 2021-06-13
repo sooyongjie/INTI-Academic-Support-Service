@@ -26,7 +26,6 @@
   </div>
 
   <?php include_once('./components/toast.php') ?>
-  <?php include_once('./components/fab.php') ?>
   <?php include_once('./components/scroll-to-top.php') ?>
 </body>
 <?php include_once('./components/footer.php') ?>
