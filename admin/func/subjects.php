@@ -16,6 +16,7 @@ if (isset($_POST['token'])) {
 function showSubjects($progID, $sessID)
 { ?>
     <div class="heading">
+        <i class="fas fa-arrow-left" onclick="window.location.href='sessions.php?progID=<?php echo $_GET['progID'] ?>'"></i>
         <h2>
             <?php
             $sessName = selectQuery("SELECT sessName FROM `session` WHERE sessID = '$sessID'");

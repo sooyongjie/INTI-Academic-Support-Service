@@ -14,7 +14,7 @@
         <div class="content-container">
             <?php include_once('./components/options.php') ?>
             <div class="heading">
-                <!-- <i class="fas fa-arrow-left"></i> -->
+                <i class="fas fa-arrow-left" onclick="window.location.href='./programmes.php'"></i>
                 <h2>Sessions</h2>
                 <button onclick="showModal(1)">
                     <i class="fas fa-plus"></i>

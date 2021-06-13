@@ -41,6 +41,7 @@
         <!-- Request Details  -->
         <div class="section">
           <div class="heading">
+            <i class="fas fa-arrow-left" onclick="window.location.href='./requests.php'"></i>
             <h3>Request <?php echo $_GET['id'] ?></h3>
           </div>
           <?php $result = requestDetails($_GET['id']) ?>

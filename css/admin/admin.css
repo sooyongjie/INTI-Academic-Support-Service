@@ -582,7 +582,28 @@ button span {
   display: flex;
   align-items: center;
   align-self: flex-start;
-  column-gap: 16px;
+}
+
+.heading .fa-arrow-left {
+  height: 32px;
+  width: 32px;
+  margin-right: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 14px;
+  transition: 0.2s ease-out;
+}
+
+.heading .fa-arrow-left:hover, .heading .fa-arrow-left:focus {
+  background: #fdf0f0;
+  color: #e20c18;
+}
+
+.heading .fa-arrow-left:active {
+  background: #f9ced0;
+  transition: 0.05s;
 }
 
 .heading h1 {
@@ -591,6 +612,7 @@ button span {
 
 .heading button,
 .heading a {
+  margin-left: 16px;
   padding: 6px 12px;
   display: flex;
   align-items: center;

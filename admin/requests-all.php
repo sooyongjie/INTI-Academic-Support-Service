@@ -16,6 +16,7 @@
             <!-- All Requests  -->
             <div class="section">
                 <div class="heading">
+                    <i class="fas fa-arrow-left" onclick="window.location.href='./requests.php'"></i>
                     <h2>All Requests</h2>
                 </div>
                 <div class="card request-list">
