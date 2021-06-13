@@ -55,7 +55,7 @@ function requestView()
 {
     $query = "SELECT r.reqID, `datetime`, p.amount , `status`, p.token FROM requests r 
     INNER JOIN payment p ON r.reqID = p.reqID 
-    WHERE r.reqID = '" . $_GET['id'] . "'";
+    WHERE r.reqID = '" . $_GET['id'] . "' LIMIT 1";
 
     $result = selectQuery($query);
     if ($result) {
@@ -103,7 +103,7 @@ function subjects()
     INNER JOIN programme prog ON rs.progID = prog.progID 
     INNER JOIN `subject` sub ON ss.subID = sub.subID 
     INNER JOIN `session` sess ON ss.sessID = sess.sessID 
-    WHERE rs.reqID = " . $_SESSION['reqID'] . "";
+    WHERE rs.reqID = " . $_GET['id'] . "";
 
 
     $result = selectQuery($query);
