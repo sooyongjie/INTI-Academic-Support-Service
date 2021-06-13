@@ -65,7 +65,7 @@ function pendingRequests()
     } else {
         $query = "SELECT reqID, username, `datetime`, `status` FROM requests r
         INNER JOIN user u on r.uid = u.uid 
-        WHERE `status` = '1' ORDER BY `datetime` desc LIMIT " . $_SESSION['offset'] . ", " . $_SESSION['limit'] . " ";
+        WHERE `status` = '1' ORDER BY `datetime` desc LIMIT 0, " . $_SESSION['limit'] . " ";
     }
 
     $result = selectQuery($query);
