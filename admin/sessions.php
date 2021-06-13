@@ -96,6 +96,7 @@
                     <label for="">Subject Name</label>
                     <input type="text" name="subName" id="input-subName">
                     <input type="hidden" name="updateSubject">
+                    <input type="hidden" name="progID" value="<?php echo $_GET['progID'] ?>">
                     <div class="buttons">
                         <button class="cancel-btn" type="button" onclick="hideModal(3)">
                             <span>Cancel</span>

@@ -1,11 +1,12 @@
 <?php
 
 // create new session
+$_SESSION['progID'] = $_GET['progID'];
 if (isset($_GET['updateSubject'])) {
     include_once('./func.php');
     include_once("../../db_connect.php");
     updateSubject($_GET['subID'], $_GET['subName']);
-    $header = "Location: ../sessions.php?progID=" . $_SESSION['progID'];
+    $header = "Location: ../sessions.php?progID=".$_SESSION['progID'];
     header($header);
 } else if (isset($_GET['newSession'])) {
     session_start();
@@ -23,11 +24,11 @@ if (isset($_GET['updateSubject'])) {
     include_once("../../db_connect.php");
     deleteSubject($_GET['delete'], $_GET['progID']);
 } else if (isset($_GET['progID'])) {
-    $_SESSION['progID'] = $_GET['progID'];
     // view sessions
     include_once('./func/func.php');
     include_once("../db_connect.php");
 }
+
 
 function showSessions($progID)
 {
@@ -94,18 +95,14 @@ function showSubjects($progID)
                         </tr>
                     <?php } ?>
                 </table>
-        </div>
-
-<?php } else {
+        </div> <?php } else {
                 echo "There are no subjects";
             }
         }
 
-
-
         /*
- * New Session
-*/
+         * New Session
+         */
 
         function newSession($sessName, $progID)
         {
@@ -152,6 +149,7 @@ function showSubjects($progID)
                 updateSubject($subID, $subName);
                 updateSessionSubjects($subID);
                 $header = "Location: ../sessions.php?progID=" . $_SESSION['progID'];
+
                 header($header);
             } else {
                 // get all sessions
