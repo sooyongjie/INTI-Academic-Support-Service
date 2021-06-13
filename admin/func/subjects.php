@@ -28,8 +28,10 @@ function showSubjects($progID, $sessID)
             <span>Delete</span>
         </button>
     </div>
-    <?php $query = "SELECT sub.subID, sub.subName, ss.ssID, ss.token, ss.status FROM `session_subjects` ss 
-    INNER JOIN `subject` sub ON ss.subID = sub.subID WHERE ss.sessID = '$sessID' AND ss.status = 1";
+    <?php $query = "SELECT sub.subID, sub.subName, ss.ssID, ss.sessID, sess.sessName, ss.token, ss.status FROM `session_subjects` ss 
+    INNER JOIN `subject` sub ON ss.subID = sub.subID 
+    INNER JOIN `session` sess ON ss.sessID = sess.sessID  
+    WHERE ss.sessID = '$sessID' AND ss.status = 1";
     $result = selectQuery($query);
     if ($result) { ?>
         <div class="card request-list">
@@ -57,9 +59,10 @@ function showSubject($sub)
         <td class="status">
             <?php
             if ($sub['token'] != "") {
-                $baseURL = "https://firebasestorage.googleapis.com/v0/b/inti-academic-support.appspot.com/o/CSIT321%20July%202020?alt=media&token=";
+                $baseURL = "https://firebasestorage.googleapis.com/v0/b/inti-academic-support.appspot.com/o/";
+                //CSIT321%20July%202020
             ?>
-                <a href="<?php echo $baseURL . $sub['token'] ?>">
+                <a href="<?php echo $baseURL . $sub['subID'] . " " . $sub['sessName'] . "?alt=media&token=" . $sub['token'] ?>">
                     <i class="far fa-file-pdf"></i>
                 </a>
                 <a onclick="triggerInput(); updateSelectedSubject('<?php echo $sub['ssID'] ?>','<?php echo $sub['subID'] ?>');" class="arrow">
