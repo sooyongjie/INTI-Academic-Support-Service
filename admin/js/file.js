@@ -19,6 +19,7 @@ const onInsertFile = () => {
 };
 
 const uploadFile = (file) => {
+  showToast("Uploading file")
   var fileName = generateFileName();
   var fileRef = storageRef.child(fileName);
   var fileImagesRef = storageRef.child(fileName);

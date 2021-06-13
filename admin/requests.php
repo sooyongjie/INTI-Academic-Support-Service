@@ -63,8 +63,10 @@
       ?>
     </div>
   </div>
-  <?php if (isset($_SESSION['toast'])) include_once('./components/toast.php') ?>
+  <?php include_once('./components/toast.php') ?>
 </body>
 <script src="./js/offset.js"></script>
+<script src="./js/toast.js"></script>
+
 
 </html>

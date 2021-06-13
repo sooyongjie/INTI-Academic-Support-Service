@@ -35,8 +35,10 @@
             </div> -->
         </div>
     </div>
+    <?php include_once('./components/toast.php') ?>
 </body>
 <!-- <script src="./js/modal.js"></script> -->
+<script src="./js/toast.js"></script>
 <script src="./js/file.js"></script>
 <script src="./js/prompt.js"></script>
 
