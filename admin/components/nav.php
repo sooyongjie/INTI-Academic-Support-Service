@@ -16,11 +16,10 @@
             <i class="fas fa-book"></i>
             <span>Programmes</span>
         </button>
-        <button class="nav-notification nav-links" id="notifications" onclick="window.location.href='./notifications.php'">
+        <!-- <button class="nav-notification nav-links" id="notifications" onclick="window.location.href='./notifications.php'">
             <i class="fas fa-bell"></i>
             <span>Notifications</span>
-            <!-- <div class="notification-dot"></div> -->
-        </button>
+        </button> -->
     </div>
     <hr />
     <div class="nav-profile">
