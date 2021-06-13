@@ -114,9 +114,9 @@ function submitRequest()
     $reqID = insertQuery($query, 1);
 
     for ($i = 0; $i < $subCount; $i++) {
-        $progID = $_GET[$keys[0]];
-        $sessID = $_GET[$keys[2]];
-        $subID = $_GET[$keys[4]];
+        $progID = $_GET[$keys[$uniIndex]];
+        $sessID = $_GET[$keys[$sessIndex]];
+        $subID = $_GET[$keys[$subIndex]];
 
         $ssID = getSession_SubjectID($sessID, $subID);
         $query = "INSERT INTO request_subjects (reqID, progID, ssID)
